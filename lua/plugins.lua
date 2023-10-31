@@ -24,6 +24,7 @@ vim.cmd([[
 ]])
 
 
+
 -- Install plugins here - `use ...`
 -- Packer.nvim hints
 --     after = string or list,           -- Specifies plugins to load before this plugin. See "sequencing" below
@@ -45,6 +46,9 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
     use { 'williamboman/mason.nvim' }
     use { 'williamboman/mason-lspconfig.nvim'}
+    use {'nvim-telescope/telescope.nvim', tag = '0.1.4'}
+    use { 'nvim-lua/plenary.nvim' }
+    use { 'nvim-tree/nvim-web-devicons' }
     ---------------------------------------
     -- NOTE: PUT YOUR THIRD PLUGIN HERE --
     ---------------------------------------
