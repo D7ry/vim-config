@@ -26,7 +26,8 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 vim.api.nvim_set_keymap('n', '<D-l>', 'w', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<D-h>', 'b', { noremap = true, silent = true })
 
-
+-- toggleterm
+vim.keymap.set('n', '<C-`>', '<cmd>ToggleTerm<cr>', opts)
 
 -----------------
 -- Visual mode --
