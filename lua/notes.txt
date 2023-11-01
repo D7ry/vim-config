@@ -1,0 +1,5 @@
+-Scrolling
+C-y => upwards
+C-e => downwards
+C-u => upwards half page
+C-d => downwards half page

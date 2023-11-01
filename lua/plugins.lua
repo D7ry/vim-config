@@ -57,6 +57,7 @@ return require('packer').startup(function(use)
     use {'morhetz/gruvbox'}
     use { 'andweeb/presence.nvim' }
     use { 'github/copilot.vim' }
+    use { 'karb94/neoscroll.nvim' }  
     --use { "startup-nvim/startup.nvim", 
        --requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
         --config = function()
