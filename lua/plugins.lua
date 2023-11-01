@@ -63,7 +63,7 @@ return require('packer').startup(function(use)
         end}
     use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true}}
 
-
+    use { 'lewis6991/gitsigns.nvim' }
 
     --use { "startup-nvim/startup.nvim", 
        --requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
