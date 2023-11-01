@@ -7,3 +7,4 @@ require("config.nvim-tree")
 require("discordrpc")
 require("github-copilot")
 require("neoscroll").setup()
+require("lualine").setup() -- https://github.com/nvim-lualine/lualine.nvim

@@ -27,7 +27,7 @@ vim.api.nvim_set_keymap('n', '<D-l>', 'w', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<D-h>', 'b', { noremap = true, silent = true })
 
 -- toggleterm
-vim.keymap.set('n', '<C-`>', '<cmd>ToggleTerm<cr>', opts)
+vim.keymap.set('n', '<C-`>', '<cmd>ToggleTerm direction=horizontal<cr>', opts)
 
 -----------------
 -- Visual mode --
