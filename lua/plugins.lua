@@ -49,6 +49,17 @@ return require('packer').startup(function(use)
     use {'nvim-telescope/telescope.nvim', tag = '0.1.4'}
     use { 'nvim-lua/plenary.nvim' }
     use { 'nvim-tree/nvim-web-devicons' }
+    use { 'nvim-tree/nvim-tree.lua',
+            requires = {
+                'nvim-tree/nvim-web-devicons',
+            },
+        }
+    --use { "startup-nvim/startup.nvim", 
+       --requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+        --config = function()
+         --   require"startup".setup(require"config.startup_nvim")
+       -- end
+   -- }
     ---------------------------------------
     -- NOTE: PUT YOUR THIRD PLUGIN HERE --
     ---------------------------------------

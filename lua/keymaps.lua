@@ -30,3 +30,5 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
 
+-- Quit terminal shortcut
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', opts)
