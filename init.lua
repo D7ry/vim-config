@@ -5,4 +5,4 @@ require("colorscheme")
 require("lsp")
 require("config.nvim-tree")
 require("discordrpc")
-
+require("github-copilot")

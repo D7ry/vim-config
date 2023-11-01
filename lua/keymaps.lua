@@ -22,6 +22,12 @@ vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', opts)
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 
+-- move left/right by a word
+vim.api.nvim_set_keymap('n', '<D-l>', 'w', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<D-h>', 'b', { noremap = true, silent = true })
+
+
+
 -----------------
 -- Visual mode --
 -----------------
