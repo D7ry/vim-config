@@ -39,3 +39,11 @@ vim.keymap.set('v', '>', '>gv', opts)
 
 -- Quit terminal shortcut
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', opts)
+
+-----------------
+-- Insertion   --
+-----------------
+
+
+-- Define a keybinding in Insert mode to delete a word with Ctrl+Backspace
+vim.api.nvim_set_keymap('i', '<C-BS>', '<C-w>', { noremap = true, silent = true })

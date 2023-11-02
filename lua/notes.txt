@@ -3,3 +3,25 @@ C-y => upwards
 C-e => downwards
 C-u => upwards half page
 C-d => downwards half page
+
+-Explorer
+-filetab
+C-] => cd to highlighted
+a => create new
+c => copy
+p => paste
+d => delete
+u => rename full path
+e => rename base
+E => expand all
+W => collapse all
+H => toggle hidden
+f => start filter
+F => clean filter
+C-t => open in new Tab
+C-v => open in vertial split
+C-x => open in horizontal split
+
+-Tab Toggle
+C-` => toggle terminal
+
