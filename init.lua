@@ -13,3 +13,5 @@ require("config.nvim-tree-sitter")
 require("bufferline").setup() -- https://github.com/akinsho/bufferline.nvim 
 require("leap").add_default_mappings()
 require("which-key").setup()
+--require("config.dashboard")
+

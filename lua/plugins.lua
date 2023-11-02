@@ -69,12 +69,7 @@ return require('packer').startup(function(use)
     use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
     use { 'ggandor/leap.nvim' }
     use { 'folke/which-key.nvim' }
-    --use { "startup-nvim/startup.nvim", 
-       --requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
-        --config = function()
-         --   require"startup".setup(require"config.startup_nvim")
-       -- end
-   -- }
+    use { 'nvimdev/dashboard-nvim', requires = {'nvim-tree/nvim-web-devicons'}, config= function() require('lua.config.dashboard').setup() end}
     ---------------------------------------
     -- NOTE: PUT YOUR THIRD PLUGIN HERE --
     ---------------------------------------

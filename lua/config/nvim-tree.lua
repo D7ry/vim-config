@@ -21,5 +21,5 @@ require("nvim-tree").setup({
   },
 })
 
-local api = require("nvim-tree.api")
-api.tree.toggle({focus=false})
+--local api = require("nvim-tree.api")
+--api.tree.toggle({focus=false})
