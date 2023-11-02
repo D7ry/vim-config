@@ -70,9 +70,6 @@ return require('packer').startup(function(use)
     use { 'ggandor/leap.nvim' }
     use { 'folke/which-key.nvim' }
     use { 'nvimdev/dashboard-nvim', requires = {'nvim-tree/nvim-web-devicons'}, config= function() require('lua.config.dashboard').setup() end}
-    ---------------------------------------
-    -- NOTE: PUT YOUR THIRD PLUGIN HERE --
-    ---------------------------------------
   
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

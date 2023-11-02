@@ -5,11 +5,12 @@ function M.setup()
       db.setup({
         theme = 'hyper',
         config = {
+          footer = {'', '"to see the world as it is, and to love it"', '--Romain Rolland'},
           week_header = {
            enable = true,
           },
           shortcut = {
-            { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+            { desc = '󰊳 Update', group = '@property', action = 'PackerSync', key = 'u' },
             {
               icon = ' ',
               icon_hl = '@variable',
@@ -19,15 +20,15 @@ function M.setup()
               key = 'f',
             },
             {
-              desc = ' Appswidjwioajod',
+              desc = ' Apps',
               group = 'DiagnosticHint',
               action = 'Telescope app',
               key = 'a',
             },
             {
-              desc = ' dotfiles',
+              desc = ' Marks',
               group = 'Number',
-              action = 'Telescope dotfiles',
+              action = 'Telescope marks',
               key = 'd',
             },
           },
