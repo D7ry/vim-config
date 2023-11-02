@@ -8,13 +8,6 @@ local opts = {
 -- Normal mode --
 -----------------
 
--- Hint: see `:h vim.map.set()`
--- Better window navigation
-vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
-vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
-vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
-vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
-
 -- Resize with arrows
 -- delta: 2 lines
 vim.keymap.set('n', '<C-Up>', ':resize -2<CR>', opts)
@@ -69,7 +62,15 @@ vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<CR>', { noremap = tru
 vim.keymap.set('n', '<leader>`', '<cmd>ToggleTerm direction=horizontal<cr>', opts)
 
 -- telescope 
-vim.keymap.set('n', '<leader>T', '<cmd>Telescope find_files<CR>')
+vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
+
+-- switch windows
+-- Hint: see `:h vim.map.set()`
+-- Better window navigation
+vim.keymap.set('n', '<Leader>h', '<C-w>h', opts)
+vim.keymap.set('n', '<Leader>j', '<C-w>j', opts)
+vim.keymap.set('n', '<Leader>k', '<C-w>k', opts)
+vim.keymap.set('n', '<Leader>l', '<C-w>l', opts)
 
 
 -- Quit terminal shortcut
