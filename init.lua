@@ -10,3 +10,4 @@ require("github-copilot")
 require("lualine").setup() -- https://github.com/nvim-lualine/lualine.nvim
 require("gitsigns").setup() -- https://github.com/lewis6991/gitsigns.nvim
 require("config.nvim-tree-sitter")
+require("bufferline").setup() -- https://github.com/akinsho/bufferline.nvim 

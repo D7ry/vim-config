@@ -26,8 +26,8 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 vim.api.nvim_set_keymap('n', '<D-l>', 'w', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<D-h>', 'b', { noremap = true, silent = true })
 
--- toggleterm
-vim.keymap.set('n', '<C-`>', '<cmd>ToggleTerm direction=horizontal<cr>', opts)
+-- quick save
+vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 
 -----------------
 -- Visual mode --
@@ -37,8 +37,6 @@ vim.keymap.set('n', '<C-`>', '<cmd>ToggleTerm direction=horizontal<cr>', opts)
 vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
 
--- Quit terminal shortcut
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', opts)
 
 -----------------
 -- Insertion   --
@@ -53,3 +51,24 @@ vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', { noremap = true, silent = true
 
 -- Define a keybinding in Insert mode to delete a word with Ctrl+Backspace
 vim.api.nvim_set_keymap('i', '<C-BS>', '<C-w>', { noremap = true, silent = true })
+
+
+-- Leader keybinding
+
+-- Set space as the leader key
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+
+-- Map keys to navigate through buffers
+vim.api.nvim_set_keymap('n', '<leader>]', ':bnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>[', ':bprevious<CR>', { noremap = true, silent = true }) 
+
+-- toggleterm
+vim.keymap.set('n', '<leader>`', '<cmd>ToggleTerm direction=horizontal<cr>', opts)
+
+
+-- Quit terminal shortcut
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', opts)
+
+

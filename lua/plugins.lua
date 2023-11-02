@@ -64,7 +64,9 @@ return require('packer').startup(function(use)
     use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true}}
 
     use { 'lewis6991/gitsigns.nvim' }
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } 
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
     --use { "startup-nvim/startup.nvim", 
        --requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
         --config = function()
