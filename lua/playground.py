@@ -8,6 +8,11 @@ def this_is_a_function(information: dict) -> int:
     pass
 
 
+def this_this_another_function(another_dict: dict) -> int:
+    print(another_dict)
+    return 0
+
+
 def subroutine(input: float):
     print(f"subroutine has received value {input}")
 

@@ -1,1 +1,3 @@
-require('monokai').setup {}
+--require('monokai').setup {}
+
+vim.cmd.colorscheme("gruvbox")
