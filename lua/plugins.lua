@@ -67,6 +67,7 @@ return require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+    use { 'ggandor/leap.nvim' }
     --use { "startup-nvim/startup.nvim", 
        --requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
         --config = function()
