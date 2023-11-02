@@ -5,7 +5,7 @@ function M.setup()
       db.setup({
         theme = 'hyper',
         config = {
-          footer = {'', '"to see the world as it is, and to love it"', '--Romain Rolland'},
+          footer = {'', '"By breaking through the foul and ugly mists', 'Of vapors that did seem to strangle him."'},
           week_header = {
            enable = true,
           },
