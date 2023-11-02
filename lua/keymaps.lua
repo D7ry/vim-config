@@ -68,6 +68,9 @@ vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<CR>', { noremap = tru
 -- toggleterm
 vim.keymap.set('n', '<leader>`', '<cmd>ToggleTerm direction=horizontal<cr>', opts)
 
+-- telescope 
+vim.keymap.set('n', '<leader>T', '<cmd>Telescope find_files<CR>')
+
 
 -- Quit terminal shortcut
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', opts)

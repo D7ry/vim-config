@@ -12,3 +12,4 @@ require("gitsigns").setup() -- https://github.com/lewis6991/gitsigns.nvim
 require("config.nvim-tree-sitter")
 require("bufferline").setup() -- https://github.com/akinsho/bufferline.nvim 
 require("leap").add_default_mappings()
+require("which-key").setup()

@@ -68,6 +68,7 @@ return require('packer').startup(function(use)
 
     use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
     use { 'ggandor/leap.nvim' }
+    use { 'folke/which-key.nvim' }
     --use { "startup-nvim/startup.nvim", 
        --requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
         --config = function()
