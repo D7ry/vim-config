@@ -119,14 +119,14 @@ return {
         --["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
         ["C"] = "close_node",
         -- ['C'] = 'close_all_subnodes',
-        ["e"] = "close_all_nodes",
-        ["E"] = "expand_all_nodes",
+        ["E"] = "close_all_nodes",
+        ["e"] = "expand_all_nodes",
         ["a"] = { 
           "add",
           -- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
           -- some commands may take optional config options, see `:h neo-tree-mappings` for details
           config = {
-            show_path = "none" -- "none", "relative", "absolute"
+            show_path = "absolute" -- "none", "relative", "absolute"
           }
         },
         --["A"] = "add_directory", -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
@@ -177,7 +177,7 @@ return {
         },
       },
       follow_current_file = {
-        enabled = false, -- This will find and focus the file in the active buffer every time
+        enabled = true, -- This will find and focus the file in the active buffer every time
         --               -- the current file is changed while the tree is open.
         leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
       },
