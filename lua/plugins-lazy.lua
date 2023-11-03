@@ -38,11 +38,29 @@ local plugins = {
     -- Telescope
     {'nvim-telescope/telescope.nvim', dependencies = {'nvim-lua/plenary.nvim'}},
 
+    -- AI
+    {'zbirenbaum/copilot.lua', cmd = "Copilot"},
+
     -- Treesitter
     {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
 
     -- File Explorer
-    {'kyazdani42/nvim-tree.lua', dependencies = {'kyazdani42/nvim-web-devicons'}},
+    --{'kyazdani42/nvim-tree.lua', dependencies = {'kyazdani42/nvim-web-devicons'}},
+    
+    {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+          "nvim-lua/plenary.nvim",
+          "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+          "MunifTanjim/nui.nvim",
+          "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+        },
+    config = function()
+        require("neo-tree").setup(require("config.neo-tree-config"))
+    end,
+    keys = require("config.neo-tree-keymap")
+    },
 
     -- Git
     {'lewis6991/gitsigns.nvim'},
