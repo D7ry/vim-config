@@ -72,7 +72,9 @@ vim.keymap.set('n', '<Leader>j', '<C-w>j', opts)
 vim.keymap.set('n', '<Leader>k', '<C-w>k', opts)
 vim.keymap.set('n', '<Leader>l', '<C-w>l', opts)
 
-
+-- esc key mapping
+vim.keymap.set('n', '<C-Space>', '<Esc>', opts)
+vim.keymap.set('i', '<C-Space>', '<Esc>', opts)
 -- Quit terminal shortcut
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', opts)
 
