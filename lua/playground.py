@@ -9,7 +9,11 @@ def this_is_a_function(information: dict) -> int:
 
 
 def this_this_another_function(another_dict: dict) -> int:
+    """
+    this is a function.
+    """
     print(another_dict)
+    this_this_another_function(dict)
     return 0
 
 
