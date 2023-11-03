@@ -74,7 +74,8 @@ return require('packer').startup(function(use)
     use { 'simrat39/rust-tools.nvim' }
     use {'jdhao/better-escape.vim', event = 'InsertEnter'}
     -- use { 'liuchengxu/vista.vim' }
-    use 'simrat39/symbols-outline.nvim' 
+    use 'simrat39/symbols-outline.nvim' --https://github.com/simrat39/symbols-outline.nvim
+    use { 'RRethy/vim-illuminate' }
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
