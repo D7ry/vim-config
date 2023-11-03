@@ -71,6 +71,7 @@ return require('packer').startup(function(use)
     use { 'folke/which-key.nvim' }
     use { 'nvimdev/dashboard-nvim', requires = {'nvim-tree/nvim-web-devicons'} }
     use ({ 'projekt0n/github-nvim-theme' })
+    use { 'simrat39/rust-tools.nvim' } 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
