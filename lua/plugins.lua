@@ -56,7 +56,7 @@ return require('packer').startup(function(use)
         }
     use {'morhetz/gruvbox'}
     use { 'andweeb/presence.nvim' }
-    use { 'github/copilot.vim' }
+    use { 'zbirenbaum/copilot.lua' }
     use { 'karb94/neoscroll.nvim' }
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
            require("toggleterm").setup()
