@@ -78,4 +78,4 @@ vim.keymap.set('n', '<Leader>s', '<cmd>SymbolsOutline<cr>', opts)
 -- Quit terminal shortcut
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', opts)
 
-
+vim.keymap.set('n', '<C-i>', 'K', opts)

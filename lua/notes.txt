@@ -25,3 +25,7 @@ C-x => open in horizontal split
 -Tab Toggle
 C-` => toggle terminal
 
+- Editing trivia
+gd => jump to definition
+gD => jump to declaration
+gr => jump to ref
