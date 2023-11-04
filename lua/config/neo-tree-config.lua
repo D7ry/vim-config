@@ -264,5 +264,8 @@ return {
           ["ot"] = { "order_by_type", nowait = false },
         }
       }
+    },
+    document_symbols = {
+
     }
   }

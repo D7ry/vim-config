@@ -81,7 +81,11 @@ local plugins = {
     {'williamboman/mason.nvim'},
     {'williamboman/mason-lspconfig.nvim'},
     {'jdhao/better-escape.vim'},
-    {'simrat39/symbols-outline.nvim'},
+    {'simrat39/symbols-outline.nvim', 
+        config = function()
+            require("symbols-outline").setup(require("config.symbols-outline-config"))
+        end
+    },
     {'RRethy/vim-illuminate'},
     {'folke/which-key.nvim'},
     {'ggandor/leap.nvim'},
