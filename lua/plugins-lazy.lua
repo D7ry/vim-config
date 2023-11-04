@@ -24,6 +24,19 @@ local plugins = {
     {'goolord/alpha-nvim', dependencies = {'kyazdani42/nvim-web-devicons'}},
     
     {'nvimdev/dashboard-nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
+    {'rcarriga/nvim-notify',
+        config = function()
+            vim.opt.termguicolors = true
+            vim.notify = require("notify")
+        end,
+        lazy = false
+    },
+    {'folke/trouble.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}, opts = require("config.nvim-notify-config")},
+    {'folke/noice.nvim', event = 'VeryLazy', dependencies = {'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify'},
+       config = function()
+            require('noice').setup(require('config.noice-config'))
+        end
+    },
     -- LSP and Autocompletion
     {'neovim/nvim-lspconfig'},
     {'hrsh7th/nvim-cmp', dependencies = {
@@ -31,7 +44,7 @@ local plugins = {
         {'hrsh7th/cmp-buffer'},
         {'hrsh7th/cmp-path'},
         {'hrsh7th/cmp-cmdline'},
-        {'hrsh7th/cmp-nvim-lsp-signature-help'}
+       -- {'hrsh7th/cmp-nvim-lsp-signature-help'}
     },
     lazy=false
     },

@@ -2,14 +2,13 @@
 def main():
     print("hello world!")
 
-def this_is_a_function(information: dict) -> int
+def this_is_a_function(information: dict) -> int:
     pass
-
 
 class Foo:
     def __init__(self, name: str):
         self.__name: str = name
-
+        return 
     def get_name(self) -> str:
         return self.__name
 
