@@ -1,4 +1,4 @@
-return ({
+return {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python", "rust", "json", "html", "javascript", "java", "css", "cpp" },
 
@@ -38,4 +38,4 @@ return ({
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
-})
+}

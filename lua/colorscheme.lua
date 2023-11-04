@@ -1,3 +1,3 @@
 --require('monokai').setup {}
 
-vim.cmd.colorscheme("monokai")
+vim.cmd.colorscheme("tokyonight-storm")

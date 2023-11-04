@@ -16,6 +16,20 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 
     -- UI Plugins
+    --{'marko-cerovac/material.nvim'},
+    {"loctvl842/monokai-pro.nvim",
+        config = function()
+            require('config.monokai-pro-setup')
+        end
+    },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require('config.tokyonight-setup')
+        end
+    },
     {'tanvirtin/monokai.nvim'},
     {'morhetz/gruvbox'},
     {'projekt0n/github-nvim-theme'},
@@ -67,12 +81,12 @@ local plugins = {
 
     -- Treesitter
     {'nvim-treesitter/nvim-treesitter',
+        lazy = false,
+        run = ':TSUpdate',
         config = function()
-            require("nvim-treesitter").setup(require("config.nvim-treesitter-config"))
-        end,
-        lazy = false
-        --run = ':TSUpdate'
-    },
+            require("nvim-treesitter.configs").setup(require("config.nvim-treesitter-config"))
+        end
+   },
 
     -- File Explorer
     --{'kyazdani42/nvim-tree.lua', dependencies = {'kyazdani42/nvim-web-devicons'}},
@@ -103,7 +117,7 @@ local plugins = {
     {'andweeb/presence.nvim'},
     {'williamboman/mason.nvim'},
     {'williamboman/mason-lspconfig.nvim'},
-    {'jdhao/better-escape.vim'},
+   {'jdhao/better-escape.vim'},
     {'simrat39/symbols-outline.nvim', 
         config = function()
             require("symbols-outline").setup(require("config.symbols-outline-config"))
@@ -119,3 +133,5 @@ local opts = {}
 
 require("lazy").setup(plugins)
 require("config.telescope-setup").setup()
+
+
