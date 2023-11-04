@@ -62,7 +62,6 @@ vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<CR>', { noremap = tru
 vim.keymap.set('n', '<leader>`', '<cmd>ToggleTerm direction=horizontal<cr>', opts)
 
 -- telescope 
-vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
 
 -- switch windows
 -- Hint: see `:h vim.map.set()`

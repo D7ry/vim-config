@@ -38,13 +38,13 @@ local plugins = {
         end
     },
     -- LSP and Autocompletion
-    {'neovim/nvim-lspconfig'},
+    {'neovim/nvim-lspconfig', lazy=false},
     {'hrsh7th/nvim-cmp', dependencies = {
-        {'hrsh7th/cmp-nvim-lsp', },
-        {'hrsh7th/cmp-buffer'},
-        {'hrsh7th/cmp-path'},
-        {'hrsh7th/cmp-cmdline'},
-       -- {'hrsh7th/cmp-nvim-lsp-signature-help'}
+        {'hrsh7th/cmp-nvim-lsp',lazy=false },
+        {'hrsh7th/cmp-buffer', lazy=false},
+        {'hrsh7th/cmp-path', lazy=false},
+        {'hrsh7th/cmp-cmdline', lazy=false},
+        --{'hrsh7th/cmp-nvim-lsp-signature-help'}
     },
     lazy=false
     },
@@ -53,7 +53,8 @@ local plugins = {
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     -- Telescope
     {'nvim-telescope/telescope.nvim', lazy = false, dependencies = {'nvim-lua/plenary.nvim', "nvim-telescope/telescope-fzf-native.nvim"}, 
-        keys = require("config.telescope-keymap")
+        keys = require("config.telescope-keymap"),
+        lazy = false
     },
 
     -- AI
@@ -65,7 +66,11 @@ local plugins = {
     },
 
     -- Treesitter
-    {'nvim-treesitter/nvim-treesitter' 
+    {'nvim-treesitter/nvim-treesitter',
+        config = function()
+            require("nvim-treesitter").setup(require("config.nvim-treesitter-config"))
+        end,
+        lazy = false
         --run = ':TSUpdate'
     },
 

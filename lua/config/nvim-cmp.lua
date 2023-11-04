@@ -7,6 +7,12 @@ end
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 
+-- unmap vanilla cmp keys
+vim.api.nvim_set_keymap('i', '<C-n>', '<Nop>', {noremap = true})
+vim.api.nvim_set_keymap('i', '<C-p>', '<Nop>', {noremap = true})
+vim.api.nvim_set_keymap('i', '<C-x><C-o>', '<Nop>', {noremap = true})
+
+
 cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
@@ -16,11 +22,12 @@ cmp.setup({
     },
     mapping = cmp.mapping.preset.insert({
         -- Use <C-b/f> to scroll the docs
-        ['<C-p>'] = cmp.mapping.scroll_docs( -4),
-        ['<C-n>'] = cmp.mapping.scroll_docs(4),
+        ['<C-k>'] = cmp.mapping.scroll_docs( -4),
+        ['<C-j>'] = cmp.mapping.scroll_docs(4),
         -- Use <C-k/j> to switch in items
-        ['<C-k>'] = cmp.mapping.select_prev_item(),
-        ['<C-j>'] = cmp.mapping.select_next_item(),
+        ['<C-p>'] = cmp.mapping.select_prev_item(),
+        ['<C-n>'] = cmp.mapping.select_next_item(),
+        ['<C-e>'] = cmp.mapping.abort(),
         -- Use <CR>(Enter) to confirm selection
         -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         ['<CR>'] = cmp.mapping.confirm({ select = true }),

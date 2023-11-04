@@ -13,6 +13,7 @@ function M.setup()
         }
     }
     ts.load_extension('fzf')
+    ts.load_extension('notify')
 end
 
 

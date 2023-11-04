@@ -8,9 +8,12 @@ def this_is_a_function(information: dict) -> int:
 class Foo:
     def __init__(self, name: str):
         self.__name: str = name
-        return 
+
     def get_name(self) -> str:
         return self.__name
+
+    def my_func(self, v1: str, v2: int) -> bool:
+        return False
 
 def this_this_another_function(another_dict: dict) -> int:
     pass
@@ -34,4 +37,4 @@ if __name__ == "__main__":
     main()  # call main here.
     this_is_a_function(5)
     this_this_another_function(8)
-    
+    EOFError
