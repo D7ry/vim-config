@@ -42,7 +42,9 @@ local plugins = {
     {'zbirenbaum/copilot.lua', cmd = "Copilot"},
 
     -- Treesitter
-    {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
+    {'nvim-treesitter/nvim-treesitter' 
+        --run = ':TSUpdate'
+    },
 
     -- File Explorer
     --{'kyazdani42/nvim-tree.lua', dependencies = {'kyazdani42/nvim-web-devicons'}},
