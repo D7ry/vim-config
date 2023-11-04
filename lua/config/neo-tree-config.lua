@@ -91,8 +91,8 @@ return {
     -- see `:h neo-tree-custom-commands-global`
     commands = {},
     window = {
-      position = "right",
-      width = 40,
+      position = "float",
+      width = 140,
       mapping_options = {
         noremap = true,
         nowait = true,
@@ -233,7 +233,7 @@ return {
         mappings = {
           ["bd"] = "buffer_delete",
           ["<bs>"] = "navigate_up",
-          ["\\"] = "set_root",
+          ["."] = "set_root",
           ["o"] = { "show_help", nowait=false, config = { title = "Order by", prefix_key = "o" }},
           ["oc"] = { "order_by_created", nowait = false },
           ["od"] = { "order_by_diagnostics", nowait = false },
@@ -268,4 +268,4 @@ return {
     document_symbols = {
 
     }
-  }
+}

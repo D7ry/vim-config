@@ -13,6 +13,8 @@ require('mason-lspconfig').setup({
     ensure_installed = { 'pylsp',  'lua_ls', 'rust_analyzer' , 'clangd'},
 })
 
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 -- Set different settings for different languages' LSP
 -- LSP list: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 -- How to use setup({}): https://github.com/neovim/nvim-lspconfig/wiki/Understanding-setup-%7B%7D

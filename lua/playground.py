@@ -2,8 +2,7 @@
 def main():
     print("hello world!")
 
-
-def this_is_a_function(information: dict) -> int:
+def this_is_a_function(information: dict) -> int
     pass
 
 
@@ -36,3 +35,4 @@ if __name__ == "__main__":
     main()  # call main here.
     this_is_a_function(5)
     this_this_another_function(8)
+    

@@ -16,8 +16,8 @@ cmp.setup({
     },
     mapping = cmp.mapping.preset.insert({
         -- Use <C-b/f> to scroll the docs
-        ['<C-b>'] = cmp.mapping.scroll_docs( -4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-u>'] = cmp.mapping.scroll_docs( -4),
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),
         -- Use <C-k/j> to switch in items
         ['<C-k>'] = cmp.mapping.select_prev_item(),
         ['<C-j>'] = cmp.mapping.select_next_item(),
@@ -75,6 +75,7 @@ cmp.setup({
       { name = 'luasnip' },     -- For luasnip user
       { name = 'buffer' },      -- For buffer word completion
       { name = 'path' },        -- For path completion
+      { name = 'nvim_lsp_signature_help' } -- for signature hint
   })
 })
 
