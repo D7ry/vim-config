@@ -14,12 +14,16 @@ class Foo:
     def get_name(self) -> str:
         return self.__name
 
+def this_this_another_function(another_dict: dict) -> int:
+    pass
 
 def this_this_another_function(another_dict: dict) -> int:
     """
     this is a function.
     """
     print(another_dict)
+
+    foo = Foo("something")
     return 0
 
 

@@ -36,7 +36,7 @@ local plugins = {
     {'saadparwaiz1/cmp_luasnip'},
 
     -- Telescope
-    {'nvim-telescope/telescope.nvim', dependencies = {'nvim-lua/plenary.nvim'}},
+    {'nvim-telescope/telescope.nvim', lazy = false, dependencies = {'nvim-lua/plenary.nvim'}, keys = require("config.telescope-keymap") },
 
     -- AI
     {'zbirenbaum/copilot.lua', cmd = "Copilot"},
