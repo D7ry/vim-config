@@ -39,7 +39,12 @@ local plugins = {
     {'nvim-telescope/telescope.nvim', lazy = false, dependencies = {'nvim-lua/plenary.nvim'}, keys = require("config.telescope-keymap") },
 
     -- AI
-    {'zbirenbaum/copilot.lua', cmd = "Copilot"},
+    {'zbirenbaum/copilot.lua', cmd = "Copilot", 
+        config = function()
+            require("copilot").setup(require("config.copilot-config"))
+        end,
+        event = "InsertEnter"
+    },
 
     -- Treesitter
     {'nvim-treesitter/nvim-treesitter' 
