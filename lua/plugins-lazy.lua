@@ -34,9 +34,11 @@ local plugins = {
     }},
     {'L3MON4D3/LuaSnip'},
     {'saadparwaiz1/cmp_luasnip'},
-
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     -- Telescope
-    {'nvim-telescope/telescope.nvim', lazy = false, dependencies = {'nvim-lua/plenary.nvim'}, keys = require("config.telescope-keymap") },
+    {'nvim-telescope/telescope.nvim', lazy = false, dependencies = {'nvim-lua/plenary.nvim', "nvim-telescope/telescope-fzf-native.nvim"}, 
+        keys = require("config.telescope-keymap")
+    },
 
     -- AI
     {'zbirenbaum/copilot.lua', cmd = "Copilot", 
@@ -95,3 +97,4 @@ local plugins = {
 local opts = {}
 
 require("lazy").setup(plugins)
+require("config.telescope-setup").setup()
