@@ -17,3 +17,12 @@ require("config.illuminate")
 require("copilot").setup({})
 --require("config.rust-tools")
 require("config.nvim-cmp")
+
+vim.api.nvim_create_autocmd("VimEnter", {
+    pattern = "*",
+    callback = function()
+        if #vim.fn.argv() == 0 then
+            vim.cmd('Neotree toggle')
+        end
+    end
+})

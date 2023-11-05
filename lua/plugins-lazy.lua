@@ -106,7 +106,8 @@ local plugins = {
     config = function()
         require("neo-tree").setup(require("config.neo-tree-config"))
     end,
-    keys = require("config.neo-tree-keymap")
+    keys = require("config.neo-tree-keymap"),
+    lazy = false
     },
 
     -- Git
