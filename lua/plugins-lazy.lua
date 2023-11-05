@@ -45,7 +45,7 @@ local plugins = {
         end,
         lazy = false
     },
-    {'folke/trouble.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}, opts = require("config.nvim-notify-config")},
+    require("plugins.plugin-trouble"),
     {'folke/noice.nvim', event = 'VeryLazy', dependencies = {'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify'},
        config = function()
             require('noice').setup(require('config.noice-config'))

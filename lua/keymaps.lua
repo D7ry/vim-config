@@ -4,6 +4,11 @@ local opts = {
     silent = true,       -- do not show message
 }
 
+-- delete some useless keymaps
+
+
+vim.api.nvim_set_keymap('n', 't', '<Nop>', {noremap = true})
+vim.api.nvim_set_keymap('n', 'f', '<Nop>', {noremap = true})
 -----------------
 -- Normal mode --
 -----------------

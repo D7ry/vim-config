@@ -4,9 +4,26 @@ def main():
     print("Gg")
 
 
+def get_fibbonacci(i: int) -> int:
+    if i == 0:
+        return 0
+    elif i == 1:
+        return 1
+    else:
+        return get_fibbonacci(i - 1) + get_fibbonacci(i - 2)
+
+
+def this_is_a_function(argument: int):
+    print(f"this_is_a_function has received value {argument}")
+
+
 class Foo:
     def __init__(self, name: str):
         self.__name: str = name
+
+    def fib(i: int) -> int:
+        if i == 0:
+            return 0
 
     def get_name(self) -> str:
         return self.__name
@@ -22,34 +39,9 @@ class Foo:
         else:
             return get_fibbonacci(i - 1) + get_fibbonacci(i - 2)
 
+
 def this_this_another_function(another_dict: dict) -> int:
     """
-    wio'wjefj
-    kjwefkj
-    fkeflk
-    fkeflk
-    jfje
-    fj
-
-    elwel
-    oewipoeifpow
-
-    pf
-    EOFError
-    fkeflk
-
-    fkeflk
-
-    elwel
-    elwele
-
-    elwele
-    elwele
-    elwele
-    elwel
-    elwele
-    elwel
-    fkeflke
     """
     pass
 
@@ -57,18 +49,22 @@ def this_this_another_function(another_dict: dict) -> int:
 def bad_func() -> str:
     return 5
 
+
 def take_string(s: str):
     print(s)
 
+
 take_string(5)
+
 
 def subroutine(argument: float):
     print(f"subroutine has received value {input}")
 
-def gg():
-    pass
 
-# github copilot isn't working here...
+def gg():
+
+
+    # github copilot isn't working here...
 if __name__ == "__main__":
     main()  # call main here.
     this_is_a_function(5)

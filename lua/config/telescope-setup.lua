@@ -4,10 +4,19 @@ function M.setup()
     ts = require("telescope")
     ts.setup{
         defaults = {
+            prompt_prefix = "🔭 ",
             layout_strategy = "horizontal",
             layout_config = {
                 height = 0.8,
-                width = 0.9
+                width = 0.75,
+                horizontal = {
+                    preview_width = 0.6,
+                    mirror = false,
+                    prompt_position = "top",
+                },
+                vertical = {
+                    mirror = false,
+                }
             },
             mappings = {
                 i = {
