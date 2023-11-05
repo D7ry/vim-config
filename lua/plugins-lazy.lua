@@ -74,7 +74,7 @@ local plugins = {
     -- AI
     {'zbirenbaum/copilot.lua', cmd = "Copilot", 
         config = function()
-            require("copilot").setup(require("config.copilot-config"))
+        require("copilot").setup(require("config.copilot-config"))
         end,
         event = "InsertEnter"
     },
@@ -117,7 +117,7 @@ local plugins = {
     {'andweeb/presence.nvim'},
     {'williamboman/mason.nvim'},
     {'williamboman/mason-lspconfig.nvim'},
-   {'jdhao/better-escape.vim'},
+    {'jdhao/better-escape.vim'},
     {'simrat39/symbols-outline.nvim', 
         config = function()
             require("symbols-outline").setup(require("config.symbols-outline-config"))

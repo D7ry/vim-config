@@ -2,7 +2,19 @@ local M = {}
 
 function M.setup()
     ts = require("telescope")
-    ts.setup{ 
+    ts.setup{
+        defaults = {
+            layout_strategy = "horizontal",
+            layout_config = {
+                height = 0.8,
+                width = 0.9
+            },
+            mappings = {
+                i = {
+                    ["<esc>"] = require("telescope.actions").close
+                }
+            }
+        },
         extensions = {
             fzf = {
                 fuzzy = true,

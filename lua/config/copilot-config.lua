@@ -16,15 +16,15 @@ return {
   },
   suggestion = {
     enabled = true,
-    auto_trigger = false,
+    auto_trigger = true,
     debounce = 75,
     keymap = {
-      accept = "<M-l>",
+      accept = "<C-Enter>",
       accept_word = false,
       accept_line = false,
-      next = "<M-]>",
-      prev = "<M-[>",
-      dismiss = "<C-]>",
+      next = "<C-'>",
+      prev = "<C-;>",
+      dismiss = "<C-w>",
     },
   },
   filetypes = {
