@@ -43,8 +43,8 @@ local plugins = {
     { 'projekt0n/github-nvim-theme' },
     require("plugins.plugin-bufferline"),
     require("plugins.plugin-lualine"),
-    { 'goolord/alpha-nvim',    dependencies = { 'kyazdani42/nvim-web-devicons' } },
-
+    require("plugins.plugin-drop"),
+    require("plugins.plugin-alpha"),
     -- {'nvimdev/dashboard-nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
     {
         'rcarriga/nvim-notify',

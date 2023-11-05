@@ -70,6 +70,8 @@ def this_this_another_function(another_dict: dict) -> int:
 def bad_func() -> str:
     return 5
 
+def ():
+
 
 def take_string(s: str):
     print(s)
