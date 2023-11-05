@@ -6,5 +6,5 @@ return {
     { "fi", "<cmd>Telescope lsp_implementations<cr>", "go to implementations" },
     { "fg", "<cmd>Telescope live_grep<cr>", "global search"},
     { 'ff', '<cmd>Telescope find_files<CR>'},
-    { 'fs', '<cmd>Telescope treesitter<cr>', "telescope tree sitter" }
+    { 'fs', '<cmd>Telescope lsp_document_symbols<cr>', "telescope tree sitter" }
 }

@@ -102,13 +102,6 @@ ins_left_most {
 --    color = { fg = colors.violet, gui = 'bold' },
 }
 
-ins_right {
-    -- filesize component
-    'filetype',
-    cond = conditions.buffer_not_empty,
-}
-
-
 ins_left {
     'filename',
     cond = conditions.buffer_not_empty,
@@ -119,7 +112,7 @@ ins_left { 'location' }
 
 --ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
-ins_left {
+ins_right {
     'diagnostics',
     sources = { 'nvim_diagnostic' },
     symbols = { error = ' ', warn = ' ', info = ' ' },
@@ -137,6 +130,25 @@ ins_left {
 --    return '%='
 --  end,
 --}
+
+ins_left {
+    'diff',
+    -- Is it me or the symbol for modified us really weird
+    symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
+    diff_color = {
+        added = { fg = colors.green },
+        modified = { fg = colors.orange },
+        removed = { fg = colors.red },
+    },
+    -- cond = conditions.hide_in_width,
+}
+
+
+ins_right {
+    -- filesize component
+    'filetype',
+    cond = conditions.buffer_not_empty,
+}
 
 ins_right_most {
     -- Lsp server name .
@@ -174,17 +186,6 @@ ins_right {
 }
 
 
-ins_right {
-    'diff',
-    -- Is it me or the symbol for modified us really weird
-    symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
-    diff_color = {
-        added = { fg = colors.green },
-        modified = { fg = colors.orange },
-        removed = { fg = colors.red },
-    },
-    -- cond = conditions.hide_in_width,
-}
 
 
 

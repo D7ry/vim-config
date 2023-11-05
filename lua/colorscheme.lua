@@ -1,2 +1,2 @@
 --require('monokai').setup {}
-vim.cmd.colorscheme("onedark")
+vim.cmd.colorscheme("tokyonight-moon")

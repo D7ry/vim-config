@@ -30,6 +30,14 @@ function M.setup()
                 override_generic_sorter = true,
                 override_file_sorter = true,
                 case_mode = "smart_case"
+            },
+            aerial = {
+                  -- Display symbols as <root>.<parent>.<symbol>
+                  show_nesting = {
+                    ["_"] = true,
+                    json = true, -- You can set the option for specific filetypes
+                    yaml = true,
+                  },
             }
         },
         pickers = {

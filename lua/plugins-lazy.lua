@@ -26,8 +26,8 @@ local plugins = {
         end
     },
     { "sainnhe/sonokai" },
-    { "marko-cerovac/material.nvim"},
-    { "navarasu/onedark.nvim"},
+    { "marko-cerovac/material.nvim" },
+    { "navarasu/onedark.nvim" },
     {
         "folke/tokyonight.nvim",
         lazy = false,
@@ -65,6 +65,7 @@ local plugins = {
     },
     -- LSP and Autocompletion
     require("plugins.plugin-hover"),
+    require("plugins.plugin-aerial"),
     { 'neovim/nvim-lspconfig', lazy = false },
     {
         'hrsh7th/nvim-cmp',
@@ -119,7 +120,7 @@ local plugins = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
-            "3rd/image.nvim",            -- Optional image support in preview window: See `# Preview Mode` for more information
+            "3rd/image.nvim",              -- Optional image support in preview window: See `# Preview Mode` for more information
         },
         config = function()
             require("neo-tree").setup(require("config.neo-tree-config"))
@@ -127,10 +128,7 @@ local plugins = {
         keys = require("config.neo-tree-keymap"),
         lazy = false
     },
-
-    -- Git
     { 'lewis6991/gitsigns.nvim' },
-
     -- Terminal Integration
     { 'akinsho/toggleterm.nvim', config = true },
 
@@ -141,12 +139,12 @@ local plugins = {
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
     { 'jdhao/better-escape.vim' },
-    {
-        'simrat39/symbols-outline.nvim',
-        config = function()
-            require("symbols-outline").setup(require("config.symbols-outline-config"))
-        end
-    },
+    --{
+    --    'simrat39/symbols-outline.nvim',
+    --    config = function()
+    --        require("symbols-outline").setup(require("config.symbols-outline-config"))
+    --    end
+    --},
     { 'RRethy/vim-illuminate' },
     { 'folke/which-key.nvim' },
     { 'ggandor/leap.nvim' },
