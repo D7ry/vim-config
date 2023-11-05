@@ -1,9 +1,7 @@
 
 def main():
     print("hello world!")
-    
-
-def thij_is_a_function(information: dict) -> int:
+    print("Gg")
 
 
 class Foo:
@@ -46,9 +44,9 @@ def this_this_another_function(another_dict: dict) -> int:
     elwele
 
     elwele
+    elwele
     elwele
-    elwele
-    elwel
+    elwel
     elwele
     elwel
     fkeflke
@@ -56,12 +54,19 @@ def this_this_another_function(another_dict: dict) -> int:
     pass
 
 
+def bad_func() -> str:
+    return 5
 
+def take_string(s: str):
+    print(s)
+
+take_string(5)
 
 def subroutine(argument: float):
     print(f"subroutine has received value {input}")
-    in = input("enter a value: ")
-    
+
+def gg():
+    pass
 
 # github copilot isn't working here...
 if __name__ == "__main__":
