@@ -117,7 +117,8 @@ local plugins = {
     {'akinsho/toggleterm.nvim', config=true},
 
     -- Other Utilities
-    {'karb94/neoscroll.nvim'},
+    require("plugins.plugin-cinnamon"),
+    --{'karb94/neoscroll.nvim'},
     {'andweeb/presence.nvim'},
     {'williamboman/mason.nvim'},
     {'williamboman/mason-lspconfig.nvim'},
