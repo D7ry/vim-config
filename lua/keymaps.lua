@@ -50,6 +50,8 @@ vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', { noremap = true, silent = true
 -- Define a keybinding in Insert mode to delete a word with Ctrl+Backspace
 vim.api.nvim_set_keymap('i', '<C-BS>', '<C-w>', { noremap = true, silent = true })
 
+-- invoke noh when pressing esc in normal mode
+vim.api.nvim_set_keymap('n', '<Esc>', ':noh<CR>', { noremap = true, silent = true })
 
 -- Leader keybinding
 

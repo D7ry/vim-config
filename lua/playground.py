@@ -3,6 +3,7 @@ def main():
     print("hello world!")
     print("Gg")
 
+GLOBAL_DICT:dict = {"key" : "val", "key2" : "val2"}
 
 def get_fibbonacci(i: int) -> int:
     if i == 0:

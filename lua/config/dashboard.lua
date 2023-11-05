@@ -10,28 +10,28 @@ function M.setup()
            enable = true,
           },
           shortcut = {
-            { desc = '󰊳 Sync', group = '@property', action = 'Lazy sync', key = 'u' },
-            {
-              icon = ' ',
-              icon_hl = '@variable',
-              desc = 'Files',
-              group = 'Label',
-              action = 'Telescope find_files',
-              key = 'f',
-            },
-            {
-              desc = ' Apps',
-              group = 'DiagnosticHint',
-              action = 'Telescope app',
-              key = 'a',
-            },
-            {
-              desc = ' Marks',
-              group = 'Number',
-              action = 'Telescope marks',
-              key = 'd',
-            },
-          },
+    { desc = '󰊳 Sync', group = '@property', action = 'Lazy sync', key = 'u' },
+          }
+--          shortcut = {
+--        
+--            {
+--              icon = ' ',
+--              icon_hl = '@variable',
+--              desc = 'Files',
+--              group = 'Label',
+--              key = 'ff',
+--            },
+--            {
+--              desc = ' Apps',
+--              group = 'DiagnosticHint',
+--              key = '',
+--            },
+--            {
+--              desc = ' Marks',
+--              group = 'Number',
+--              key = '',
+--            },
+--          },
         },
       })
     end

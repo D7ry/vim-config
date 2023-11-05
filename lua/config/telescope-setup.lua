@@ -5,7 +5,7 @@ function M.setup()
     ts.setup{
         defaults = {
             prompt_prefix = "🔭 ",
-            layout_strategy = "horizontal",
+            layout_strategy = "flex",
             layout_config = {
                 height = 0.8,
                 width = 0.75,

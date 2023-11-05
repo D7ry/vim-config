@@ -15,6 +15,9 @@ vim.opt.rtp:prepend(lazypath)
 -- define plugins here
 local plugins = {
 
+    -- startup screen
+    --require("plugins.plugin-startup"),
+    --require("plugins.plugin-miniintro"),
     -- UI Plugins
     --{'marko-cerovac/material.nvim'},
     {"loctvl842/monokai-pro.nvim",
@@ -34,10 +37,10 @@ local plugins = {
     {'morhetz/gruvbox'},
     {'projekt0n/github-nvim-theme'},
     {'nvim-lualine/lualine.nvim', dependencies = {'kyazdani42/nvim-web-devicons'}},
-    {'akinsho/bufferline.nvim', dependencies = {'kyazdani42/nvim-web-devicons'}},
+    require("plugins.plugin-bufferline"),
     {'goolord/alpha-nvim', dependencies = {'kyazdani42/nvim-web-devicons'}},
     
-    {'nvimdev/dashboard-nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
+   -- {'nvimdev/dashboard-nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
     {'rcarriga/nvim-notify',
         config = function()
             vim.opt.termguicolors = true
@@ -127,6 +130,7 @@ local plugins = {
     {'folke/which-key.nvim'},
     {'ggandor/leap.nvim'},
     {'simrat39/rust-tools.nvim'},
+    require("plugins.plugin-nvim-autopairs")
 }
 
 local opts = {}
