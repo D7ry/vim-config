@@ -1,14 +1,14 @@
 --lazy bootstrap
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -19,12 +19,15 @@ local plugins = {
     --require("plugins.plugin-startup"),
     --require("plugins.plugin-miniintro"),
     -- UI Plugins
-    --{'marko-cerovac/material.nvim'},
-    {"loctvl842/monokai-pro.nvim",
+    {
+        "loctvl842/monokai-pro.nvim",
         config = function()
             require('config.monokai-pro-setup')
         end
     },
+    { "sainnhe/sonokai" },
+    { "marko-cerovac/material.nvim"},
+    { "navarasu/onedark.nvim"},
     {
         "folke/tokyonight.nvim",
         lazy = false,
@@ -33,17 +36,18 @@ local plugins = {
             require('config.tokyonight-setup')
         end
     },
-    { 'mhartington/oceanic-next'},
-    {'tanvirtin/monokai.nvim'},
-    {'morhetz/gruvbox'},
-{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
-    {'projekt0n/github-nvim-theme'},
-    --require("plugins.plugin-bufferline"),
+    { 'mhartington/oceanic-next' },
+    { 'tanvirtin/monokai.nvim' },
+    { 'morhetz/gruvbox' },
+    { "bluz71/vim-moonfly-colors",  name = "moonfly", lazy = false, priority = 1000 },
+    { 'projekt0n/github-nvim-theme' },
+    require("plugins.plugin-bufferline"),
     require("plugins.plugin-lualine"),
-    {'goolord/alpha-nvim', dependencies = {'kyazdani42/nvim-web-devicons'}},
-    
-   -- {'nvimdev/dashboard-nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
-    {'rcarriga/nvim-notify',
+    { 'goolord/alpha-nvim',    dependencies = { 'kyazdani42/nvim-web-devicons' } },
+
+    -- {'nvimdev/dashboard-nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
+    {
+        'rcarriga/nvim-notify',
         config = function()
             vim.opt.termguicolors = true
             vim.notify = require("notify")
@@ -51,89 +55,102 @@ local plugins = {
         lazy = false
     },
     require("plugins.plugin-trouble"),
-    {'folke/noice.nvim', event = 'VeryLazy', dependencies = {'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify'},
-       config = function()
+    {
+        'folke/noice.nvim',
+        event = 'VeryLazy',
+        dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
+        config = function()
             require('noice').setup(require('config.noice-config'))
         end
     },
     -- LSP and Autocompletion
-    {'neovim/nvim-lspconfig', lazy=false},
-    {'hrsh7th/nvim-cmp', dependencies = {
-        {'hrsh7th/cmp-nvim-lsp',lazy=false },
-        {'hrsh7th/cmp-buffer', lazy=false},
-        {'hrsh7th/cmp-path', lazy=false},
-        {'hrsh7th/cmp-cmdline', lazy=false},
-        --{'hrsh7th/cmp-nvim-lsp-signature-help'}
+    require("plugins.plugin-hover"),
+    { 'neovim/nvim-lspconfig', lazy = false },
+    {
+        'hrsh7th/nvim-cmp',
+        dependencies = {
+            { 'hrsh7th/cmp-nvim-lsp', lazy = false },
+            { 'hrsh7th/cmp-buffer',   lazy = false },
+            { 'hrsh7th/cmp-path',     lazy = false },
+            { 'hrsh7th/cmp-cmdline',  lazy = false },
+            --{'hrsh7th/cmp-nvim-lsp-signature-help'}
+        },
+        lazy = false
     },
-    lazy=false
-    },
-    {'L3MON4D3/LuaSnip'},
-    {'saadparwaiz1/cmp_luasnip'},
+    { 'L3MON4D3/LuaSnip' },
+    { 'saadparwaiz1/cmp_luasnip' },
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     -- Telescope
-    {'nvim-telescope/telescope.nvim', lazy = false, dependencies = {'nvim-lua/plenary.nvim', "nvim-telescope/telescope-fzf-native.nvim"}, 
+    {
+        'nvim-telescope/telescope.nvim',
+        lazy = false,
+        dependencies = { 'nvim-lua/plenary.nvim', "nvim-telescope/telescope-fzf-native.nvim" },
         keys = require("config.telescope-keymap"),
         lazy = false
     },
 
     -- AI
-    {'zbirenbaum/copilot.lua', cmd = "Copilot", 
+    {
+        'zbirenbaum/copilot.lua',
+        cmd = "Copilot",
         config = function()
-        require("copilot").setup(require("config.copilot-config"))
+            require("copilot").setup(require("config.copilot-config"))
         end,
         event = "InsertEnter"
     },
 
     -- Treesitter
-    {'nvim-treesitter/nvim-treesitter',
+    {
+        'nvim-treesitter/nvim-treesitter',
         lazy = false,
         run = ':TSUpdate',
         config = function()
             require("nvim-treesitter.configs").setup(require("config.nvim-treesitter-config"))
         end
-   },
+    },
 
     -- File Explorer
     --{'kyazdani42/nvim-tree.lua', dependencies = {'kyazdani42/nvim-web-devicons'}},
-    
+
     {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-          "nvim-lua/plenary.nvim",
-          "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-          "MunifTanjim/nui.nvim",
-          "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+            "3rd/image.nvim",            -- Optional image support in preview window: See `# Preview Mode` for more information
         },
-    config = function()
-        require("neo-tree").setup(require("config.neo-tree-config"))
-    end,
-    keys = require("config.neo-tree-keymap"),
-    lazy = false
+        config = function()
+            require("neo-tree").setup(require("config.neo-tree-config"))
+        end,
+        keys = require("config.neo-tree-keymap"),
+        lazy = false
     },
 
     -- Git
-    {'lewis6991/gitsigns.nvim'},
+    { 'lewis6991/gitsigns.nvim' },
 
     -- Terminal Integration
-    {'akinsho/toggleterm.nvim', config=true},
+    { 'akinsho/toggleterm.nvim', config = true },
 
     -- Other Utilities
     require("plugins.plugin-cinnamon"),
     --{'karb94/neoscroll.nvim'},
-    {'andweeb/presence.nvim'},
-    {'williamboman/mason.nvim'},
-    {'williamboman/mason-lspconfig.nvim'},
-    {'jdhao/better-escape.vim'},
-    {'simrat39/symbols-outline.nvim', 
+    { 'andweeb/presence.nvim' },
+    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason-lspconfig.nvim' },
+    { 'jdhao/better-escape.vim' },
+    {
+        'simrat39/symbols-outline.nvim',
         config = function()
             require("symbols-outline").setup(require("config.symbols-outline-config"))
         end
     },
-    {'RRethy/vim-illuminate'},
-    {'folke/which-key.nvim'},
-    {'ggandor/leap.nvim'},
-    {'simrat39/rust-tools.nvim'},
+    { 'RRethy/vim-illuminate' },
+    { 'folke/which-key.nvim' },
+    { 'ggandor/leap.nvim' },
+    { 'simrat39/rust-tools.nvim' },
     require("plugins.plugin-nvim-autopairs")
 }
 
@@ -141,5 +158,3 @@ local opts = {}
 
 require("lazy").setup(plugins)
 require("config.telescope-setup").setup()
-
-

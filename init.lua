@@ -17,11 +17,11 @@ require("copilot").setup({})
 --require("config.rust-tools")
 require("config.nvim-cmp")
 --open up a neotree if no file has been opened
-vim.api.nvim_create_autocmd("VimEnter", {
-    pattern = "*",
-    callback = function()
-        if #vim.fn.argv() == 0 then
-            vim.cmd('Neotree toggle')
-        end
-    end
-})
+--vim.api.nvim_create_autocmd("VimEnter", {
+--    pattern = "*",
+--    callback = function()
+--        if #vim.fn.argv() == 0 then
+--            vim.cmd('Neotree toggle')
+--        end
+--    end
+--})
