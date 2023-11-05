@@ -9,10 +9,16 @@ local opts = {
 
 vim.api.nvim_set_keymap('n', 't', '<Nop>', {noremap = true})
 vim.api.nvim_set_keymap('n', 'f', '<Nop>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-h>', '<Nop>', opts)
+vim.api.nvim_set_keymap('n', '<C-l>', '<Nop>', opts)
+vim.api.nvim_set_keymap('n', 'ge', '<Nop>', opts)
 -----------------
 -- Normal mode --
 -----------------
-
+--
+--jumping to begin/end of lines with gb & ge
+vim.keymap.set('n', 'gb', '^', opts)
+vim.keymap.set('n', 'ge', '$', opts)
 -- Resize with arrows
 -- delta: 2 lines
 vim.keymap.set('n', '<C-Up>', ':resize -2<CR>', opts)
@@ -21,8 +27,8 @@ vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 
 -- move left/right by a word
-vim.api.nvim_set_keymap('n', '<D-l>', 'w', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<D-h>', 'b', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-l>', 'w', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-h>', 'b', { noremap = true, silent = true })
 
 -- quick save
 vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
@@ -42,14 +48,15 @@ vim.keymap.set('v', '>', '>gv', opts)
 
 -- Remove the original keybinding for Ctrl-j
 -- vim.api.nvim_del_keymap('i', '<C-j>')
-vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', { noremap = true, silent = true, expr = false })
+--vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', { noremap = true, silent = true, expr = false })
 --vim.api.nvim_set_keymap('i', '<C-j>', '<Down>', { noremap = true, silent = true, expr = false })
 --vim.api.nvim_set_keymap('i', '<C-k>', '<Up>', { noremap = true, silent = true, expr = false })
-vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', { noremap = true, silent = true, expr = false })
+--vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', { noremap = true, silent = true, expr = false })
 
 -- Define a keybinding in Insert mode to delete a word with Ctrl+Backspace
 vim.api.nvim_set_keymap('i', '<C-BS>', '<C-w>', { noremap = true, silent = true })
-
+-- delete a word in command mode
+vim.api.nvim_set_keymap('t', '<C-BS>', '<C-w>', { noremap = true, silent = true })
 -- invoke noh when pressing esc in normal mode
 vim.api.nvim_set_keymap('n', '<Esc>', ':noh<CR>', { noremap = true, silent = true })
 

@@ -33,11 +33,13 @@ local plugins = {
             require('config.tokyonight-setup')
         end
     },
+    { 'mhartington/oceanic-next'},
     {'tanvirtin/monokai.nvim'},
     {'morhetz/gruvbox'},
+{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
     {'projekt0n/github-nvim-theme'},
-    {'nvim-lualine/lualine.nvim', dependencies = {'kyazdani42/nvim-web-devicons'}},
-    require("plugins.plugin-bufferline"),
+    --require("plugins.plugin-bufferline"),
+    require("plugins.plugin-lualine"),
     {'goolord/alpha-nvim', dependencies = {'kyazdani42/nvim-web-devicons'}},
     
    -- {'nvimdev/dashboard-nvim', dependencies = 'nvim-tree/nvim-web-devicons'},

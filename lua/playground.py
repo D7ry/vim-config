@@ -63,7 +63,7 @@ def subroutine(argument: float):
 
 
 def gg():
-
+    pass
 
     # github copilot isn't working here...
 if __name__ == "__main__":

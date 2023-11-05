@@ -1,4 +1,5 @@
 return {
+    --sources = {"document_symbols", "filesystem"},
     close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
     popup_border_style = "rounded",
     enable_git_status = true,
@@ -92,7 +93,7 @@ return {
     commands = {},
     window = {
       position = "float",
-      width = 140,
+      width = 100,
       mapping_options = {
         noremap = true,
         nowait = true,
@@ -265,7 +266,4 @@ return {
         }
       }
     },
-    document_symbols = {
-
-    }
 }

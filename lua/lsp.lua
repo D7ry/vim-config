@@ -69,6 +69,8 @@ lspconfig.pylsp.setup({
     }
 })
 
+lspconfig.lua_ls.setup({on_attach = on_attach})
+
 lspconfig.clangd.setup({
 
     on_attach = on_attach
@@ -77,6 +79,7 @@ lspconfig.clangd.setup({
 
 lspconfig.rust_analyzer.setup({
     on_attach = on_attach,
+    cmd = {'rustup', 'run', 'stable', 'rust-analyzer'},
     settings = {
         ["rust-analyzer"] = {
             imports = {

@@ -31,6 +31,11 @@ function M.setup()
                 override_file_sorter = true,
                 case_mode = "smart_case"
             }
+        },
+        pickers = {
+            colorscheme = {
+                enable_preview = true
+            }
         }
     }
     ts.load_extension('fzf')
