@@ -14,6 +14,10 @@ return {
             "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
             "                                                     ",
         }
+    
+        dashboard.section.footer.val = {
+            "工欲善其事，必先利其器"
+        }
 
         -- Set menu
         dashboard.section.buttons.val = {
@@ -21,6 +25,7 @@ return {
             dashboard.button( "f", "󰛔  > Find file", ":Telescope find_files<CR>"),
             dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
             dashboard.button( "s", "  > Configuration" , ":cd ~/.config/nvim/ | :e .<CR>"),
+            dashboard.button( "c", "󰔎  > Color scheme", ":Telescope colorscheme<CR>"),
             dashboard.button( "q", "󰗼  > Exit", ":qa<CR>"),
         }
         -- Send config to alpha
