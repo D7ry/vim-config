@@ -1,11 +1,13 @@
-
 def main():
     print("hello world!")
     print("Gg")
 
-GLOBAL_DICT:dict = {"key" : "val", "key2" : "val2"}
+
+GLOBAL_DICT: dict = {"key": "val", "key2": "val2"}
+
 
 def get_fibbonacci(i: int) -> int:
+    # TODO: refactor this function!
     if i == 0:
         return 0
     elif i == 1:
@@ -16,6 +18,7 @@ def get_fibbonacci(i: int) -> int:
 
 def this_is_a_function(argument: int):
     print(f"this_is_a_function has received value {argument}")
+
 
 class Foo:
     class Foo_inner:
@@ -39,6 +42,7 @@ class Foo:
                 return 1
             else:
                 return get_fibbonacci(i - 1) + get_fibbonacci(i - 2)
+
     def __init__(self, name: str):
         self.__name: str = name
 
@@ -62,15 +66,12 @@ class Foo:
 
 
 def this_this_another_function(another_dict: dict) -> int:
-    """
-    """
+    """ """
     pass
 
 
 def bad_func() -> str:
     return 5
-
-def ():
 
 
 def take_string(s: str):
@@ -88,6 +89,8 @@ def gg():
     pass
 
     # github copilot isn't working here...
+
+
 if __name__ == "__main__":
     main()  # call main here.
     this_is_a_function(5)

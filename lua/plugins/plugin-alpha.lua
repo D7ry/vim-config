@@ -26,6 +26,7 @@ return {
             dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
             dashboard.button( "s", "  > Configuration" , ":cd ~/.config/nvim/ | :e .<CR>"),
             dashboard.button( "c", "󰔎  > Color scheme", ":Telescope colorscheme<CR>"),
+            dashboard.button( "p", "  > Plugins"  , ":Lazy<CR>"),
             dashboard.button( "q", "󰗼  > Exit", ":qa<CR>"),
         }
         -- Send config to alpha

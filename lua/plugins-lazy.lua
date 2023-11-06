@@ -1,151 +1,157 @@
 --lazy bootstrap
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 -- define plugins here
 local plugins = {
 
-    -- startup screen
-    --require("plugins.plugin-startup"),
-    --require("plugins.plugin-miniintro"),
-    -- UI Plugins
-    {
-        "loctvl842/monokai-pro.nvim",
-        config = function()
-            require('config.monokai-pro-setup')
-        end
-    }, 
-    { "sainnhe/edge" },
-    { "sainnhe/sonokai" },
-    { "marko-cerovac/material.nvim" },
-    { "navarasu/onedark.nvim" },
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require('config.tokyonight-setup')
-        end
-    },
-    { 'mhartington/oceanic-next' },
-    { 'tanvirtin/monokai.nvim' },
-    { 'morhetz/gruvbox' },
-    { "bluz71/vim-moonfly-colors",  name = "moonfly", lazy = false, priority = 1000 },
-    { 'projekt0n/github-nvim-theme' },
-    require("plugins.plugin-bufferline"),
-    require("plugins.plugin-lualine"),
-    require("plugins.plugin-drop"),
-    require("plugins.plugin-alpha"),
-    -- {'nvimdev/dashboard-nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
-    {
-        'rcarriga/nvim-notify',
-        config = function()
-            vim.opt.termguicolors = true
-            vim.notify = require("notify")
-        end,
-        lazy = false
-    },
-    require("plugins.plugin-trouble"),
-    {
-        'folke/noice.nvim',
-        event = 'VeryLazy',
-        dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
-        config = function()
-            require('noice').setup(require('config.noice-config'))
-        end
-    },
-    -- LSP and Autocompletion
-    require("plugins.plugin-hover"),
-    require("plugins.plugin-aerial"),
-    { 'neovim/nvim-lspconfig', lazy = false },
-    {
-        'hrsh7th/nvim-cmp',
-        dependencies = {
-            { 'hrsh7th/cmp-nvim-lsp', lazy = false },
-            { 'hrsh7th/cmp-buffer',   lazy = false },
-            { 'hrsh7th/cmp-path',     lazy = false },
-            { 'hrsh7th/cmp-cmdline',  lazy = false },
-            --{'hrsh7th/cmp-nvim-lsp-signature-help'}
-        },
-        lazy = false
-    },
-    { 'L3MON4D3/LuaSnip' },
-    { 'saadparwaiz1/cmp_luasnip' },
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-    -- Telescope
-    {
-        'nvim-telescope/telescope.nvim',
-        lazy = false,
-        dependencies = { 'nvim-lua/plenary.nvim', "nvim-telescope/telescope-fzf-native.nvim" },
-        keys = require("config.telescope-keymap"),
-        lazy = false
-    },
+	-- startup screen
+	--require("plugins.plugin-startup"),
+	--require("plugins.plugin-miniintro"),
+	-- UI Plugins
+	{
+		"loctvl842/monokai-pro.nvim",
+		config = function()
+			require("config.monokai-pro-setup")
+		end,
+	},
+	{ "sainnhe/edge" },
+	{ "sainnhe/sonokai" },
+	{ "marko-cerovac/material.nvim" },
+	{ "navarasu/onedark.nvim" },
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("config.tokyonight-setup")
+		end,
+	},
+	{ "mhartington/oceanic-next" },
+	{ "tanvirtin/monokai.nvim" },
+	{ "morhetz/gruvbox" },
+	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
+	{ "projekt0n/github-nvim-theme" },
+	require("plugins.plugin-bufferline"),
+	require("plugins.plugin-lualine"),
+	require("plugins.plugin-drop"),
+	require("plugins.plugin-alpha"),
+	require("plugins.plugin-todo-comments"),
+	-- {'nvimdev/dashboard-nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
+	{
+		"rcarriga/nvim-notify",
+		config = function()
+			vim.opt.termguicolors = true
+			vim.notify = require("notify")
+		end,
+		lazy = false,
+	},
+	require("plugins.plugin-trouble"),
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+		config = function()
+			require("noice").setup(require("config.noice-config"))
+		end,
+	},
+	-- LSP and Autocompletion
+	require("plugins.plugin-hover"),
+	require("plugins.plugin-aerial"),
+	{ "neovim/nvim-lspconfig", lazy = false },
+	{ "folke/lsp-colors.nvim" },
+	{
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+			{ "hrsh7th/cmp-nvim-lsp", lazy = false },
+			{ "hrsh7th/cmp-buffer", lazy = false },
+			{ "hrsh7th/cmp-path", lazy = false },
+			{ "hrsh7th/cmp-cmdline", lazy = false },
+			--{'hrsh7th/cmp-nvim-lsp-signature-help'}
+		},
+		lazy = false,
+	},
+	{ "L3MON4D3/LuaSnip" },
+	{ "saadparwaiz1/cmp_luasnip" },
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
-    -- AI
-    {
-        'zbirenbaum/copilot.lua',
-        cmd = "Copilot",
-        config = function()
-            require("copilot").setup(require("config.copilot-config"))
-        end,
-        event = "InsertEnter"
-    },
+	-- auto formatting
+	require("plugins.plugin-conform"),
+	-- Telescope
+	{
+		"nvim-telescope/telescope.nvim",
+		lazy = false,
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzf-native.nvim" },
+		keys = require("config.telescope-keymap"),
+		lazy = false,
+	},
 
-    -- Treesitter
-    {
-        'nvim-treesitter/nvim-treesitter',
-        lazy = false,
-        run = ':TSUpdate',
-        config = function()
-            require("nvim-treesitter.configs").setup(require("config.nvim-treesitter-config"))
-        end
-    },
+	-- AI
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		config = function()
+			require("copilot").setup(require("config.copilot-config"))
+		end,
+		event = "InsertEnter",
+	},
 
-    -- File Explorer
-    --{'kyazdani42/nvim-tree.lua', dependencies = {'kyazdani42/nvim-web-devicons'}},
+	-- Treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
+		run = ":TSUpdate",
+		config = function()
+			require("nvim-treesitter.configs").setup(require("config.nvim-treesitter-config"))
+		end,
+	},
+	--require("plugins.plugin-nvim-treesitter-context"),
 
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-            "MunifTanjim/nui.nvim",
-            "3rd/image.nvim",              -- Optional image support in preview window: See `# Preview Mode` for more information
-        },
-        config = function()
-            require("neo-tree").setup(require("config.neo-tree-config"))
-        end,
-        keys = require("config.neo-tree-keymap"),
-        lazy = false
-    },
-    { 'lewis6991/gitsigns.nvim' },
-    -- Terminal Integration
-    { 'akinsho/toggleterm.nvim', config = true },
+	-- File Explorer
+	--{'kyazdani42/nvim-tree.lua', dependencies = {'kyazdani42/nvim-web-devicons'}},
 
-    -- Other Utilities
-    require("plugins.plugin-cinnamon"),
-    --{'karb94/neoscroll.nvim'},
-    { 'andweeb/presence.nvim' },
-    { 'williamboman/mason.nvim' },
-    { 'williamboman/mason-lspconfig.nvim' },
-    { 'jdhao/better-escape.vim' },
-    require("plugins.plugin-which-key"),
-    { 'RRethy/vim-illuminate' },
-    { 'folke/which-key.nvim' },
-    { 'ggandor/leap.nvim' },
-    { 'simrat39/rust-tools.nvim' },
-    require("plugins.plugin-nvim-autopairs")
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+			"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		},
+		config = function()
+			require("neo-tree").setup(require("config.neo-tree-config"))
+		end,
+		keys = require("config.neo-tree-keymap"),
+		lazy = false,
+	},
+	{ "lewis6991/gitsigns.nvim" },
+	-- Terminal Integration
+	{ "akinsho/toggleterm.nvim", config = true },
+
+	-- Other Utilities
+	require("plugins.plugin-cinnamon"),
+	--{'karb94/neoscroll.nvim'},
+	{ "andweeb/presence.nvim" },
+	{ "williamboman/mason.nvim" },
+	{ "williamboman/mason-lspconfig.nvim" },
+	{ "jdhao/better-escape.vim" },
+	require("plugins.plugin-which-key"),
+	{ "RRethy/vim-illuminate" },
+	{ "folke/which-key.nvim" },
+	{ "ggandor/leap.nvim" },
+	{ "simrat39/rust-tools.nvim" },
+	require("plugins.plugin-nvim-autopairs"),
 }
 
 local opts = {}
