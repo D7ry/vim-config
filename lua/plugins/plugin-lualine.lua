@@ -47,8 +47,8 @@ local config = {
 		--normal = { c = { fg = colors.fg, bg = colors.bg } },
 		--inactive = { c = { fg = colors.fg, bg = colors.bg } },
 		--},
-		globalstatus = true,
-		disabled_filetypes = { "alpha" }, -- disable startup dashboard
+		globalstatus = false,
+		disabled_filetypes = { "aerial", "alpha", "neo-tree" }, -- disable startup dashboard
 	},
 	sections = {
 		-- these are to remove the defaults
@@ -62,13 +62,17 @@ local config = {
 	},
 	inactive_sections = {
 		-- these are to remove the defaults
-		lualine_a = {},
+		lualine_a = {"filename"},
 		lualine_b = {},
 		lualine_y = {},
 		lualine_z = {},
 		lualine_c = {},
 		lualine_x = {},
 	},
+    statusline = {
+
+  lualine_c = {'filename'},
+    }
 }
 
 -- Inserts a component in lualine_c at left section

@@ -9,7 +9,7 @@ return {
 					return vim.o.columns * 0.4
 				end
 			end,
-			open_mapping = [[<Leader>\]],
+			open_mapping = [[\]],
 			--  on_create = fun(t: Terminal), -- function to run when the terminal is first created
 			--  on_open = fun(t: Terminal), -- function to run when the terminal opens
 			--  on_close = fun(t: Terminal), -- function to run when the terminal closes
@@ -60,8 +60,14 @@ return {
 			-- },
 			winbar = {
 				enabled = false,
-				name_formatter = function(term) --  term: Terminal
-					return term.name
+				name_formatter = function(term)
+					-- Assuming term.name is a string like "/bin/zsh;#toggleterm#1"
+					local number = term.name:match("#toggleterm#(%d+)$")
+					if number then
+						return "Terminal (" .. number .. ")"
+					else
+						return "Terminal (Unknown)"
+					end
 				end,
 			},
 		})

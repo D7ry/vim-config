@@ -25,6 +25,7 @@ local plugins = {
 			require("config.monokai-pro-setup")
 		end,
 	},
+    { "rebelot/kanagawa.nvim"},
 	{ "sainnhe/edge" },
 	{ "sainnhe/sonokai" },
 	{ "marko-cerovac/material.nvim" },
@@ -153,7 +154,8 @@ local plugins = {
 	{ "simrat39/rust-tools.nvim" },
 	require("plugins.plugin-nvim-autopairs"),
     require("plugins.plugin-battery"),
-    require("plugins.plugin-indent-blankline")
+    require("plugins.plugin-indent-blankline"),
+    --require("plugins.plugin-headlines")
 }
 
 local opts = {}

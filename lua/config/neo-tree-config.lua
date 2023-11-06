@@ -147,8 +147,8 @@ return {
         ["q"] = "close_window",
         ["R"] = "refresh",
         ["?"] = "show_help",
-        ["<Leader>["] = "prev_source",
-        ["<Leader>]"] = "next_source",
+        ["["] = "prev_source",
+        ["]"] = "next_source",
         ["i"] = "show_file_details",
       }
     },

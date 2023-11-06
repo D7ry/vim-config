@@ -5,7 +5,9 @@ local opts = {
 }
 
 -- delete some useless keymaps
-
+-- delete [] 
+vim.api.nvim_set_keymap("n", "]", "<Nop>", { noremap = true })
+vim.api.nvim_set_keymap("n", "[", "<Nop>", { noremap = true })
 vim.api.nvim_set_keymap("n", "t", "<Nop>", { noremap = true })
 vim.api.nvim_set_keymap("n", "f", "<Nop>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-h>", "<Nop>", opts)
@@ -65,8 +67,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Map keys to navigate through buffers
-vim.api.nvim_set_keymap("n", "<leader>]", ":bnext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>[", ":bprevious<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "]", ":bnext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "[", ":bprevious<CR>", { noremap = true, silent = true })
 -- toggleterm
 --vim.keymap.set("n", "<leader>`", "<cmd>ToggleTerm direction=horizontal<cr>", opts)
 

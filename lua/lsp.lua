@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = {'pylsp',  'lua_ls', 'rust_analyzer' , 'clangd' },
+    ensure_installed = {'pylsp',  'lua_ls', 'rust_analyzer' , 'clangd', 'marksman'},
 })
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -71,10 +71,19 @@ lspconfig.pylsp.setup({
 
 lspconfig.lua_ls.setup({on_attach = on_attach})
 
+local clangd_capabilities = capabilities
+clangd_capabilities.offsetEncoding = "utf-8"
 lspconfig.clangd.setup({
-
+    capabilities = clangd_capabilities,
     on_attach = on_attach
 }
+)
+
+lspconfig.marksman.setup({
+
+    on_attach = on_attach,
+}
+
 )
 
 lspconfig.rust_analyzer.setup({

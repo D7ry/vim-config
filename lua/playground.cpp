@@ -10,6 +10,16 @@ int gg() {
     return 99;
 }
 
+std::string scope_testing(int i) {
+    {
+        std::cout << "this is in this scope" << std::endl;
+    }
+    std::vector<std::string> vecstr;
+    for (auto& i : vecstr) {
+        std::cout << i << std::endl;
+    }
+    
+}
 
 
 
