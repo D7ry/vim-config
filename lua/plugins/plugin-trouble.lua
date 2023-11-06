@@ -56,6 +56,6 @@ return {
     use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
     },
     keys = {
-        { "<Leader>tb", "<cmd>TroubleToggle<cr>", "Toggle trouble" }
+        { "<Leader>b", "<cmd>TroubleToggle<cr>", "Toggle trouble" }
     }
 }
