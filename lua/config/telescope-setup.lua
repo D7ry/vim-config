@@ -4,6 +4,7 @@ function M.setup()
     ts = require("telescope")
     ts.setup{
         defaults = {
+            winblend = 10,
             prompt_prefix = "🔭 ",
             layout_strategy = "flex",
             layout_config = {

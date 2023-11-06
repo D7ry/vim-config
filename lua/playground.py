@@ -26,6 +26,7 @@ class Foo:
             self.__name: str = name
 
         def fib(i: int) -> int:
+            def helper()
             if i == 0:
                 return 0
 
@@ -63,6 +64,11 @@ class Foo:
             return 1
         else:
             return get_fibbonacci(i - 1) + get_fibbonacci(i - 2)
+
+
+
+
+
 
 
 def this_this_another_function(another_dict: dict) -> int:

@@ -1,3 +1,3 @@
 return {
-    {"<leader>nt", "<cmd>Neotree toggle<cr>", desc = "Toggle Neotree"}
+    {"<leader><tab>", "<cmd>Neotree toggle<cr>", desc = "Toggle Neotree"}
 }

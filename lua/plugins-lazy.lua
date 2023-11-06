@@ -152,7 +152,8 @@ local plugins = {
 	{ "ggandor/leap.nvim" },
 	{ "simrat39/rust-tools.nvim" },
 	require("plugins.plugin-nvim-autopairs"),
-    require("plugins.plugin-battery")
+    require("plugins.plugin-battery"),
+    require("plugins.plugin-indent-blankline")
 }
 
 local opts = {}
