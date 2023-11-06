@@ -107,6 +107,7 @@ local plugins = {
 		end,
 		event = "InsertEnter",
 	},
+    require("plugins.plugin-chatgpt"),
 
 	-- Treesitter
 	{

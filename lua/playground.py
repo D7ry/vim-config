@@ -96,6 +96,13 @@ def gg():
 
     # github copilot isn't working here...
 
+def two_sum(nums: list[int], target: int) -> list[int]:
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[i] + nums[j] == target:  # type: ignore
+                return [i, j]
+    return []
+
 
 if __name__ == "__main__":
     main()  # call main here.
