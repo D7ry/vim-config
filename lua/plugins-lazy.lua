@@ -24,7 +24,8 @@ local plugins = {
         config = function()
             require('config.monokai-pro-setup')
         end
-    },
+    }, 
+    { "sainnhe/edge" },
     { "sainnhe/sonokai" },
     { "marko-cerovac/material.nvim" },
     { "navarasu/onedark.nvim" },
@@ -139,12 +140,7 @@ local plugins = {
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
     { 'jdhao/better-escape.vim' },
-    --{
-    --    'simrat39/symbols-outline.nvim',
-    --    config = function()
-    --        require("symbols-outline").setup(require("config.symbols-outline-config"))
-    --    end
-    --},
+    require("plugins.plugin-which-key"),
     { 'RRethy/vim-illuminate' },
     { 'folke/which-key.nvim' },
     { 'ggandor/leap.nvim' },

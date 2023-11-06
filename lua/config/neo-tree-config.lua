@@ -92,8 +92,8 @@ return {
     -- see `:h neo-tree-custom-commands-global`
     commands = {},
     window = {
-      position = "float",
-      width = 100,
+      position = "right",
+      width = 40,
       mapping_options = {
         noremap = true,
         nowait = true,
@@ -157,7 +157,7 @@ return {
       filtered_items = {
         visible = false, -- when true, they will just be displayed differently than normal items
         hide_dotfiles = true,
-        hide_gitignored = true,
+        hide_gitignored = false,
         hide_hidden = true, -- only works on Windows for hidden files/directories
         hide_by_name = {
           --"node_modules"

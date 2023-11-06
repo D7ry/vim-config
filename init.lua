@@ -6,12 +6,10 @@ require("colorscheme")
 require("lsp")
 --require("config.nvim-tree")
 require("discordrpc")
---require("github-copilot")
 --require("lualine").setup() -- https://github.com/nvim-lualine/lualine.nvim
 require("gitsigns").setup() -- https://github.com/lewis6991/gitsigns.nvim
 --require("bufferline").setup() -- https://github.com/akinsho/bufferline.nvim
 require("leap").add_default_mappings()
-require("which-key").setup()
 require("config.illuminate")
 require("copilot").setup({})
 --require("config.rust-tools")
