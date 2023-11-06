@@ -1,11 +1,34 @@
 -- define common options
 local opts = {
-	noremap = true, -- non-recursive
-	silent = true, -- do not show message
+    noremap = true, -- non-recursive
+    silent = true, -- do not show message
 }
 
+-- Unmap all keybindings starting with a given character in Neovim using Lua
+local function unmap_keys_starting_with_char(mode, char)
+    -- Validate the input character
+    if not char or #char ~= 1 then
+        --    print("Please provide a single character.")
+        return
+    end
+
+    -- Retrieve current key mappings for the given mode
+    local keymaps = vim.api.nvim_get_keymap(mode)
+
+    -- Iterate over the key mappings and unmap those starting with the given character
+    for _, map in ipairs(keymaps) do
+        if map.lhs:sub(1, 1) == char then
+            -- Unmap the key using the command-line mode to handle complex mappings
+            vim.api.nvim_command(mode .. "unmap " .. map.lhs)
+            --      print("Unmapped: " .. map.lhs)
+        end
+    end
+end
+
+unmap_keys_starting_with_char("n", "[")
+unmap_keys_starting_with_char("n", "]")
 -- delete some useless keymaps
--- delete [] 
+-- delete []
 vim.api.nvim_set_keymap("n", "]", "<Nop>", { noremap = true })
 vim.api.nvim_set_keymap("n", "[", "<Nop>", { noremap = true })
 vim.api.nvim_set_keymap("n", "t", "<Nop>", { noremap = true })
@@ -13,6 +36,12 @@ vim.api.nvim_set_keymap("n", "f", "<Nop>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-h>", "<Nop>", opts)
 vim.api.nvim_set_keymap("n", "<C-l>", "<Nop>", opts)
 vim.api.nvim_set_keymap("n", "ge", "<Nop>", opts)
+
+
+
+
+-- Example usage, this creates a command that you can use from the Neovim command line
+-- Usage in Neovim command line
 -----------------
 -- Normal mode --
 -----------------
@@ -67,8 +96,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Map keys to navigate through buffers
-vim.api.nvim_set_keymap("n", "]", ":bnext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "[", ":bprevious<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>]", ":bnext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>[", ":bprevious<CR>", { noremap = true, silent = true })
 -- toggleterm
 --vim.keymap.set("n", "<leader>`", "<cmd>ToggleTerm direction=horizontal<cr>", opts)
 
