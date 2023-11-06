@@ -53,6 +53,7 @@ local plugins = {
 		config = function()
 			vim.opt.termguicolors = true
 			vim.notify = require("notify")
+            require("notify").setup(require("config.nvim-notify-config"))
 		end,
 		lazy = false,
 	},
@@ -137,10 +138,9 @@ local plugins = {
 	},
 	{ "lewis6991/gitsigns.nvim" },
 	-- Terminal Integration
-	{ "akinsho/toggleterm.nvim", config = true },
-
+    require("plugins.plugin-toggleterm"),
 	-- Other Utilities
-	require("plugins.plugin-cinnamon"),
+	require("plugins.plugin-cinnamon"), -- for smooth scrolling
 	--{'karb94/neoscroll.nvim'},
 	{ "andweeb/presence.nvim" },
 	{ "williamboman/mason.nvim" },
@@ -152,6 +152,7 @@ local plugins = {
 	{ "ggandor/leap.nvim" },
 	{ "simrat39/rust-tools.nvim" },
 	require("plugins.plugin-nvim-autopairs"),
+    require("plugins.plugin-battery")
 }
 
 local opts = {}
