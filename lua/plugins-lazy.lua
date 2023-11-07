@@ -25,7 +25,7 @@ local plugins = {
 			require("config.monokai-pro-setup")
 		end,
 	},
-    { "rebelot/kanagawa.nvim"},
+	{ "rebelot/kanagawa.nvim" },
 	{ "sainnhe/edge" },
 	{ "sainnhe/sonokai" },
 	{ "marko-cerovac/material.nvim" },
@@ -54,7 +54,7 @@ local plugins = {
 		config = function()
 			vim.opt.termguicolors = true
 			vim.notify = require("notify")
-            require("notify").setup(require("config.nvim-notify-config"))
+			require("notify").setup(require("config.nvim-notify-config"))
 		end,
 		lazy = false,
 	},
@@ -85,7 +85,11 @@ local plugins = {
 	},
 	{ "L3MON4D3/LuaSnip" },
 	{ "saadparwaiz1/cmp_luasnip" },
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+	{
+		"nvim-telescope/telescope-fzf-native.nvim",
+		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+		lazy = false,
+	},
 
 	-- auto formatting
 	require("plugins.plugin-conform"),
@@ -95,19 +99,18 @@ local plugins = {
 		lazy = false,
 		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzf-native.nvim" },
 		keys = require("config.telescope-keymap"),
-		lazy = false,
 	},
 
 	-- AI
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		config = function()
-			require("copilot").setup(require("config.copilot-config"))
-		end,
-		event = "InsertEnter",
-	},
-    require("plugins.plugin-chatgpt"),
+--	{
+--		"zbirenbaum/copilot.lua",
+--		cmd = "Copilot",
+--		config = function()
+--			require("copilot").setup(require("config.copilot-config"))
+--		end,
+--		event = "InsertEnter",
+--	},
+	require("plugins.plugin-chatgpt"),
 
 	-- Treesitter
 	{
@@ -140,13 +143,13 @@ local plugins = {
 	},
 	{ "lewis6991/gitsigns.nvim" },
 	-- Terminal Integration
-    require("plugins.plugin-toggleterm"),
+	require("plugins.plugin-toggleterm"),
 	-- Other Utilities
 	require("plugins.plugin-cinnamon"), -- for smooth scrolling
 	--{'karb94/neoscroll.nvim'},
 	{ "andweeb/presence.nvim" },
-	{ "williamboman/mason.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
+	{ "williamboman/mason.nvim", lazy = false },
+	{ "williamboman/mason-lspconfig.nvim", lazy = false },
 	{ "jdhao/better-escape.vim" },
 	require("plugins.plugin-which-key"),
 	{ "RRethy/vim-illuminate" },
@@ -154,12 +157,13 @@ local plugins = {
 	{ "ggandor/leap.nvim" },
 	{ "simrat39/rust-tools.nvim" },
 	require("plugins.plugin-nvim-autopairs"),
-    require("plugins.plugin-battery"),
-    require("plugins.plugin-indent-blankline"),
-    --require("plugins.plugin-headlines")
+	require("plugins.plugin-battery"),
+	require("plugins.plugin-indent-blankline"),
+	--require("plugins.plugin-headlines")
 }
 
 local opts = {}
 
 require("lazy").setup(plugins)
+
 require("config.telescope-setup").setup()

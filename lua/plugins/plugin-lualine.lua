@@ -1,7 +1,6 @@
 -- Eviline config for lualine
 -- Author: shadmansaleh
 -- Credit: glepnir
-local lualine = require("lualine")
 
 -- Color table for highlights
 -- stylua: ignore
@@ -203,6 +202,6 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "kyazdani42/nvim-web-devicons" },
 	config = function()
-		lualine.setup(config)
+    require("lualine").setup(config)
 	end,
 }

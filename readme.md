@@ -5,6 +5,8 @@
 
 ### General
 - make
+- python3-venv 
+- ripgrep
 
 ### Formatting
 - clangd
