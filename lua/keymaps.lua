@@ -37,6 +37,16 @@ vim.api.nvim_set_keymap("n", "<C-h>", "<Nop>", opts)
 vim.api.nvim_set_keymap("n", "<C-l>", "<Nop>", opts)
 vim.api.nvim_set_keymap("n", "ge", "<Nop>", opts)
 
+local function unmap_key(mode, key)
+    vim.api.nvim_set_keymap(mode, key, "<Nop>", { noremap = true })
+end
+
+unmap_key("n", "(")
+unmap_key("n", ")")
+
+-- set () to go to line start/end
+vim.api.nvim_set_keymap("n", "(", "^", opts)
+vim.api.nvim_set_keymap("n", ")", "$", opts)
 
 
 
@@ -46,9 +56,6 @@ vim.api.nvim_set_keymap("n", "ge", "<Nop>", opts)
 -- Normal mode --
 -----------------
 --
---jumping to begin/end of lines with gb & ge
-vim.keymap.set("n", "gb", "^", opts)
-vim.keymap.set("n", "ge", "$", opts)
 -- Resize with arrows
 -- delta: 2 lines
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
