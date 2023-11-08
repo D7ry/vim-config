@@ -79,9 +79,9 @@ local plugins = {
 			{ "hrsh7th/cmp-buffer", lazy = false },
 			{ "hrsh7th/cmp-path", lazy = false },
 			{ "hrsh7th/cmp-cmdline", lazy = false },
-            { "hrsh7th/cmp-vsnip"},
-            { "hrsh7th/vim-vsnip"},
-			--{'hrsh7th/cmp-nvim-lsp-signature-help'}
+			{ "hrsh7th/cmp-vsnip" },
+			{ "hrsh7th/vim-vsnip" },
+			{ "onsails/lspkind.nvim" ,lazy=false}, --{'hrsh7th/cmp-nvim-lsp-signature-help'}
 		},
 		lazy = false,
 	},
@@ -92,7 +92,8 @@ local plugins = {
 		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 		lazy = false,
 	},
-    require("plugins.plugin-rust-tools"),
+	require("plugins.plugin-lspkind"),
+	require("plugins.plugin-rust-tools"),
 
 	-- auto formatting
 	require("plugins.plugin-conform"),

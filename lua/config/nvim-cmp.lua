@@ -13,6 +13,7 @@ vim.api.nvim_set_keymap('i', '<C-p>', '<Nop>', {noremap = true})
 vim.api.nvim_set_keymap('i', '<C-x><C-o>', '<Nop>', {noremap = true})
 
 
+local lspkind = require('lspkind')
 cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
@@ -20,6 +21,11 @@ cmp.setup({
             require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
+
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+	},
     mapping = cmp.mapping.preset.insert({
         -- Use <C-b/f> to scroll the docs
         ['<C-k>'] = cmp.mapping.scroll_docs( -4),
@@ -64,16 +70,23 @@ cmp.setup({
       -- menu: extra text for the popup menu, displayed after "word" or "abbr"
       fields = { 'abbr', 'menu' },
 
+    format = lspkind.cmp_format({
+      mode = 'symbol', -- show only symbol annotations
+      maxwidth = 150, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+
+      -- The function below will be called before any actual modifications from lspkind
+    })
       -- customize the appearance of the completion menu
-      format = function(entry, vim_item)
-          vim_item.menu = ({
-              nvim_lsp = '[Lsp]',
-              luasnip = '[Luasnip]',
-              buffer = '[File]',
-              path = '[Path]',
-          })[entry.source.name]
-          return vim_item
-      end,
+--      format = function(entry, vim_item)
+--          vim_item.menu = ({
+--              nvim_lsp = '[Lsp]',
+--              luasnip = '[Luasnip]',
+--              buffer = '[File]',
+--              path = '[Path]',
+--          })[entry.source.name]
+--          return vim_item
+--      end,
   },
 
   -- Set source precedence
@@ -82,7 +95,13 @@ cmp.setup({
       { name = 'luasnip' },     -- For luasnip user
       { name = 'buffer' },      -- For buffer word completion
       { name = 'path' },        -- For path completion
-      { name = 'nvim_lsp_signature_help' } -- for signature hint
+      { name = 'nvim_lsp_signature_help' }, -- for signature hint
+		{ name = "calc" }, -- source for math calculation
+
+        
+		{ name = "nvim_lua", keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
+		{ name = "vsnip", keyword_length = 2 }, -- nvim-cmp source for vim-vsnip
+        
   })
 })
 
