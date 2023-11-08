@@ -122,6 +122,6 @@ vim.keymap.set("n", "<Leader>l", "<C-w>l", opts)
 --vim.keymap.set('n', '<Leader>s', '<cmd>SymbolsOutline<cr>', opts)
 
 -- Quit terminal shortcut
---vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", opts)
+vim.keymap.set("t", "<C-\\>q", "<C-\\><C-n>", opts)
 
 vim.keymap.set("n", "<C-i>", "K", opts)
