@@ -22,7 +22,7 @@ return {
         -- Set menu
         dashboard.section.buttons.val = {
             dashboard.button( "a", "󱙺  > Jarvis" , ":enew | :ChatGPT<CR>"),
-            dashboard.button( "t", "󰙅  > File tree" , ":Neotree<CR>"),
+            dashboard.button( "t", "󰙅  > File tree" , ":NvimTreeToggle<cr>"),
             dashboard.button( "f", "󰛔  > Find file", ":Telescope find_files<CR>"),
             dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
             dashboard.button( "s", "  > Configuration" , ":cd ~/.config/nvim/ | :e .<CR>"),

@@ -129,23 +129,24 @@ local plugins = {
 	--require("plugins.plugin-nvim-treesitter-context"),
 
 	-- File Explorer
+    require("plugins.plugin-nvim-tree"),
 	--{'kyazdani42/nvim-tree.lua', dependencies = {'kyazdani42/nvim-web-devicons'}},
 
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-			"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-		},
-		config = function()
-			require("neo-tree").setup(require("config.neo-tree-config"))
-		end,
-		keys = require("config.neo-tree-keymap"),
-		lazy = false,
-	},
+	--{
+	--	"nvim-neo-tree/neo-tree.nvim",
+	--	branch = "v3.x",
+	--	dependencies = {
+	--		"nvim-lua/plenary.nvim",
+	--		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+	--		"MunifTanjim/nui.nvim",
+	--		"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+	--	},
+	--	config = function()
+	--		require("neo-tree").setup(require("config.neo-tree-config"))
+	--	end,
+	--	keys = require("config.neo-tree-keymap"),
+	--	lazy = false,
+	--},
 	{ "lewis6991/gitsigns.nvim" },
 	-- Terminal Integration
 	require("plugins.plugin-toggleterm"),
@@ -164,6 +165,7 @@ local plugins = {
 	require("plugins.plugin-nvim-autopairs"),
 	require("plugins.plugin-battery"),
 	require("plugins.plugin-indent-blankline"),
+    require("plugins.plugin-nvim-bufdel"),
 	--require("plugins.plugin-headlines")
 }
 
