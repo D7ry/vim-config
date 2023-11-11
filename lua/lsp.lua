@@ -10,7 +10,8 @@ require("mason").setup({
 
 require("mason-lspconfig").setup({
 	-- A list of servers to automatically install if they're not already installed
-	ensure_installed = { "pylsp", "lua_ls", "rust_analyzer", "clangd", "marksman" },
+        ensure_installed = { "pylsp", "lua_ls", "rust_analyzer", "clangd", "marksman" , "pyright"},
+        automatic_installation = true,
 })
 
 --Set completeopt to have a better completion experience
@@ -75,18 +76,24 @@ local on_attach = function(client, bufnr)
 	--vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
-lspconfig.pylsp.setup({
-	on_attach = on_attach,
-	settings = {
-		pylsp = {
-			plugins = {
-				--rope = { enabled = true },
-				pyflakes = { enabled = true },
-				--pylint = { enabled = true },
-				pycodestyle = { enabled = false }, -- fuck style checkers
-			},
-		},
-	},
+--lspconfig.pylsp.setup({
+--	on_attach = on_attach,
+--	settings = {
+--		pylsp = {
+--			plugins = {
+--                mypy = {enabled = true},
+--
+--				--rope = { enabled = true },
+--				--pyflakes = { enabled = true},
+--				--pylint = { enabled = true, args = { "--disable=missing-function-docstring", "--disable=missing-module-docstring",}},
+--				pycodestyle = { enabled = true}, -- fuck style checkers
+--			},
+--		},
+--	},
+--})
+-- for static type checking
+lspconfig.pyright.setup({
+    on_attach = on_attach,
 })
 
 lspconfig.lua_ls.setup({ on_attach = on_attach })

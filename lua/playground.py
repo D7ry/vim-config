@@ -5,6 +5,12 @@ def main():
 
 GLOBAL_DICT: dict = {"key": "val", "key2": "val2"}
 
+def take_int(
+    i: int
+    ):
+    i= i+ 1
+    print(i)
+take_int("one_string")
 
 def get_fibbonacci(i: int) -> int:
     # TODO: refactor this function!
@@ -26,7 +32,6 @@ class Foo:
             self.__name: str = name
 
         def fib(i: int) -> int:
-            def helper()
             if i == 0:
                 return 0
 
@@ -57,23 +62,17 @@ class Foo:
     def my_func(self, v1: str, v2: int) -> bool:
         return False
 
-    def get_fibbonacci(i: int) -> int:
+    def get_fibbonacci(self, i: int) -> int:
         if i == 0:
             return 0
         elif i == 1:
             return 1
         else:
-            return get_fibbonacci(i - 1) + get_fibbonacci(i - 2)
-
-
-
-
-
+            return self.get_fibbonacci(i - 1) + self.get_fibbonacci(i - 2)
 
 
 def this_this_another_function(another_dict: dict) -> int:
     """ """
-    pass
 
 
 def bad_func() -> str:

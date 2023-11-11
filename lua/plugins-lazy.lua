@@ -113,6 +113,7 @@ local plugins = {
 			require("copilot").setup(require("config.copilot-config"))
 		end,
 		event = "InsertEnter",
+        lazy = false
 	},
 	require("plugins.plugin-chatgpt"),
 
