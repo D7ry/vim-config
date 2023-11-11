@@ -25,24 +25,26 @@ local plugins = {
 			require("config.monokai-pro-setup")
 		end,
 	},
-	{ "rebelot/kanagawa.nvim" },
-	{ "sainnhe/edge" },
-	{ "sainnhe/sonokai" },
-	{ "marko-cerovac/material.nvim" },
-	{ "navarasu/onedark.nvim" },
+	{ "rebelot/kanagawa.nvim", lazy = true},
+	{ "sainnhe/edge", lazy = true},
+	{ "sainnhe/sonokai" , lazy = true},
+	{ "marko-cerovac/material.nvim" , lazy = true},
+	{ "navarasu/onedark.nvim" , lazy = true},
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
 			require("config.tokyonight-setup")
-		end,
+		end
+        , lazy = true
 	},
-	{ "mhartington/oceanic-next" },
-	{ "tanvirtin/monokai.nvim" },
-	{ "morhetz/gruvbox" },
+	{ "mhartington/oceanic-next" , lazy = true},
+	{ "tanvirtin/monokai.nvim" , lazy = true},
+	{ "morhetz/gruvbox" , lazy = true},
 	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
-	{ "projekt0n/github-nvim-theme" },
+	{ "projekt0n/github-nvim-theme" , lazy = true},
+    { 'shaunsingh/nord.nvim', lazy = false},
 	require("plugins.plugin-bufferline"),
 	require("plugins.plugin-lualine"),
 	require("plugins.plugin-drop"),

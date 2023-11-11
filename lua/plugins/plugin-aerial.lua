@@ -243,7 +243,7 @@ return {
           update_events = "TextChanged,InsertLeave",
 
           -- Show box drawing characters for the tree hierarchy
-          show_guides = false,
+          show_guides = true,
 
           -- Customize the characters used when show_guides = true
           guides = {
