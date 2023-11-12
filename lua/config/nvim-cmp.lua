@@ -68,10 +68,10 @@ cmp.setup({
       -- kind: single letter indicating the type of completion
       -- abbr: abbreviation of "word"; when not empty it is used in the menu instead of "word"
       -- menu: extra text for the popup menu, displayed after "word" or "abbr"
-      fields = { 'abbr', 'menu' },
+      fields = { 'abbr', 'menu' , 'kind'},
 
     format = lspkind.cmp_format({
-      mode = 'symbol', -- show only symbol annotations
+      mode = 'symbol_text', -- show only symbol annotations
       maxwidth = 150, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
       ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 
