@@ -4,17 +4,70 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzf-native.nvim" },
 	keys = {
 		{ "<Leader>t", "<cmd>Telescope<cr>", "open telescope" },
-		{ "ft", "<cmd>Telescope lsp_definitions<cr>", "go to definition" },
-		{ "fr", "<cmd>Telescope lsp_references<cr>", "go to references" },
-		{ "fi", "<cmd>Telescope lsp_implementations<cr>", "go to implementations" },
+		{
+			"fd",
+			function()
+				require("telescope.builtin").lsp_definitions({ jump_type = "never" })
+			end,
+			"go to definition",
+		},
+		{
+			"ft",
+			function()
+				require("telescope.builtin").lsp_type_definitions({ jump_type = "never" })
+			end,
+			"go to type definition",
+		},
+		{
+			"fr",
+			function()
+				require("telescope.builtin").lsp_references({ jump_type = "never" ,show_line = false})
+			end,
+			"go to references",
+		},
+        {
+            "fc",
+            function()
+                require("telescope.builtin").lsp_outgoing_calls({jump_type = "never"})
+            end,
+            " go to outgoing calls"
+        },
+        {
+            "fC",
+            function()
+                require("telescope.builtin").lsp_incoming_calls({jump_type = "never"})
+            end,
+            " go to incoming calls"
+        },
+		{
+			"fi",
+			function()
+				require("telescope.builtin").lsp_implementations({ jump_type = "never" })
+			end,
+			"go to implementations",
+		},
 		{ "fg", "<cmd>Telescope live_grep<cr>", "global search" },
 		{ "ff", "<cmd>Telescope find_files<CR>" },
-		{ "fs", "<cmd>Telescope lsp_document_symbols<cr>", "telescope tree sitter" },
+		{
+			"fs",
+			function()
+				require("telescope.builtin").lsp_document_symbols({ symbol_width = 50 })
+			end,
+			"telescope tree sitter",
+		},
+		{
+			"fS",
+			function()
+				require("telescope.builtin").lsp_workspace_symbols({ symbol_width = 50 })
+			end,
+			"telescope tree sitter",
+		},
 	},
 	config = function()
-        local ts = require("telescope")
+		local ts = require("telescope")
 		ts.setup({
 			defaults = {
+				sorting_strategy = "ascending",
 				winblend = 10,
 				prompt_prefix = "🔭 ",
 				layout_strategy = "flex",
