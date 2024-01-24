@@ -88,8 +88,8 @@ local plugins = {
 		},
 		lazy = false,
 	},
-	{ "L3MON4D3/LuaSnip" },
-	{ "saadparwaiz1/cmp_luasnip" },
+	--{ "L3MON4D3/LuaSnip" },
+	--{ "saadparwaiz1/cmp_luasnip" },
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
 		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",

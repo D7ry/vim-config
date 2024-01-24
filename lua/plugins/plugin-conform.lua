@@ -14,7 +14,6 @@ return {
 			formatters = {
 				clang_format = {
 					args = {
-						"-style={BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 100, PointerAlignment: Left}"
 					}
 					-- indentation is a tab
 				},
