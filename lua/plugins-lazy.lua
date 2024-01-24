@@ -101,13 +101,7 @@ local plugins = {
 	-- auto formatting
 	require("plugins.plugin-conform"),
 	-- Telescope
-	{
-		"nvim-telescope/telescope.nvim",
-		lazy = false,
-		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzf-native.nvim" },
-		keys = require("config.telescope-keymap"),
-	},
-
+    require("plugins.plugin-telescope"),
 	-- AI
 	{
 		"zbirenbaum/copilot.lua",
@@ -176,4 +170,3 @@ local opts = {}
 
 require("lazy").setup(plugins)
 
-require("config.telescope-setup").setup()
