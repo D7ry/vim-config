@@ -47,7 +47,7 @@ local plugins = {
     { 'shaunsingh/nord.nvim', lazy = false},
 	require("plugins.plugin-bufferline"),
 	require("plugins.plugin-lualine"),
-	require("plugins.plugin-drop"),
+	--require("plugins.plugin-drop"),
 	require("plugins.plugin-alpha"),
 	require("plugins.plugin-todo-comments"),
 	-- {'nvimdev/dashboard-nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
