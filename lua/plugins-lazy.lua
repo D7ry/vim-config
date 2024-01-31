@@ -92,7 +92,7 @@ local plugins = {
 	--{ "saadparwaiz1/cmp_luasnip" },
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+		build = "make",
 		lazy = false,
 	},
 	require("plugins.plugin-lspkind"),
@@ -112,7 +112,7 @@ local plugins = {
 		event = "InsertEnter",
         lazy = false
 	},
-	require("plugins.plugin-chatgpt"),
+	--require("plugins.plugin-chatgpt"),
 
 	-- Treesitter
 	{
