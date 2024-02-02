@@ -21,24 +21,24 @@ return {
 		{
 			"<Leader>fr",
 			function()
-				require("telescope.builtin").lsp_references({ jump_type = "never" ,show_line = false})
+				require("telescope.builtin").lsp_references({ jump_type = "never", show_line = false })
 			end,
 			"go to references",
 		},
-        {
-            "<Leader>fc",
-            function()
-                require("telescope.builtin").lsp_outgoing_calls({jump_type = "never"})
-            end,
-            " go to outgoing calls"
-        },
-        {
-            "<Leader>fC",
-            function()
-                require("telescope.builtin").lsp_incoming_calls({jump_type = "never"})
-            end,
-            " go to incoming calls"
-        },
+		{
+			"<Leader>fc",
+			function()
+				require("telescope.builtin").lsp_outgoing_calls({ jump_type = "never" })
+			end,
+			" go to outgoing calls",
+		},
+		{
+			"<Leader>fC",
+			function()
+				require("telescope.builtin").lsp_incoming_calls({ jump_type = "never" })
+			end,
+			" go to incoming calls",
+		},
 		{
 			"<Leader>fi",
 			function()
@@ -61,6 +61,11 @@ return {
 				require("telescope.builtin").lsp_workspace_symbols({ symbol_width = 50 })
 			end,
 			"telescope tree sitter",
+		},
+		{
+			"<Leader>fh",
+			"<cmd>Telescope harpoon marks<cr>",
+            "telescope harpoon marks"
 		},
 	},
 	config = function()
@@ -90,12 +95,12 @@ return {
 				},
 			},
 			extensions = {
---				fzf = {
---					fuzzy = true,
---					override_generic_sorter = true,
---					override_file_sorter = true,
---					case_mode = "smart_case",
---				},
+				--				fzf = {
+				--					fuzzy = true,
+				--					override_generic_sorter = true,
+				--					override_file_sorter = true,
+				--					case_mode = "smart_case",
+				--				},
 				aerial = {
 					-- Display symbols as <root>.<parent>.<symbol>
 					show_nesting = {
@@ -111,7 +116,7 @@ return {
 				},
 			},
 		})
---		ts.load_extension("fzf")
+		--		ts.load_extension("fzf")
 		ts.load_extension("notify")
 	end,
 }
