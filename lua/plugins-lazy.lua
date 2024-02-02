@@ -88,6 +88,7 @@ local plugins = {
 		},
 		lazy = false,
 	},
+    require( "plugins.plugin-harpoon"),
 	--{ "L3MON4D3/LuaSnip" },
 	--{ "saadparwaiz1/cmp_luasnip" },
 	{
@@ -157,7 +158,7 @@ local plugins = {
 	require("plugins.plugin-which-key"),
 	{ "RRethy/vim-illuminate" },
 	{ "folke/which-key.nvim" },
-	{ "ggandor/leap.nvim" },
+	--{ "ggandor/leap.nvim" },
 	{ "simrat39/rust-tools.nvim" },
 	require("plugins.plugin-nvim-autopairs"),
 	require("plugins.plugin-battery"),

@@ -5,58 +5,58 @@ return {
 	keys = {
 		{ "<Leader>t", "<cmd>Telescope<cr>", "open telescope" },
 		{
-			"fd",
+			"<Leader>fd",
 			function()
 				require("telescope.builtin").lsp_definitions({ jump_type = "never" })
 			end,
 			"go to definition",
 		},
 		{
-			"ft",
+			"<Leader>ft",
 			function()
 				require("telescope.builtin").lsp_type_definitions({ jump_type = "never" })
 			end,
 			"go to type definition",
 		},
 		{
-			"fr",
+			"<Leader>fr",
 			function()
 				require("telescope.builtin").lsp_references({ jump_type = "never" ,show_line = false})
 			end,
 			"go to references",
 		},
         {
-            "fc",
+            "<Leader>fc",
             function()
                 require("telescope.builtin").lsp_outgoing_calls({jump_type = "never"})
             end,
             " go to outgoing calls"
         },
         {
-            "fC",
+            "<Leader>fC",
             function()
                 require("telescope.builtin").lsp_incoming_calls({jump_type = "never"})
             end,
             " go to incoming calls"
         },
 		{
-			"fi",
+			"<Leader>fi",
 			function()
 				require("telescope.builtin").lsp_implementations({ jump_type = "never" })
 			end,
 			"go to implementations",
 		},
-		{ "fg", "<cmd>Telescope live_grep<cr>", "global search" },
-		{ "ff", "<cmd>Telescope find_files<CR>" },
+		{ "<Leader>fg", "<cmd>Telescope live_grep<cr>", "global search" },
+		{ "<Leader>ff", "<cmd>Telescope find_files<CR>" },
 		{
-			"fs",
+			"<Leader>fs",
 			function()
 				require("telescope.builtin").lsp_document_symbols({ symbol_width = 50 })
 			end,
 			"telescope tree sitter",
 		},
 		{
-			"fS",
+			"<Leader>fS",
 			function()
 				require("telescope.builtin").lsp_workspace_symbols({ symbol_width = 50 })
 			end,

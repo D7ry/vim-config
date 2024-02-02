@@ -31,8 +31,8 @@ unmap_keys_starting_with_char("n", "]")
 -- delete []
 vim.api.nvim_set_keymap("n", "]", "<Nop>", { noremap = true })
 vim.api.nvim_set_keymap("n", "[", "<Nop>", { noremap = true })
-vim.api.nvim_set_keymap("n", "t", "<Nop>", { noremap = true })
-vim.api.nvim_set_keymap("n", "f", "<Nop>", { noremap = true })
+--vim.api.nvim_set_keymap("n", "t", "<Nop>", { noremap = true })
+--vim.api.nvim_set_keymap("n", "f", "<Nop>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-h>", "<Nop>", opts)
 vim.api.nvim_set_keymap("n", "<C-l>", "<Nop>", opts)
 vim.api.nvim_set_keymap("n", "ge", "<Nop>", opts)
@@ -68,7 +68,7 @@ vim.api.nvim_set_keymap("n", "<C-l>", "w", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-h>", "b", { noremap = true, silent = true })
 
 -- quick save
-vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
+--vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 
 -----------------
 -- Visual mode --

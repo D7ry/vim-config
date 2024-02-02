@@ -66,6 +66,6 @@ return {
 		})
 	end,
     keys = {
-        {"<leader>s", ":SymbolsOutline<CR>"},
+        {"<leader>so", ":SymbolsOutline<CR>"},
     }
 }
