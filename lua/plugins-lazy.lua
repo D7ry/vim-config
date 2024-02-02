@@ -104,15 +104,15 @@ local plugins = {
 	-- Telescope
     require("plugins.plugin-telescope"),
 	-- AI
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		config = function()
-			require("copilot").setup(require("config.copilot-config"))
-		end,
-		event = "InsertEnter",
-        lazy = false
-	},
+	--{
+	--	"zbirenbaum/copilot.lua",
+	--	cmd = "Copilot",
+	--	config = function()
+	--		require("copilot").setup(require("config.copilot-config"))
+	--	end,
+	--	event = "InsertEnter",
+    --    lazy = false
+	--},
 	--require("plugins.plugin-chatgpt"),
 
 	-- Treesitter
