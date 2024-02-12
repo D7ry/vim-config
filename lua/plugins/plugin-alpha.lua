@@ -52,12 +52,12 @@ return {
 		dashboard.section.buttons.val = {
 			--dashboard.button( "a", "󱙺  > Jarvis" , ":enew | :ChatGPT<CR>"),
 			dashboard.button("t", "󰙅  > File tree", ":NvimTreeToggle<cr>"),
-			dashboard.button("f", "󰛔  > Find file", ":Telescope find_files<CR>"),
+--			dashboard.button("f", "󰛔  > Find file", ":Telescope find_files<CR>"),
 			dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
 			dashboard.button("s", "  > Configuration", ":cd ~/.config/nvim/ | :e .<CR>"),
-			dashboard.button("c", "󰔎  > Color scheme", ":Telescope colorscheme<CR>"),
-			dashboard.button("p", "  > Plugins", ":Lazy<CR>"),
-			dashboard.button("q", "󰗼  > Exit", ":qa<CR>"),
+--			dashboard.button("c", "󰔎  > Color scheme", ":Telescope colorscheme<CR>"),
+--			dashboard.button("p", "  > Plugins", ":Lazy<CR>"),
+--			dashboard.button("q", "󰗼  > Exit", ":qa<CR>"),
 		}
 		-- Send config to alpha
 		alpha.setup(dashboard.opts)
