@@ -44,6 +44,7 @@ local plugins = {
 	{ "morhetz/gruvbox" , lazy = true},
 	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
 	{ "projekt0n/github-nvim-theme" , lazy = true},
+    { "catppuccin/nvim", lazy = false, priority = 1000},
     { 'shaunsingh/nord.nvim', lazy = false},
 	require("plugins.plugin-bufferline"),
 	--require("plugins.plugin-lualine"),
