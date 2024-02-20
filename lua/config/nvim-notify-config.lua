@@ -1,5 +1,5 @@
 return {
-	background_colour = "#000000",
+	background_colour = "00FFFFFF",
 	fps = 60,
 	icons = {
 		DEBUG = "",
