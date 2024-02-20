@@ -30,15 +30,15 @@ local plugins = {
 	{ "sainnhe/sonokai", lazy = true },
 	{ "marko-cerovac/material.nvim", lazy = true },
 	{ "navarasu/onedark.nvim", lazy = true },
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("config.tokyonight-setup")
-		end,
-		lazy = true,
-	},
+	--{
+	--	"folke/tokyonight.nvim",
+	--	lazy = false,
+	--	priority = 1000,
+	--	config = function()
+	--		require("config.tokyonight-setup")
+	--	end,
+	--	lazy = true,
+	--},
 	{ "mhartington/oceanic-next", lazy = true },
 	{ "tanvirtin/monokai.nvim", lazy = true },
 	{ "morhetz/gruvbox", lazy = true },

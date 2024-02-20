@@ -61,7 +61,10 @@ local function my_on_attach(bufnr)
 	vim.keymap.set("n", "<2-LeftMouse>", api.node.open.edit, opts("Open"))
 	vim.keymap.set("n", "<2-RightMouse>", api.tree.change_root_to_node, opts("CD"))
 end
-
+local gheight = vim.api.nvim_list_uis()[1].height
+local gwidth = vim.api.nvim_list_uis()[1].width
+local width = 50
+local height = 100
 return {
 	"nvim-tree/nvim-tree.lua",
 	config = function()
@@ -88,23 +91,35 @@ return {
 				centralize_selection = false,
 				cursorline = true,
 				debounce_delay = 15,
-				side = "left",
+				side = "right",
 				preserve_window_proportions = false,
 				number = false,
 				relativenumber = false,
 				signcolumn = "yes",
-				width = 40,
+				width = 80,
 				float = {
 					enable = true,
 					quit_on_focus_loss = true,
-					open_win_config = {
-						relative = "editor",
-						border = "rounded",
-						width = 50,
-						height = 50,
-						row = 1,
-						col = 1,
-					},
+					open_win_config = function()
+						local HEIGHT_RATIO = 0.8 -- You can change this
+						local WIDTH_RATIO = 0.5 -- You can change this too
+						local screen_w = vim.opt.columns:get()
+						local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+						local window_w = screen_w * WIDTH_RATIO
+						local window_h = screen_h * HEIGHT_RATIO
+						local window_w_int = math.floor(window_w)
+						local window_h_int = math.floor(window_h)
+						local center_x = (screen_w - window_w) / 2
+						local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
+						return {
+							border = "rounded",
+							relative = "editor",
+							row = center_y,
+							col = center_x,
+							width = window_w_int,
+							height = window_h_int,
+						}
+					end,
 				},
 			},
 			renderer = {
