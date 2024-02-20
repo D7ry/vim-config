@@ -25,27 +25,27 @@ local plugins = {
 			require("config.monokai-pro-setup")
 		end,
 	},
-	{ "rebelot/kanagawa.nvim", lazy = true},
-	{ "sainnhe/edge", lazy = true},
-	{ "sainnhe/sonokai" , lazy = true},
-	{ "marko-cerovac/material.nvim" , lazy = true},
-	{ "navarasu/onedark.nvim" , lazy = true},
+	{ "rebelot/kanagawa.nvim", lazy = true },
+	{ "sainnhe/edge", lazy = true },
+	{ "sainnhe/sonokai", lazy = true },
+	{ "marko-cerovac/material.nvim", lazy = true },
+	{ "navarasu/onedark.nvim", lazy = true },
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
 			require("config.tokyonight-setup")
-		end
-        , lazy = true
+		end,
+		lazy = true,
 	},
-	{ "mhartington/oceanic-next" , lazy = true},
-	{ "tanvirtin/monokai.nvim" , lazy = true},
-	{ "morhetz/gruvbox" , lazy = true},
+	{ "mhartington/oceanic-next", lazy = true },
+	{ "tanvirtin/monokai.nvim", lazy = true },
+	{ "morhetz/gruvbox", lazy = true },
 	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
-	{ "projekt0n/github-nvim-theme" , lazy = true},
-    { "catppuccin/nvim", lazy = false, priority = 1000},
-    { 'shaunsingh/nord.nvim', lazy = false},
+	{ "projekt0n/github-nvim-theme", lazy = true },
+	{ "catppuccin/nvim", lazy = false, priority = 1000 },
+	{ "shaunsingh/nord.nvim", lazy = false },
 	require("plugins.plugin-bufferline"),
 	--require("plugins.plugin-lualine"),
 	--require("plugins.plugin-drop"),
@@ -73,7 +73,7 @@ local plugins = {
 	-- LSP and Autocompletion
 	require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
-    require("plugins.plugin-symbols-outline"),
+	require("plugins.plugin-symbols-outline"),
 	{ "neovim/nvim-lspconfig", lazy = false },
 	{ "folke/lsp-colors.nvim" },
 	{
@@ -85,11 +85,11 @@ local plugins = {
 			{ "hrsh7th/cmp-cmdline", lazy = false },
 			{ "hrsh7th/cmp-vsnip" },
 			{ "hrsh7th/vim-vsnip" },
-			{ "onsails/lspkind.nvim" ,lazy=false}, --{'hrsh7th/cmp-nvim-lsp-signature-help'}
+			{ "onsails/lspkind.nvim", lazy = false }, --{'hrsh7th/cmp-nvim-lsp-signature-help'}
 		},
 		lazy = false,
 	},
-    require( "plugins.plugin-harpoon"),
+	require("plugins.plugin-harpoon"),
 	--{ "L3MON4D3/LuaSnip" },
 	--{ "saadparwaiz1/cmp_luasnip" },
 	{
@@ -103,7 +103,7 @@ local plugins = {
 	-- auto formatting
 	require("plugins.plugin-conform"),
 	-- Telescope
-    require("plugins.plugin-telescope"),
+	require("plugins.plugin-telescope"),
 	-- AI
 	--{
 	--	"zbirenbaum/copilot.lua",
@@ -112,7 +112,7 @@ local plugins = {
 	--		require("copilot").setup(require("config.copilot-config"))
 	--	end,
 	--	event = "InsertEnter",
-    --    lazy = false
+	--    lazy = false
 	--},
 	--require("plugins.plugin-chatgpt"),
 
@@ -128,7 +128,7 @@ local plugins = {
 	--require("plugins.plugin-nvim-treesitter-context"),
 
 	-- File Explorer
-    require("plugins.plugin-nvim-tree"),
+	require("plugins.plugin-nvim-tree"),
 	--{'kyazdani42/nvim-tree.lua', dependencies = {'kyazdani42/nvim-web-devicons'}},
 
 	--{
@@ -164,11 +164,12 @@ local plugins = {
 	require("plugins.plugin-nvim-autopairs"),
 	require("plugins.plugin-battery"),
 	require("plugins.plugin-indent-blankline"),
-    require("plugins.plugin-nvim-bufdel"),
+	require("plugins.plugin-nvim-bufdel"),
 	--require("plugins.plugin-headlines")
+	require("plugins.plugin-obsidian"),
+    require("plugins.plugin-transparent")
 }
 
 local opts = {}
 
 require("lazy").setup(plugins)
-
