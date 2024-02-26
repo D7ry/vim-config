@@ -167,7 +167,8 @@ local plugins = {
 	require("plugins.plugin-nvim-bufdel"),
 	--require("plugins.plugin-headlines")
 	require("plugins.plugin-obsidian"),
-    require("plugins.plugin-transparent")
+    require("plugins.plugin-transparent"),
+    require("plugins.plugin-nvim-markdown")
 }
 
 local opts = {}
