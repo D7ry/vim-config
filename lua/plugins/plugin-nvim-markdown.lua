@@ -1,6 +1,7 @@
 return (
 {
     "ixru/nvim-markdown",
+    lazy = false,
     config = function()
         require("hover").setup {
             init = function()
