@@ -73,7 +73,7 @@ return {
 		ts.setup({
 			defaults = {
 				sorting_strategy = "ascending",
-				winblend = 0,
+				winblend = 50,
 				prompt_prefix = "🔭 ",
 				layout_strategy = "flex",
 				layout_config = {
