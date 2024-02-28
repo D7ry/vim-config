@@ -1,5 +1,5 @@
 return {
-	background_colour = "00FFFFFF",
+	background_colour = "NotifyBackground",
 	fps = 60,
 	icons = {
 		DEBUG = "",
@@ -10,7 +10,7 @@ return {
 	},
 	level = 2,
 	minimum_width = 50,
-	render = "compact",
+	render = "default",
 	stages = "fade_in_slide_out",
 	timeout = 5000,
 	top_down = false,

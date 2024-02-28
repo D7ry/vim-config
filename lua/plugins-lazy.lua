@@ -52,25 +52,26 @@ local plugins = {
 	require("plugins.plugin-alpha"),
 	require("plugins.plugin-todo-comments"),
 	-- {'nvimdev/dashboard-nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
-	{
-		"rcarriga/nvim-notify",
-		config = function()
-			vim.opt.termguicolors = true
-			vim.notify = require("notify")
-			require("notify").setup(require("config.nvim-notify-config"))
-		end,
-		lazy = false,
-	},
-	require("plugins.plugin-trouble"),
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
-		config = function()
-			require("noice").setup(require("config.noice-config"))
-		end,
-	},
+	--{
+	--	"rcarriga/nvim-notify",
+	--	config = function()
+	--		vim.opt.termguicolors = true
+	--		vim.notify = require("notify")
+	--		require("notify").setup(require("config.nvim-notify-config"))
+	--	end,
+	--	lazy = false,
+	--},
+	--require("plugins.plugin-trouble"),
+	--{
+	--	"folke/noice.nvim",
+	--	event = "VeryLazy",
+	--	dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+	--	config = function()
+	--		require("noice").setup(require("config.noice-config"))
+	--	end,
+	--},
 	-- LSP and Autocompletion
+    --require("noice").setup(require("config.noice-config")),
 	require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
 	require("plugins.plugin-symbols-outline"),

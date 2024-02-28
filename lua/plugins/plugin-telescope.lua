@@ -117,6 +117,6 @@ return {
 			},
 		})
 		--		ts.load_extension("fzf")
-		ts.load_extension("notify")
+		--ts.load_extension("notify")
 	end,
 }
