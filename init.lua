@@ -17,6 +17,7 @@ require("config.illuminate")
 --require("config.rust-tools")
 require("config.nvim-cmp")
 require("lazygit")
+require("neovide")
 --open up a neotree if no file has been opened
 --vim.api.nvim_create_autocmd("VimEnter", {
 --    pattern = "*",

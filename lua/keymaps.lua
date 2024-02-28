@@ -67,6 +67,8 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 vim.api.nvim_set_keymap("n", "<C-l>", "w", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-h>", "b", { noremap = true, silent = true })
 
+-- 
+
 -- quick save
 --vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 
@@ -74,7 +76,7 @@ vim.api.nvim_set_keymap("n", "<C-h>", "b", { noremap = true, silent = true })
 -- Visual mode --
 -----------------
 
--- Hint: start visual mode with the same area as the previous area and the same mode
+--k Hint: start visual mode with the same area as the previous area and the same mode
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 

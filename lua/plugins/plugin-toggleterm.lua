@@ -5,12 +5,12 @@ return {
 		require("toggleterm").setup({
 			size = function(term)
 				if term.direction == "horizontal" then
-					return 15
+					return 30
 				elseif term.direction == "vertical" then
 					return vim.o.columns * 0.4
 				end
 			end,
-			open_mapping = [[\]],
+			open_mapping = [[<C-k><space>]],
 			--  on_create = fun(t: Terminal), -- function to run when the terminal is first created
 			--  on_open = fun(t: Terminal), -- function to run when the terminal opens
 			--  on_close = fun(t: Terminal), -- function to run when the terminal closes

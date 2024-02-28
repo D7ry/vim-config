@@ -150,7 +150,7 @@ local plugins = {
 	-- Terminal Integration
 	require("plugins.plugin-toggleterm"),
 	-- Other Utilities
-	require("plugins.plugin-cinnamon"), -- for smooth scrolling
+	--require("plugins.plugin-cinnamon"), -- for smooth scrolling
 	--{'karb94/neoscroll.nvim'},
 	{ "andweeb/presence.nvim" },
 	{ "williamboman/mason.nvim", lazy = false },
