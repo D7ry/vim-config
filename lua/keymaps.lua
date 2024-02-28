@@ -49,7 +49,8 @@ vim.api.nvim_set_keymap("n", "(", "^", opts)
 vim.api.nvim_set_keymap("n", ")", "$", opts)
 
 
-
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", {noremap = true})
 -- Example usage, this creates a command that you can use from the Neovim command line
 -- Usage in Neovim command line
 -----------------
