@@ -10,9 +10,23 @@ return {
 			"mark file to harpoon",
 		},
 		{
-			"<Leader>n",
+			"<Leader>hu",
 			function()
 				require("harpoon.ui").toggle_quick_menu()
+			end,
+			"open harpoon",
+		},
+		{
+			"<Leader>n",
+			function()
+				require("harpoon.ui").nav_next()
+			end,
+			"open harpoon",
+		},
+		{
+			"<Leader>p",
+			function()
+				require("harpoon.ui").nav_prev()
 			end,
 			"open harpoon",
 		},
