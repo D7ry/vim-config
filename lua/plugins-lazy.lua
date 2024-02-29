@@ -62,6 +62,9 @@ local plugins = {
 	--	lazy = false,
 	--},
 	--require("plugins.plugin-trouble"),
+	--
+
+    require("plugins.plugin-noice"),
 	--{
 	--	"folke/noice.nvim",
 	--	event = "VeryLazy",
@@ -71,7 +74,7 @@ local plugins = {
 	--	end,
 	--},
 	-- LSP and Autocompletion
-    --require("noice").setup(require("config.noice-config")),
+	--require("noice").setup(require("config.noice-config")),
 	require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
 	require("plugins.plugin-symbols-outline"),
@@ -168,9 +171,9 @@ local plugins = {
 	require("plugins.plugin-nvim-bufdel"),
 	--require("plugins.plugin-headlines")
 	require("plugins.plugin-obsidian"),
-    require("plugins.plugin-transparent"),
-    require("plugins.plugin-nvim-markdown"),
-    require("plugins.plugin-nabla")
+	require("plugins.plugin-transparent"),
+	require("plugins.plugin-nvim-markdown"),
+	require("plugins.plugin-nabla"),
 }
 
 local opts = {}
