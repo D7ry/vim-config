@@ -36,8 +36,8 @@ local conditions = {
 local config = {
 	options = {
 		-- Disable sections and component separators
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+		section_separators = { left = "", right = "" },
+		component_separators = { left = "", right = "" },
 		--        theme = "tokyonight",
 		--theme = {
 		-- We are going to use lualine_c an lualine_x as left and
@@ -47,7 +47,7 @@ local config = {
 		--inactive = { c = { fg = colors.fg, bg = colors.bg } },
 		--},
 		globalstatus = false,
-		disabled_filetypes = { "aerial", "alpha", "neo-tree" , "NvimTree"}, -- disable startup dashboard
+		disabled_filetypes = { "aerial", "alpha", "neo-tree", "NvimTree" }, -- disable startup dashboard
 	},
 	sections = {
 		-- these are to remove the defaults
@@ -61,17 +61,17 @@ local config = {
 	},
 	inactive_sections = {
 		-- these are to remove the defaults
-		lualine_a = {"filename"},
+		lualine_a = { "filename" },
 		lualine_b = {},
 		lualine_y = {},
 		lualine_z = {},
 		lualine_c = {},
 		lualine_x = {},
 	},
-    statusline = {
+	statusline = {
 
-  lualine_c = {'filename'},
-    }
+		lualine_c = { "filename" },
+	},
 }
 
 -- Inserts a component in lualine_c at left section
@@ -202,6 +202,6 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "kyazdani42/nvim-web-devicons" },
 	config = function()
-    require("lualine").setup(config)
+		require("lualine").setup(config)
 	end,
 }

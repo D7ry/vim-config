@@ -31,5 +31,7 @@ return {
 			"open harpoon",
 		},
 	},
-	config = function() end, -- or `opts = {}`
+	config = function()
+		require("telescope").load_extension("harpoon")
+	end, -- or `opts = {}`
 }

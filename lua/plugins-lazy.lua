@@ -108,17 +108,7 @@ local plugins = {
 	require("plugins.plugin-conform"),
 	-- Telescope
 	require("plugins.plugin-telescope"),
-	-- AI
-	--{
-	--	"zbirenbaum/copilot.lua",
-	--	cmd = "Copilot",
-	--	config = function()
-	--		require("copilot").setup(require("config.copilot-config"))
-	--	end,
-	--	event = "InsertEnter",
-	--    lazy = false
-	--},
-	--require("plugins.plugin-chatgpt"),
+    require("plugins.plugin-copilot"),
 
 	-- Treesitter
 	{
@@ -132,7 +122,8 @@ local plugins = {
 	--require("plugins.plugin-nvim-treesitter-context"),
 
 	-- File Explorer
-	require("plugins.plugin-nvim-tree"),
+	--require("plugins.plugin-nvim-tree"),
+    require("plugins.plugin-telescope-file-browser"),
 	--{'kyazdani42/nvim-tree.lua', dependencies = {'kyazdani42/nvim-web-devicons'}},
 
 	--{
