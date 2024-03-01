@@ -148,6 +148,11 @@ ins_left({
 })
 
 ins_right({
+    -- copilot status
+    "copilot"
+})
+
+ins_right({
 	-- filesize component
 	"filetype",
 	cond = conditions.buffer_not_empty,

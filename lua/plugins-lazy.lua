@@ -25,9 +25,9 @@ local plugins = {
 			require("config.monokai-pro-setup")
 		end,
 	},
-	{ "rebelot/kanagawa.nvim", lazy = true },
-	{ "sainnhe/edge", lazy = true },
-	{ "sainnhe/sonokai", lazy = true },
+	{ "rebelot/kanagawa.nvim", lazy = false},
+	{ "sainnhe/edge", lazy = false},
+	{ "sainnhe/sonokai", lazy = false},
 	{ "marko-cerovac/material.nvim", lazy = true },
 	{ "navarasu/onedark.nvim", lazy = true },
 	--{
@@ -48,6 +48,7 @@ local plugins = {
 	{ "shaunsingh/nord.nvim", lazy = false },
 	require("plugins.plugin-bufferline"),
 	require("plugins.plugin-lualine"),
+    require("plugins.plugin-copilot-lualine"),
 	--require("plugins.plugin-drop"),
 	require("plugins.plugin-alpha"),
 	require("plugins.plugin-todo-comments"),
