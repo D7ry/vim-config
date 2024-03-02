@@ -25,6 +25,7 @@ return (
         -- Setup keymaps
         vim.keymap.set("n", "K", require("hover").hover, {desc = "hover.nvim"})
         vim.keymap.set("n", "gK", require("hover").hover_select, {desc = "hover.nvim (select)"})
+        vim.g.vim_markdown_conceal = 2
     end
 }
 )
