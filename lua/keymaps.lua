@@ -68,7 +68,9 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 vim.api.nvim_set_keymap("n", "<C-l>", "w", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-h>", "b", { noremap = true, silent = true })
 
--- 
+-- Automatic center after searching
+vim.api.nvim_set_keymap("n", "n", "nzz", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "N", "Nzz", { noremap = true, silent = true })
 
 -- quick save
 --vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })

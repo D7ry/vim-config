@@ -70,6 +70,7 @@ return {
 	},
 	config = function()
 		local ts = require("telescope")
+        local fb_actions = ts.extensions.file_browser.actions
 		ts.setup({
 			defaults = {
 				sorting_strategy = "ascending",
@@ -91,7 +92,11 @@ return {
 				mappings = {
 					i = {
 						["<esc>"] = require("telescope.actions").close,
+                        ["<C-l>"] = require("telescope.actions").select_default
 					},
+                    n = { 
+                        ["l"] = require("telescope.actions").select_default,
+                    }
 				},
 			},
 			extensions = {
@@ -109,6 +114,17 @@ return {
 						yaml = true,
 					},
 				},
+                file_browser = {
+                    hijack_netrw = true,
+                    mappings = {
+                        ["n"] = {
+                            ["a"] = fb_actions.create,
+                            ["."] = fb_actions.change_cwd,
+                            ["H"] = fb_actions.toggle_hidden,
+                            ["h"] = fb_actions.goto_parent_dir,
+                        }
+                    }
+                }
 			},
 			pickers = {
 				colorscheme = {

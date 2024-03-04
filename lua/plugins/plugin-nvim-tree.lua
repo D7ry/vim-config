@@ -74,7 +74,7 @@ return {
 			hijack_cursor = false,
 			auto_reload_on_write = true,
 			disable_netrw = false,
-			hijack_netrw = true,
+			hijack_netrw = false,
 			hijack_unnamed_buffer_when_opening = false,
 			root_dirs = {},
 			prefer_startup_root = false,
