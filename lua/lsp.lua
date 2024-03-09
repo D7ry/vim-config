@@ -111,26 +111,26 @@ lspconfig.marksman.setup({
 }
 )
 
---lspconfig.rust_analyzer.setup({
---	on_attach = on_attach,
---	cmd = { "rustup", "run", "stable", "rust-analyzer" },
---	settings = {
---		["rust-analyzer"] = {
---			imports = {
---				granularity = {
---					group = "module",
---				},
---				prefix = "self",
---			},
---			cargo = {
---				allFeatures = true,
---				buildScripts = {
---					enable = true,
---				},
---			},
---			procMacro = {
---				enable = true,
---			},
---		},
---	},
---})
+lspconfig.rust_analyzer.setup({
+	on_attach = on_attach,
+	cmd = { "rustup", "run", "stable", "rust-analyzer" },
+	settings = {
+		["rust-analyzer"] = {
+			imports = {
+				granularity = {
+					group = "module",
+				},
+				prefix = "self",
+			},
+			cargo = {
+				allFeatures = true,
+				buildScripts = {
+					enable = true,
+				},
+			},
+			procMacro = {
+				enable = true,
+			},
+		},
+	},
+})

@@ -91,11 +91,13 @@ return {
 				},
 				mappings = {
 					i = {
-						["<esc>"] = require("telescope.actions").close,
+						--["<esc>"] = require("telescope.actions").close,
+                        ["<C-c>"] = require("telescope.actions").close,
                         ["<C-l>"] = require("telescope.actions").select_default
 					},
                     n = { 
                         ["l"] = require("telescope.actions").select_default,
+                        ["<C-c>"] = require("telescope.actions").close,
                     }
 				},
 			},
