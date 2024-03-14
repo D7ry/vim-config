@@ -74,7 +74,7 @@ return {
 		ts.setup({
 			defaults = {
 				sorting_strategy = "ascending",
-				winblend = 50,
+				winblend = 0,
 				prompt_prefix = "🔭 ",
 				layout_strategy = "flex",
 				layout_config = {
@@ -91,7 +91,7 @@ return {
 				},
 				mappings = {
 					i = {
-						--["<esc>"] = require("telescope.actions").close,
+						["<esc>"] = require("telescope.actions").close,
                         ["<C-c>"] = require("telescope.actions").close,
                         ["<C-l>"] = require("telescope.actions").select_default
 					},

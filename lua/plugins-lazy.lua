@@ -50,9 +50,9 @@ local plugins = {
 	require("plugins.plugin-lualine"),
     require("plugins.plugin-copilot-lualine"),
 	--require("plugins.plugin-drop"),
-	require("plugins.plugin-alpha"),
+	--require("plugins.plugin-alpha"),
 	require("plugins.plugin-todo-comments"),
-	-- {'nvimdev/dashboard-nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
+    --require("plugins.plugin-dashboard"),
 	--{
 	--	"rcarriga/nvim-notify",
 	--	config = function()
