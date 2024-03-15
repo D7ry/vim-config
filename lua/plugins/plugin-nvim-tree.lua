@@ -1,17 +1,16 @@
 local function my_on_attach(bufnr)
 	local api = require("nvim-tree.api")
-
 	local function opts(desc)
 		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 	end
 
 	vim.keymap.set("n", ".", api.tree.change_root_to_node, opts("CD"))
 	vim.keymap.set("n", "<C-e>", api.node.open.replace_tree_buffer, opts("Open: In Place"))
-	vim.keymap.set("n", "<C-k>", api.node.show_info_popup, opts("Info"))
+	--vim.keymap.set("n", "<C-k>", api.node.show_info_popup, opts("Info"))
 	vim.keymap.set("n", "<C-r>", api.fs.rename_sub, opts("Rename: Omit Filename"))
 	vim.keymap.set("n", "<C-t>", api.node.open.tab, opts("Open: New Tab"))
-	vim.keymap.set("n", "<C-v>", api.node.open.vertical, opts("Open: Vertical Split"))
-	vim.keymap.set("n", "<C-x>", api.node.open.horizontal, opts("Open: Horizontal Split"))
+	vim.keymap.set("n", "%", api.node.open.vertical, opts("Open: Vertical Split"))
+	vim.keymap.set("n", '"', api.node.open.horizontal, opts("Open: Horizontal Split"))
 	vim.keymap.set("n", "<BS>", api.node.navigate.parent_close, opts("Close Directory"))
 	vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Open"))
 	vim.keymap.set("n", "<Tab>", api.node.open.preview, opts("Open Preview"))
@@ -31,7 +30,6 @@ local function my_on_attach(bufnr)
 	vim.keymap.set("n", "d", api.fs.remove, opts("Delete"))
 	vim.keymap.set("n", "D", api.fs.trash, opts("Trash"))
 	vim.keymap.set("n", "E", api.tree.expand_all, opts("Expand All"))
-	vim.keymap.set("n", "e", api.fs.rename_basename, opts("Rename: Basename"))
 	vim.keymap.set("n", "]e", api.node.navigate.diagnostics.next, opts("Next Diagnostic"))
 	vim.keymap.set("n", "[e", api.node.navigate.diagnostics.prev, opts("Prev Diagnostic"))
 	vim.keymap.set("n", "F", api.live_filter.clear, opts("Clean Filter"))
@@ -48,8 +46,9 @@ local function my_on_attach(bufnr)
 	vim.keymap.set("n", "p", api.fs.paste, opts("Paste"))
 	vim.keymap.set("n", "P", api.node.navigate.parent, opts("Parent Directory"))
 	vim.keymap.set("n", "q", api.tree.close, opts("Close"))
+	vim.keymap.set("n", "R", api.fs.rename_basename, opts("Rename: Basename"))
 	vim.keymap.set("n", "r", api.fs.rename, opts("Rename"))
-	vim.keymap.set("n", "R", api.tree.reload, opts("Refresh"))
+	--vim.keymap.set("n", "R", api.tree.reload, opts("Refresh"))
 	vim.keymap.set("n", "s", api.node.run.system, opts("Run System"))
 	vim.keymap.set("n", "S", api.tree.search_node, opts("Search"))
 	vim.keymap.set("n", "u", api.fs.rename_full, opts("Rename: Full Path"))
@@ -91,14 +90,14 @@ return {
 				centralize_selection = false,
 				cursorline = true,
 				debounce_delay = 15,
-				side = "right",
+				side = "left",
 				preserve_window_proportions = false,
 				number = false,
 				relativenumber = false,
 				signcolumn = "yes",
-				width = 80,
+				width = 60,
 				float = {
-					enable = true,
+					enable = false,
 					quit_on_focus_loss = true,
 					open_win_config = function()
 						local HEIGHT_RATIO = 0.8 -- You can change this
@@ -340,7 +339,20 @@ return {
 		})
 	end,
 	keys = {
-		{ "<leader><tab>", "<cmd>NvimTreeToggle<cr>" },
+		{
+			"<C-k><tab>",
+			function()
+				require("nvim-tree.api").tree.toggle({ focus = false })
+			end,
+			"toggle nvim tree",
+		},
+		{
+			"<Leader><tab>",
+			function()
+				require("nvim-tree.api").tree.focus()
+			end,
+			"focus nvim tree",
+		},
 	},
 	lazy = false,
 }

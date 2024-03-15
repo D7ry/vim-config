@@ -7,7 +7,6 @@ require("plugins-lazy")
 require("setup_markdown")
 require("colorscheme")
 require("lsp")
---require("config.nvim-tree")
 require("discordrpc")
 --require("lualine").setup() -- https://github.com/nvim-lualine/lualine.nvim
 require("gitsigns").setup() -- https://github.com/lewis6991/gitsigns.nvim
