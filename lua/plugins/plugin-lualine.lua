@@ -201,7 +201,6 @@ local nvimbattery = {
 	--color = { fg = colors.violet, bg = colors.bg },
 }
 
-ins_right_most(nvimbattery)
 
 return {
 	"nvim-lualine/lualine.nvim",
