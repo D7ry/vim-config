@@ -8,15 +8,15 @@ return {
 		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	keys = {
-
-		{ "<leader><tab>", "<cmd>Neotree toggle<cr>", desc = "Toggle Neotree" },
+		{ "<C-k><tab>", "<cmd>Neotree toggle<cr>", desc = "Toggle Neotree" },
+        { "<leader><tab>", "<cmd>Neotree focus<cr>", desc = "Toggle Neotree" },
 	},
 	config = function()
 		require("neo-tree").setup({
 			--sources = {"document_symbols", "filesystem"},
 			close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
 			popup_border_style = "rounded",
-			enable_git_status = true,
+			enable_git_status = false,
 			enable_diagnostics = true,
 			enable_normal_mode_for_inputs = false, -- Enable normal mode for input dialogs.
 			open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
@@ -34,7 +34,7 @@ return {
 					enable_character_fade = true,
 				},
 				indent = {
-					indent_size = 2,
+					indent_size = 3,
 					padding = 1, -- extra padding on left hand side
 					-- indent guides
 					with_markers = true,
@@ -107,7 +107,7 @@ return {
 			commands = {},
 			window = {
 				position = "right",
-				width = 40,
+				width = 50,
 				mapping_options = {
 					noremap = true,
 					nowait = true,
@@ -120,11 +120,11 @@ return {
 					["<2-LeftMouse>"] = "open",
 					["<cr>"] = "open",
 					["<esc>"] = "cancel", -- close preview or floating neo-tree window
-					["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
+					["K"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
 					-- Read `# Preview Mode` for more information
 					["l"] = "focus_preview",
-					["S"] = "open_split",
-					["s"] = "open_vsplit",
+					["$"] = "open_vsplit",
+					["\""] = "open_split",
 					-- ["S"] = "split_with_window_picker",
 					-- ["s"] = "vsplit_with_window_picker",
 					--["t"] = "open_tabnew",
@@ -141,7 +141,7 @@ return {
 						-- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
 						-- some commands may take optional config options, see `:h neo-tree-mappings` for details
 						config = {
-							show_path = "absolute", -- "none", "relative", "absolute"
+							show_path = "relative", -- "none", "relative", "absolute"
 						},
 					},
 					--["A"] = "add_directory", -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
@@ -161,8 +161,8 @@ return {
 					["q"] = "close_window",
 					["R"] = "refresh",
 					["?"] = "show_help",
-					["<Leader>["] = "prev_source",
-					["<Leader>]"] = "next_source",
+					--["<Leader>["] = "prev_source",
+					--["<Leader>]"] = "next_source",
 					["i"] = "show_file_details",
 				},
 			},
@@ -192,7 +192,7 @@ return {
 					},
 				},
 				follow_current_file = {
-					enabled = true, -- This will find and focus the file in the active buffer every time
+					enabled = false, -- This will find and focus the file in the active buffer every time
 					--               -- the current file is changed while the tree is open.
 					leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
 				},
