@@ -112,7 +112,7 @@ local plugins = {
 			require("nvim-treesitter.configs").setup(require("config.nvim-treesitter-config"))
 		end,
 	},
-	--require("plugins.plugin-nvim-treesitter-context"),
+	require("plugins.plugin-nvim-treesitter-context"),
 
 	-- File Explorer
 	require("plugins.plugin-nvim-tree"),
