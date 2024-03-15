@@ -123,7 +123,8 @@ local plugins = {
 	--require("plugins.plugin-nvim-treesitter-context"),
 
 	-- File Explorer
-	require("plugins.plugin-nvim-tree"),
+	--require("plugins.plugin-nvim-tree"),
+    require("plugins.plugin-neotree"),
     require("plugins.plugin-telescope-file-browser"),
 	--{'kyazdani42/nvim-tree.lua', dependencies = {'kyazdani42/nvim-web-devicons'}},
 
