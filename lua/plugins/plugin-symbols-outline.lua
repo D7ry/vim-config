@@ -5,9 +5,9 @@ return {
 			highlight_hovered_item = true,
 			show_guides = true,
 			auto_preview = false,
-			position = "right",
+			position = "left",
 			relative_width = true,
-			width = 25,
+			width = 20,
 			auto_close = false,
 			show_numbers = false,
 			show_relative_numbers = false,
@@ -66,6 +66,6 @@ return {
 		})
 	end,
     keys = {
-        {"<leader>so", ":SymbolsOutline<CR>"},
+        {"<C-k>a", ":SymbolsOutline<CR>"},
     }
 }

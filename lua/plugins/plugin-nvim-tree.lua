@@ -90,7 +90,7 @@ return {
 				centralize_selection = false,
 				cursorline = true,
 				debounce_delay = 15,
-				side = "left",
+				side = "right",
 				preserve_window_proportions = false,
 				number = false,
 				relativenumber = false,
@@ -340,7 +340,7 @@ return {
 	end,
 	keys = {
 		{
-			"<C-k><tab>",
+			"<C-k>d",
 			function()
 				require("nvim-tree.api").tree.toggle({ focus = false })
 			end,
