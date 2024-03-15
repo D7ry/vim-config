@@ -52,16 +52,8 @@ local plugins = {
 	--require("plugins.plugin-drop"),
 	--require("plugins.plugin-alpha"),
 	require("plugins.plugin-todo-comments"),
+    --require("plugins.plugin-nvim-notify"),
     --require("plugins.plugin-dashboard"),
-	--{
-	--	"rcarriga/nvim-notify",
-	--	config = function()
-	--		vim.opt.termguicolors = true
-	--		vim.notify = require("notify")
-	--		require("notify").setup(require("config.nvim-notify-config"))
-	--	end,
-	--	lazy = false,
-	--},
 	--require("plugins.plugin-trouble"),
 	--
 
