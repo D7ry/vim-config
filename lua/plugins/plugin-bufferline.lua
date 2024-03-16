@@ -19,6 +19,12 @@ return {
                             text = "Files",
                             highlight = "Directory",
                             text_align = "left"
+                        },
+                        {
+                            filetype = "Outline",
+                            text = "Symbols",
+                            highlight = "Directory",
+                            text_align = "left"
                         }
                     }
                 },
