@@ -26,28 +26,30 @@ return {
 			"go to references",
 		},
 		{
-			"<Leader>fc",
+			"<Leader>fo",
 			function()
 				require("telescope.builtin").lsp_outgoing_calls({ jump_type = "never" })
 			end,
 			" go to outgoing calls",
 		},
 		{
-			"<Leader>fC",
+			"<Leader>fi",
 			function()
 				require("telescope.builtin").lsp_incoming_calls({ jump_type = "never" })
 			end,
 			" go to incoming calls",
 		},
-		{
-			"<Leader>fi",
-			function()
-				require("telescope.builtin").lsp_implementations({ jump_type = "never" })
-			end,
-			"go to implementations",
-		},
+		--{
+		--	"<Leader>fi",
+		--	function()
+		--		require("telescope.builtin").lsp_implementations({ jump_type = "never" })
+		--	end,
+		--	"go to implementations",
+		--},
 		{ "<Leader>fg", "<cmd>Telescope live_grep<cr>", "global search" },
 		{ "<Leader>ff", "<cmd>Telescope find_files<CR>" },
+        
+		{ "<Leader>fb", "<cmd>Telescope buffers<cr>", "Telescope buffers" },
 		{
 			"<Leader>fs",
 			function()
@@ -70,7 +72,7 @@ return {
 	},
 	config = function()
 		local ts = require("telescope")
-        local fb_actions = ts.extensions.file_browser.actions
+        --local fb_actions = ts.extensions.file_browser.actions
 		ts.setup({
 			defaults = {
 				sorting_strategy = "ascending",
@@ -120,10 +122,10 @@ return {
                     hijack_netrw = true,
                     mappings = {
                         ["n"] = {
-                            ["a"] = fb_actions.create,
-                            ["."] = fb_actions.change_cwd,
-                            ["H"] = fb_actions.toggle_hidden,
-                            ["h"] = fb_actions.goto_parent_dir,
+                            --["a"] = fb_actions.create,
+                            --["."] = fb_actions.change_cwd,
+                            --["H"] = fb_actions.toggle_hidden,
+                            --["h"] = fb_actions.goto_parent_dir,
                         }
                     }
                 }

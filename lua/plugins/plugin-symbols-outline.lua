@@ -20,7 +20,7 @@ return {
 			keymaps = { -- These keymaps can be a string or a table for multiple keys
 				close = { "<Esc>", "q" },
 				goto_location = "<Cr>",
-				focus_location = "p",
+				focus_location = "<tab>",
 				hover_symbol = "<C-space>",
 				toggle_preview = "P",
 				rename_symbol = "r",
