@@ -155,7 +155,7 @@ local plugins = {
 	require("plugins.plugin-indent-blankline"),
 	require("plugins.plugin-nvim-bufdel"),
 	--require("plugins.plugin-headlines")
-	--require("plugins.plugin-obsidian"),
+	require("plugins.plugin-obsidian"),
 	require("plugins.plugin-transparent"),
 	require("plugins.plugin-nvim-markdown"),
 	require("plugins.plugin-nabla"),
