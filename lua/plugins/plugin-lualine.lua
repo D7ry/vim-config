@@ -36,8 +36,8 @@ local conditions = {
 local config = {
 	options = {
 		-- Disable sections and component separators
-		section_separators = { left = "", right = "" },
-		component_separators = { left = "", right = "" },
+      component_separators = { left = '', right = '' },
+      section_separators = { left = '', right = '' },
 		--        theme = "tokyonight",
 		--theme = {
 		-- We are going to use lualine_c an lualine_x as left and
