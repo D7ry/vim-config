@@ -76,14 +76,14 @@ return {
 		ts.setup({
 			defaults = {
 				sorting_strategy = "ascending",
-				winblend = 50,
+				winblend = 10,
 				prompt_prefix = "🔭 ",
 				layout_strategy = "flex",
 				layout_config = {
 					height = 0.8,
-					width = 0.75,
+					width = 0.8,
 					horizontal = {
-						preview_width = 0.6,
+						preview_width = 0.7,
 						mirror = false,
 						prompt_position = "top",
 					},
