@@ -159,6 +159,7 @@ local plugins = {
 	require("plugins.plugin-transparent"),
 	require("plugins.plugin-nvim-markdown"),
 	require("plugins.plugin-nabla"),
+    require("plugins.plugin-comment")
 }
 
 local opts = {}
