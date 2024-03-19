@@ -25,40 +25,38 @@ local plugins = {
 			require("config.monokai-pro-setup")
 		end,
 	},
-	{ "rebelot/kanagawa.nvim", lazy = false},
-	{ "sainnhe/edge", lazy = false},
-	{ "sainnhe/sonokai", lazy = false},
+	{ "rebelot/kanagawa.nvim", lazy = false },
+	{ "sainnhe/edge", lazy = false },
+	{ "sainnhe/sonokai", lazy = false },
 	{ "marko-cerovac/material.nvim", lazy = true },
 	{ "navarasu/onedark.nvim", lazy = true },
-	--{
-	--	"folke/tokyonight.nvim",
-	--	lazy = false,
-	--	priority = 1000,
-	--	config = function()
-	--		require("config.tokyonight-setup")
-	--	end,
-	--	lazy = true,
-	--},
-	{ "mhartington/oceanic-next", lazy = false},
-	{ "tanvirtin/monokai.nvim", lazy = true},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("config.tokyonight-setup")
+		end,
+	},
+	{ "mhartington/oceanic-next", lazy = false },
+	{ "tanvirtin/monokai.nvim", lazy = true },
 	-- { "morhetz/gruvbox", lazy = false},
-    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
+	{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
 	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
 	{ "projekt0n/github-nvim-theme", lazy = false },
 	{ "catppuccin/nvim", lazy = false, priority = 1000 },
 	{ "shaunsingh/nord.nvim", lazy = false },
 	require("plugins.plugin-bufferline"),
 	require("plugins.plugin-lualine"),
-    require("plugins.plugin-copilot-lualine"),
+	require("plugins.plugin-copilot-lualine"),
 	--require("plugins.plugin-drop"),
 	--require("plugins.plugin-alpha"),
 	require("plugins.plugin-todo-comments"),
-    require("plugins.plugin-nvim-notify"),
-    --require("plugins.plugin-dashboard"),
+	require("plugins.plugin-nvim-notify"),
+	--require("plugins.plugin-dashboard"),
 	require("plugins.plugin-trouble"),
-	--
 
-    require("plugins.plugin-noice"),
+	require("plugins.plugin-noice"),
 	--{
 	--	"folke/noice.nvim",
 	--	event = "VeryLazy",
@@ -102,7 +100,7 @@ local plugins = {
 	require("plugins.plugin-conform"),
 	-- Telescope
 	require("plugins.plugin-telescope"),
-    require("plugins.plugin-copilot"),
+	require("plugins.plugin-copilot"),
 
 	-- Treesitter
 	{
@@ -117,8 +115,8 @@ local plugins = {
 
 	-- File Explorer
 	require("plugins.plugin-nvim-tree"),
-    --require("plugins.plugin-neotree"),
-    --require("plugins.plugin-telescope-file-browser"),
+	--require("plugins.plugin-neotree"),
+	--require("plugins.plugin-telescope-file-browser"),
 	--{'kyazdani42/nvim-tree.lua', dependencies = {'kyazdani42/nvim-web-devicons'}},
 
 	--{
@@ -160,7 +158,7 @@ local plugins = {
 	require("plugins.plugin-transparent"),
 	require("plugins.plugin-nvim-markdown"),
 	require("plugins.plugin-nabla"),
-    require("plugins.plugin-comment")
+	require("plugins.plugin-comment"),
 }
 
 local opts = {}
@@ -169,6 +167,5 @@ local opts = {}
 --[[ if not vim.g.neovide then
     table.insert(plugins, require("plugins.plugin-cinnamon"))
 end ]]
-  
 
 require("lazy").setup(plugins)

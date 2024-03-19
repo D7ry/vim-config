@@ -3,6 +3,8 @@ if vim.g.neovide then
 	vim.g.neovide_transparency = 0.9
 	vim.g.transparency = 1
 	vim.o.guifont = "DroidSansM Nerd Font Mono:h12"
+	vim.g.neovide_fullscreen = true
+    vim.g.neovide_cursor_vfx_mode = "railgun"
 	--	vim.g.neovide_background_color = "#0f1117" .. alpha()
 	-- Put anything you want to happen only in Neovide here
 end
