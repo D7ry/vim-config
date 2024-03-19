@@ -41,7 +41,8 @@ local plugins = {
 	--},
 	{ "mhartington/oceanic-next", lazy = false},
 	{ "tanvirtin/monokai.nvim", lazy = true},
-	{ "morhetz/gruvbox", lazy = false},
+	-- { "morhetz/gruvbox", lazy = false},
+    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
 	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
 	{ "projekt0n/github-nvim-theme", lazy = false },
 	{ "catppuccin/nvim", lazy = false, priority = 1000 },
@@ -52,7 +53,7 @@ local plugins = {
 	--require("plugins.plugin-drop"),
 	--require("plugins.plugin-alpha"),
 	require("plugins.plugin-todo-comments"),
-    --require("plugins.plugin-nvim-notify"),
+    require("plugins.plugin-nvim-notify"),
     --require("plugins.plugin-dashboard"),
 	require("plugins.plugin-trouble"),
 	--
@@ -163,5 +164,11 @@ local plugins = {
 }
 
 local opts = {}
+
+-- enable cinnamon only if neovide is not enabled
+--[[ if not vim.g.neovide then
+    table.insert(plugins, require("plugins.plugin-cinnamon"))
+end ]]
+  
 
 require("lazy").setup(plugins)
