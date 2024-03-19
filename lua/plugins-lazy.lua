@@ -167,9 +167,8 @@ local opts = {}
 --[[ if not vim.g.neovide then
     table.insert(plugins, require("plugins.plugin-cinnamon"))
 end ]]
-if not vim.g.neovide or vim.loop.os_uname().sysname ~= "Linux" then
-    print("Notify is enabled");
---    table.insert(plugins, require("plugins.plugin-nvim-notify"))
+if not vim.g.neovide then
+    print("Neovide is enabled")
 end
 
 require("lazy").setup(plugins)
