@@ -52,15 +52,15 @@ local plugins = {
 	--require("plugins.plugin-drop"),
 	--require("plugins.plugin-alpha"),
 	require("plugins.plugin-todo-comments"),
-	require("plugins.plugin-nvim-notify"),
 	--require("plugins.plugin-dashboard"),
 	require("plugins.plugin-trouble"),
 
 	require("plugins.plugin-noice"),
+    require("plugins.plugin-nvim-notify"),
 	--{
 	--	"folke/noice.nvim",
 	--	event = "VeryLazy",
-	--	dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+	--dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
 	--	config = function()
 	--		require("noice").setup(require("config.noice-config"))
 	--	end,
@@ -167,5 +167,9 @@ local opts = {}
 --[[ if not vim.g.neovide then
     table.insert(plugins, require("plugins.plugin-cinnamon"))
 end ]]
+if not vim.g.neovide or vim.loop.os_uname().sysname ~= "Linux" then
+    print("Notify is enabled");
+--    table.insert(plugins, require("plugins.plugin-nvim-notify"))
+end
 
 require("lazy").setup(plugins)
