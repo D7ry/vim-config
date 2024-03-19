@@ -54,7 +54,7 @@ local plugins = {
 	require("plugins.plugin-todo-comments"),
     --require("plugins.plugin-nvim-notify"),
     --require("plugins.plugin-dashboard"),
-	--require("plugins.plugin-trouble"),
+	require("plugins.plugin-trouble"),
 	--
 
     require("plugins.plugin-noice"),
