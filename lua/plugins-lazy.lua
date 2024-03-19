@@ -41,7 +41,7 @@ local plugins = {
 	{ "mhartington/oceanic-next", lazy = false },
 	{ "tanvirtin/monokai.nvim", lazy = true },
 	-- { "morhetz/gruvbox", lazy = false},
-	{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
+    require("plugins.colorscheme.gruvbox"),
 	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
 	{ "projekt0n/github-nvim-theme", lazy = false },
 	{ "catppuccin/nvim", lazy = false, priority = 1000 },
