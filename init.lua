@@ -21,12 +21,12 @@ require("neovide")
 
 -- open up telescope if no file has been opened
 vim.api.nvim_create_autocmd("VimEnter", {
-    pattern = "*",
-    callback = function()
-        if #vim.fn.argv() == 0  then
-            vim.cmd('Telescope find_files')
-        end
-    end,
+	pattern = "*",
+	callback = function()
+		if #vim.fn.argv() == 0 then
+			vim.cmd("Telescope find_files")
+		end
+	end,
 })
 --open up a neotree if no file has been opened
 --vim.api.nvim_create_autocmd("VimEnter", {
