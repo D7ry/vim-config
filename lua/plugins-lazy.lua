@@ -70,6 +70,7 @@ local plugins = {
 	require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
 	require("plugins.plugin-symbols-outline"),
+    require("plugins.plugin-lspsaga"),
 	{ "neovim/nvim-lspconfig", lazy = false },
 	{ "folke/lsp-colors.nvim" },
 	{
