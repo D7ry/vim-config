@@ -6,7 +6,7 @@ return {
 	keys = {
 
 		{
-			"<Leader>gd",
+			"<Leader>gs", -- git status
 			function()
 				if viewing_file_history then
 					vim.cmd("tabclose")
@@ -24,7 +24,7 @@ return {
 			"Toggle diff view",
 		},
 		{
-			"<Leader>gf",
+			"<Leader>gf", -- git log but on a current file
 			function()
 				if viewing_diff then
 					vim.cmd("tabclose")
@@ -32,8 +32,8 @@ return {
 				end
 				if viewing_commit_history then
 					vim.cmd("tabclose")
-					viewing_commit_history = false
-				end
+                    viewing_commit_history = false
+                end
 				if not viewing_file_history then
 					vim.cmd("DiffviewFileHistory %")
 					viewing_file_history = true
@@ -42,7 +42,7 @@ return {
 			"Toggle file history view for current file",
 		},
 		{
-			"<Leader>gc",
+			"<Leader>gl", -- git log
 
 			function()
 				if viewing_diff then
