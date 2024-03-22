@@ -46,4 +46,10 @@ return {
 			},
 		})
 	end,
+
+    keys = {
+		{ "<Leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle current line blame" },
+
+    }
+
 }
