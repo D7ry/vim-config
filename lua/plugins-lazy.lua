@@ -48,7 +48,6 @@ local plugins = {
 	{ "shaunsingh/nord.nvim", lazy = false },
 	require("plugins.plugin-bufferline"),
 	require("plugins.plugin-lualine"),
-	require("plugins.plugin-copilot-lualine"),
 	--require("plugins.plugin-drop"),
 	--require("plugins.plugin-alpha"),
 	require("plugins.plugin-todo-comments"),
@@ -102,7 +101,7 @@ local plugins = {
 	-- Telescope
 	require("plugins.plugin-telescope"),
 	require("plugins.plugin-copilot"),
-
+	require("plugins.plugin-copilot-lualine"),
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",

@@ -1,6 +1,8 @@
+
 return {
 	"zbirenbaum/copilot.lua",
 	config = function()
+         
 		require("copilot").setup({
 			panel = {
 				enabled = true,
@@ -22,12 +24,12 @@ return {
 				auto_trigger = true,
 				debounce = 75,
 				keymap = {
-					accept = "<C-Enter>",
+					accept = "<tab>",
 					accept_word = false,
 					accept_line = false,
 					next = "<C-;>",
 					prev = "<C-,>",
-					dismiss = "<C-'>",
+					dismiss = "<esc>",
 				},
 			},
 			filetypes = {

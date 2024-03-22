@@ -49,7 +49,12 @@ return {
 
     keys = {
 		{ "<Leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle current line blame" },
+		{ "g]", "<cmd>Gitsigns next_hunk<cr>", "Next git hunk" },
+		{ "g[", "<cmd>Gitsigns prev_hunk<cr>", "Prev git hunk" },
 
+		{ "<Leader>gd", "<cmd>Gitsigns preview_hunk_inline<cr>", "Preview git hunk in line" },
+		{ "<Leader>gv", "<cmd>Gitsigns preview_hunk_inline<cr>", "Preview git hunk in line" },
+		{ "<Leader>gd", "<cmd>Gitsigns diffthis<cr>", "Preview git hunk in line" },
     }
 
 }
