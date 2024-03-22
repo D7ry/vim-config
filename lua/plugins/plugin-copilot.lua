@@ -1,4 +1,3 @@
-
 return {
 	"zbirenbaum/copilot.lua",
 	config = function()
@@ -24,7 +23,7 @@ return {
 				auto_trigger = true,
 				debounce = 75,
 				keymap = {
-					accept = "<tab>",
+					--accept = "<tab>",
 					accept_word = false,
 					accept_line = false,
 					next = "<C-;>",

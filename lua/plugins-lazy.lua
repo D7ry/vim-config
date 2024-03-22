@@ -135,6 +135,7 @@ local plugins = {
 	--	lazy = false,
 	--},
     require("plugins.plugin-gitsigns"),
+    require("plugins.plugin-diffview"),
 	-- Terminal Integration
 	require("plugins.plugin-toggleterm"),
 	-- Other Utilities

@@ -53,19 +53,19 @@ return {
 		{ "g]", "<cmd>Gitsigns next_hunk<cr>", "Next git hunk" },
 		{ "g[", "<cmd>Gitsigns prev_hunk<cr>", "Prev git hunk" },
 
-		{ "<Leader>gv", "<cmd>Gitsigns preview_hunk_inline<cr>", "Preview git hunk in line" },
-		{
-			"<leader>gd",
-			function()
-                if viewing_diff then
-                    vim.cmd("wincmd p | q")
-                    viewing_diff = false
-                else
-                    vim.cmd(":Gitsigns diffthis")
-                    viewing_diff = true
-                end
-			end,
-            "Toggle git diff view"
-		},
+		{ "<Leader>gp", "<cmd>Gitsigns preview_hunk_inline<cr>", "Preview git hunk in line" },
+		-- {
+		-- 	"<leader>gd",
+		-- 	function()
+  --               if viewing_diff then
+  --                   vim.cmd("wincmd p | q")
+  --                   viewing_diff = false
+  --               else
+  --                   vim.cmd(":Gitsigns diffthis")
+  --                   viewing_diff = true
+  --               end
+		-- 	end,
+  --           "Toggle git diff view"
+		-- },
 	},
 }
