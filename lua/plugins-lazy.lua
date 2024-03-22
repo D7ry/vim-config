@@ -135,7 +135,7 @@ local plugins = {
 	--	keys = require("config.neo-tree-keymap"),
 	--	lazy = false,
 	--},
-	{ "lewis6991/gitsigns.nvim" },
+    require("plugins.plugin-gitsigns"),
 	-- Terminal Integration
 	require("plugins.plugin-toggleterm"),
 	-- Other Utilities
