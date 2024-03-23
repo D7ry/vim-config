@@ -47,8 +47,8 @@ local config = {
 		--inactive = { c = { fg = colors.fg, bg = colors.bg } },
 		--},
 		globalstatus = false,
-		disabled_filetypes = {"Outline", "aerial", "alpha", "neo-tree", "NvimTree" }, -- disable startup dashboard
-	},
+        disabled_filetypes = { "DiffviewFiles", "Outline", "aerial", "alpha", "neo-tree", "NvimTree" }, -- disable startup dashboard
+    },
 	sections = {
 		-- these are to remove the defaults
 		lualine_a = {},

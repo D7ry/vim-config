@@ -5,7 +5,7 @@
 
 if vim.g.neovide then
 	-- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
-	vim.g.neovide_transparency = 0.9
+	vim.g.neovide_transparency = 1
 	vim.g.transparency = 1
     if vim.loop.os_uname().sysname == "Linux" then
 	    vim.o.guifont = "DroidSansM Nerd Font Mono:h12"

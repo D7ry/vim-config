@@ -53,7 +53,7 @@ return {
 		{ "g]", "<cmd>Gitsigns next_hunk<cr>", "Next git hunk" },
 		{ "g[", "<cmd>Gitsigns prev_hunk<cr>", "Prev git hunk" },
 
-		{ "<Leader>gp", "<cmd>Gitsigns preview_hunk_inline<cr>", "Preview git hunk in line" },
+		{ "<Leader>gv", "<cmd>Gitsigns preview_hunk_inline<cr>", "Preview git hunk in line" },
 		-- {
 		-- 	"<leader>gd",
 		-- 	function()
