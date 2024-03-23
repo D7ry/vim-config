@@ -1,3 +1,7 @@
+-- load vimrc
+local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
+vim.cmd.source(vimrc)
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 require("options")
