@@ -46,7 +46,7 @@ local config = {
 		--normal = { c = { fg = colors.fg, bg = colors.bg } },
 		--inactive = { c = { fg = colors.fg, bg = colors.bg } },
 		--},
-		globalstatus = false,
+		globalstatus = true,
         disabled_filetypes = { "DiffviewFiles", "Outline", "aerial", "alpha", "neo-tree", "NvimTree" }, -- disable startup dashboard
     },
 	sections = {

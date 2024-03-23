@@ -19,6 +19,13 @@ return {
 			"go to type definition",
 		},
 		{
+			"<Leader>fw",
+			function()
+				require("telescope.builtin").current_buffer_fuzzy_find({ jump_type = "never", show_line = false })
+			end,
+			"go to references",
+		},
+		{
 			"<Leader>fr",
 			function()
 				require("telescope.builtin").lsp_references({ jump_type = "never", show_line = false })
@@ -48,7 +55,7 @@ return {
 		--},
 		{ "<Leader>fg", "<cmd>Telescope live_grep<cr>", "global search" },
 		{ "<Leader>ff", "<cmd>Telescope find_files<CR>" },
-        
+
 		{ "<Leader>fb", "<cmd>Telescope buffers<cr>", "Telescope buffers" },
 		{
 			"<Leader>fs",
@@ -67,12 +74,12 @@ return {
 		{
 			"<Leader>fh",
 			"<cmd>Telescope harpoon marks<cr>",
-            "telescope harpoon marks"
+			"telescope harpoon marks",
 		},
 	},
 	config = function()
 		local ts = require("telescope")
-        --local fb_actions = ts.extensions.file_browser.actions
+		--local fb_actions = ts.extensions.file_browser.actions
 		ts.setup({
 			defaults = {
 				sorting_strategy = "ascending",
@@ -94,13 +101,13 @@ return {
 				mappings = {
 					i = {
 						["<esc>"] = require("telescope.actions").close,
-                        ["<C-c>"] = require("telescope.actions").close,
-                        ["<C-l>"] = require("telescope.actions").select_default
+						["<C-c>"] = require("telescope.actions").close,
+						["<C-l>"] = require("telescope.actions").select_default,
 					},
-                    n = { 
-                        ["l"] = require("telescope.actions").select_default,
-                        ["<C-c>"] = require("telescope.actions").close,
-                    }
+					n = {
+						["l"] = require("telescope.actions").select_default,
+						["<C-c>"] = require("telescope.actions").close,
+					},
 				},
 			},
 			extensions = {
@@ -118,17 +125,17 @@ return {
 						yaml = true,
 					},
 				},
-                file_browser = {
-                    hijack_netrw = true,
-                    mappings = {
-                        ["n"] = {
-                            --["a"] = fb_actions.create,
-                            --["."] = fb_actions.change_cwd,
-                            --["H"] = fb_actions.toggle_hidden,
-                            --["h"] = fb_actions.goto_parent_dir,
-                        }
-                    }
-                }
+				file_browser = {
+					hijack_netrw = true,
+					mappings = {
+						["n"] = {
+							--["a"] = fb_actions.create,
+							--["."] = fb_actions.change_cwd,
+							--["H"] = fb_actions.toggle_hidden,
+							--["h"] = fb_actions.goto_parent_dir,
+						},
+					},
+				},
 			},
 			pickers = {
 				colorscheme = {
