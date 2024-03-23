@@ -38,3 +38,9 @@ vim.api.nvim_create_autocmd("VimEnter", {
 --    end
 --})
 --
+
+--TODO: put this into a separate file
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = {"*.vert", "*.frag"},
+    command = "set filetype=glsl",
+})
