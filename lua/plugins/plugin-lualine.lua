@@ -75,20 +75,20 @@ local config = {
 }
 
 -- Inserts a component in lualine_c at left section
-local function ins_left(component)
+local function push_left(component)
 	table.insert(config.sections.lualine_c, component)
 end
 
-local function ins_left_most(component)
+local function push_far_left(component)
 	table.insert(config.sections.lualine_a, component)
 end
 
 -- Inserts a component in lualine_x at right section
-local function ins_right(component)
+local function push_right(component)
 	table.insert(config.sections.lualine_x, component)
 end
 
-local function ins_right_most(component)
+local function push_far_right(component)
 	table.insert(config.sections.lualine_z, component)
 end
 
@@ -100,32 +100,22 @@ end
 -- padding = { left = 0, right = 1 }, -- We don't need space before this
 --}
 
-ins_left_most({
+push_far_left({
 	"branch",
 	icon = "",
 	--    color = { fg = colors.violet, gui = 'bold' },
 })
 
-ins_left({
-	"filename",
-	cond = conditions.buffer_not_empty,
-	--color = { fg = colors.magenta, gui = 'bold' },
-})
+-- push_left({
+-- 	"filename",
+-- 	cond = conditions.buffer_not_empty,
+-- 	--color = { fg = colors.magenta, gui = 'bold' },
+-- })
 
-ins_left({ "location" })
+push_left({ "location" })
 
 --ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
-ins_right({
-	"diagnostics",
-	sources = { "nvim_diagnostic" },
-	symbols = { error = " ", warn = " ", info = " " },
-	diagnostics_color = {
-		color_error = { fg = colors.red },
-		color_warn = { fg = colors.yellow },
-		color_info = { fg = colors.cyan },
-	},
-})
 
 -- Insert mid section. You can make any number of sections in neovim :)
 -- for lualine it's any number greater then 2
@@ -135,7 +125,7 @@ ins_right({
 --  end,
 --}
 
-ins_left({
+push_left({
 	"diff",
 	-- Is it me or the symbol for modified us really weird
 	symbols = { added = " ", modified = "󰝤 ", removed = " " },
@@ -147,18 +137,29 @@ ins_left({
 	-- cond = conditions.hide_in_width,
 })
 
-ins_right({
+push_left({
+	"diagnostics",
+	sources = { "nvim_diagnostic" },
+	symbols = { error = " ", warn = " ", info = " " },
+	diagnostics_color = {
+		color_error = { fg = colors.red },
+		color_warn = { fg = colors.yellow },
+		color_info = { fg = colors.cyan },
+	},
+})
+
+push_right({
     -- copilot status
     "copilot"
 })
 
-ins_right({
+push_right({
 	-- filesize component
 	"filetype",
 	cond = conditions.buffer_not_empty,
 })
 
-ins_right_most({
+push_far_right({
 	-- Lsp server name .
 	function()
 		local msg = "No Active Lsp"
@@ -179,14 +180,14 @@ ins_right_most({
 })
 
 -- Add components to right sections
-ins_right({
+push_right({
 	"o:encoding", -- option component same as &encoding in viml
 	fmt = string.upper, -- I'm not sure why it's upper case either ;)
 	cond = conditions.hide_in_width,
 	color = { fg = colors.green, gui = "bold" },
 })
 
-ins_right({
+push_right({
 	"fileformat",
 	fmt = string.upper,
 	icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh

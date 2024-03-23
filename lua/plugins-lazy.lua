@@ -49,7 +49,7 @@ local plugins = {
 	require("plugins.plugin-bufferline"),
 	require("plugins.plugin-lualine"),
 	--require("plugins.plugin-drop"),
-	--require("plugins.plugin-alpha"),
+	require("plugins.plugin-alpha"),
 	require("plugins.plugin-todo-comments"),
 	--require("plugins.plugin-dashboard"),
 	require("plugins.plugin-trouble"),

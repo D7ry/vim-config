@@ -43,21 +43,21 @@ return {
 
 		dashboard.section.footer.val = {
 			"The computing scientist's main challenge is not to",
-            "get confused by the complexities of his own making.",
-            "                                                   ",
-            "                                   - E. W. Dijkstra",
+			"get confused by the complexities of his own making.",
+			"                                                   ",
+			"                                   - E. W. Dijkstra",
 		}
 
 		-- Set menu
 		dashboard.section.buttons.val = {
 			--dashboard.button( "a", "󱙺  > Jarvis" , ":enew | :ChatGPT<CR>"),
-			dashboard.button("t", "󰙅  > File tree", ":Telescope file_browser<CR>"),
---			dashboard.button("f", "󰛔  > Find file", ":Telescope find_files<CR>"),
+			-- dashboard.button("t", "󰙅  > File tree", ":Telescope file_browser<CR>"),
+			--			dashboard.button("f", "󰛔  > Find file", ":Telescope find_files<CR>"),
 			dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
-			dashboard.button("s", "  > Configuration", ":cd ~/.config/nvim/ | :e .<CR>"),
---			dashboard.button("c", "󰔎  > Color scheme", ":Telescope colorscheme<CR>"),
---			dashboard.button("p", "  > Plugins", ":Lazy<CR>"),
---			dashboard.button("q", "󰗼  > Exit", ":qa<CR>"),
+			dashboard.button("s", "  > Configuration", ":cd ~/.config/nvim/ | :e .<CR> | :Telescope find_files<CR>"),
+			--			dashboard.button("c", "󰔎  > Color scheme", ":Telescope colorscheme<CR>"),
+			dashboard.button("r", "  > Plugins", ":Lazy<CR>"),
+			--			dashboard.button("q", "󰗼  > Exit", ":qa<CR>"),
 		}
 		-- Send config to alpha
 		alpha.setup(dashboard.opts)
