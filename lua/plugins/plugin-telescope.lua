@@ -4,26 +4,26 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzf-native.nvim" },
 	keys = {
 		{ "<Leader>t", "<cmd>Telescope<cr>", "open telescope" },
-		{
-			"<Leader>fd",
-			function()
-				require("telescope.builtin").lsp_definitions({ jump_type = "never" })
-			end,
-			"go to definition",
-		},
-		{
-			"<Leader>ft",
-			function()
-				require("telescope.builtin").lsp_type_definitions({ jump_type = "never" })
-			end,
-			"go to type definition",
-		},
+		-- {
+		-- 	"<Leader>fd",
+		-- 	function()
+		-- 		require("telescope.builtin").lsp_definitions({ jump_type = "never" })
+		-- 	end,
+		-- 	"go to definition",
+		-- },
+		-- {
+		-- 	"<Leader>ft",
+		-- 	function()
+		-- 		require("telescope.builtin").lsp_type_definitions({ jump_type = "never" })
+		-- 	end,
+		-- 	"go to type definition",
+		-- },
 		{
 			"<Leader>fw",
 			function()
 				require("telescope.builtin").current_buffer_fuzzy_find({ jump_type = "never", show_line = false })
 			end,
-			"go to references",
+			"fuzzy find in buffer",
 		},
 		-- {
 		-- 	"<Leader>fr",
@@ -39,13 +39,13 @@ return {
 			end,
 			" go to outgoing calls",
 		},
-		{
-			"<Leader>fi",
-			function()
-				require("telescope.builtin").lsp_incoming_calls({ jump_type = "never" })
-			end,
-			" go to incoming calls",
-		},
+		-- {
+		-- 	"<Leader>fi",
+		-- 	function()
+		-- 		require("telescope.builtin").lsp_incoming_calls({ jump_type = "never" })
+		-- 	end,
+		-- 	" go to incoming calls",
+		-- },
 		--{
 		--	"<Leader>fi",
 		--	function()

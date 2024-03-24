@@ -6,7 +6,7 @@ return {
 		local actions = glance.actions
 
 		glance.setup({
-			height = 40, -- Height of the window
+			height = 25, -- Height of the window
 			zindex = 90,
 
 			-- By default glance will open preview "embedded" within your active window
@@ -89,6 +89,21 @@ return {
 			"<Leader>fr",
             "<CMD>Glance references<CR>",
 			"glance references",
+        },
+		{
+			"<Leader>fd",
+            "<CMD>Glance definitions<CR>",
+			"glance definitions",
+		},
+		{
+			"<Leader>ft",
+            "<CMD>Glance type_definitions<CR>",
+			"glance type definitions",
+		},
+		{
+			"<Leader>fi",
+            "<CMD>Glance implementations<CR>",
+			"glance implementations",
 		},
     }
 }
