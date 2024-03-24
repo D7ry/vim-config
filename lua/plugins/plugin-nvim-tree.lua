@@ -350,7 +350,7 @@ return {
 		{
 			"<Leader><tab>",
 			function()
-				require("nvim-tree.api").tree.focus()
+				require("nvim-tree.api").tree.toggle({ focus = true})
 			end,
 			"focus nvim tree",
 		},

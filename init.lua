@@ -16,7 +16,6 @@ require("discordrpc")
 require("gitsigns").setup() -- https://github.com/lewis6991/gitsigns.nvim
 --require("bufferline").setup() -- https://github.com/akinsho/bufferline.nvim
 --require("leap").add_default_mappings()
-require("config.illuminate")
 --require("copilot").setup({})
 --require("config.rust-tools")
 require("config.nvim-cmp")

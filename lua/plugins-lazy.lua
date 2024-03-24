@@ -70,6 +70,7 @@ local plugins = {
 	--require("plugins.plugin-aerial"),
 	require("plugins.plugin-symbols-outline"),
     require("plugins.plugin-lspsaga"),
+    require("plugins.plugin-glance"),
 	{ "neovim/nvim-lspconfig", lazy = false },
 	{ "folke/lsp-colors.nvim" },
 	{
@@ -146,7 +147,7 @@ local plugins = {
 	{ "williamboman/mason-lspconfig.nvim", lazy = false },
 	{ "jdhao/better-escape.vim" },
 	require("plugins.plugin-which-key"),
-	{ "RRethy/vim-illuminate" },
+    require("plugins.plugin-illuminate"),
 	{ "folke/which-key.nvim" },
 	--{ "ggandor/leap.nvim" },
 	{ "simrat39/rust-tools.nvim" },
@@ -160,6 +161,7 @@ local plugins = {
 	require("plugins.plugin-nvim-markdown"),
 	require("plugins.plugin-nabla"),
 	require("plugins.plugin-comment"),
+    -- require("plugins.plugin-vim-visual-multi"),
 }
 
 local opts = {}

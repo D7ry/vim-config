@@ -25,13 +25,13 @@ return {
 			end,
 			"go to references",
 		},
-		{
-			"<Leader>fr",
-			function()
-				require("telescope.builtin").lsp_references({ jump_type = "never", show_line = false })
-			end,
-			"go to references",
-		},
+		-- {
+		-- 	"<Leader>fr",
+		-- 	function()
+		-- 		require("telescope.builtin").lsp_references({ jump_type = "never", show_line = false })
+		-- 	end,
+		-- 	"go to references",
+		-- },
 		{
 			"<Leader>fo",
 			function()
