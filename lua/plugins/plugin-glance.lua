@@ -26,7 +26,7 @@ return {
 				wrap = true,
 			},
 			border = {
-				enable = true, -- Show window borders. Only horizontal borders allowed
+				enable = false, -- Show window borders. Only horizontal borders allowed
 				top_char = "―",
 				bottom_char = "―",
 			},
@@ -55,11 +55,12 @@ return {
 					-- ["o"] = actions.jump,
 					["l"] = actions.open_fold,
 					["h"] = actions.close_fold,
+					["<leader>h"] = actions.enter_win("preview"), -- Focus preview window
 					["<leader>l"] = actions.enter_win("preview"), -- Focus preview window
 					["q"] = actions.close,
 					["Q"] = actions.close,
 					["<Esc>"] = actions.close,
-					["<C-q>"] = actions.quickfix,
+					-- ["<C-q>"] = actions.quickfix,
 					-- ['<Esc>'] = false -- disable a mapping
 				},
 				preview = {
@@ -67,6 +68,7 @@ return {
 					["<Tab>"] = actions.next_location,
 					["<S-Tab>"] = actions.previous_location,
 					["<leader>l"] = actions.enter_win("list"), -- Focus list window
+					["<leader>h"] = actions.enter_win("list"), -- Focus list window
 				},
 			},
 			hooks = {},
