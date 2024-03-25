@@ -36,8 +36,8 @@ local conditions = {
 local config = {
 	options = {
 		-- Disable sections and component separators
-      component_separators = { left = '', right = '' },
-      section_separators = { left = '', right = '' },
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		--        theme = "tokyonight",
 		--theme = {
 		-- We are going to use lualine_c an lualine_x as left and
@@ -47,8 +47,8 @@ local config = {
 		--inactive = { c = { fg = colors.fg, bg = colors.bg } },
 		--},
 		globalstatus = true,
-        disabled_filetypes = { "DiffviewFiles", "Outline", "aerial", "alpha", "neo-tree", "NvimTree" }, -- disable startup dashboard
-    },
+		disabled_filetypes = { "DiffviewFiles", "Outline", "aerial", "alpha", "neo-tree", "NvimTree" }, -- disable startup dashboard
+	},
 	sections = {
 		-- these are to remove the defaults
 		lualine_a = {},
@@ -79,9 +79,8 @@ local function push_left(component)
 	table.insert(config.sections.lualine_c, component)
 end
 
-
 local function push_mid_left(component)
-	table.insert(config.sections.lualine_c, component)
+	table.insert(config.sections.lualine_b, component)
 end
 
 local function push_far_left(component)
@@ -105,11 +104,6 @@ end
 -- padding = { left = 0, right = 1 }, -- We don't need space before this
 --}
 
-push_far_left({
-	"branch",
-	icon = "",
-	--    color = { fg = colors.violet, gui = 'bold' },
-})
 
 -- push_left({
 -- 	"filename",
@@ -117,21 +111,28 @@ push_far_left({
 -- 	--color = { fg = colors.magenta, gui = 'bold' },
 -- })
 
-push_left({
-   function()
-        local current_project = require("project_nvim").get_current_project()
-        if current_project then
-            return current_project
-        else
-            return "No Active Project"
+push_far_left({
+	function()
+		local project_name = require("project_nvim").get_current_project()
+		if not project_name then
+            project_name = "No Active Project"
         end
-   end,
+        return project_name
+	end,
+	icon = "",
 })
+
+
+
+push_mid_left({
+	"branch",
+	icon = "",
+	--    color = { fg = colors.violet, gui = 'bold' },
+})
+
 push_left({ "location" })
 
-
 --ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
-
 
 -- Insert mid section. You can make any number of sections in neovim :)
 -- for lualine it's any number greater then 2
@@ -154,7 +155,7 @@ push_left({
 })
 
 -- show the currently active project
-push_mid_left({
+push_left({
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
 	symbols = { error = " ", warn = " ", info = " " },
@@ -166,8 +167,8 @@ push_mid_left({
 })
 
 push_right({
-    -- copilot status
-    "copilot"
+	-- copilot status
+	"copilot",
 })
 
 push_right({
@@ -193,7 +194,7 @@ push_far_right({
 		end
 		return msg
 	end,
-	icon = " ",
+	icon = "",
 })
 
 -- Add components to right sections
@@ -218,7 +219,6 @@ local nvimbattery = {
 	end,
 	--color = { fg = colors.violet, bg = colors.bg },
 }
-
 
 return {
 	"nvim-lualine/lualine.nvim",
