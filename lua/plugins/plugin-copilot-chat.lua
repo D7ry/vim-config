@@ -20,8 +20,10 @@ return {
 
 			context = "buffer",
 			-- system_prompt = prompts.COPILOT_INSTRUCTIONS, -- System prompt to use
-			answer_header = "󱜚 ",
-			separator = ">>>>>>>>>>>>>>>>>>>>",
+            -- 
+            question_header = '󱍄', -- Header to use for user questions
+			answer_header = "",
+			separator = "━━━━━━━━━━━━━━━━━━━━━━━━━━━",
 			branch = "canary",
 			model = "gpt-4", -- GPT model to use, 'gpt-3.5-turbo' or 'gpt-4'
 			temperature = 0.1, -- GPT temperature
@@ -34,12 +36,12 @@ return {
 			window = {
 				layout = "float",
 				relative = "win",
-                title = "Github Copilot",
-                footer = "Press <C-i> to toggle chat",
+				title = "Copilot",
+				footer = "<C-i> to toggle chat | <C-l> to clean chat",
 				width = 0.6,
 				height = 0.4,
-				row = 1,
-                border = "solid"
+				row = 0,
+				border = "rounded", -- 'none', single', 'double', 'rounded', 'solid', 'shadow'
 			},
 			-- See Configuration section for rest
 		},
@@ -71,7 +73,7 @@ return {
 			{
 				"<C-i>",
 				"<cmd>CopilotChatToggle<CR>",
-                desc = "CopilotChat - Toggle chat",
+				desc = "CopilotChat - Toggle chat",
 			},
 		},
 	},

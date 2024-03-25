@@ -19,33 +19,7 @@ local plugins = {
 	--require("plugins.plugin-startup"),
 	--require("plugins.plugin-miniintro"),
 	-- UI Plugins
-	{
-		"loctvl842/monokai-pro.nvim",
-		config = function()
-			require("config.monokai-pro-setup")
-		end,
-	},
-	{ "rebelot/kanagawa.nvim", lazy = false },
-	{ "sainnhe/edge", lazy = false },
-	{ "sainnhe/sonokai", lazy = false },
-	{ "marko-cerovac/material.nvim", lazy = true },
-	{ "navarasu/onedark.nvim", lazy = true },
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("config.tokyonight-setup")
-		end,
-	},
-	{ "mhartington/oceanic-next", lazy = false },
-	{ "tanvirtin/monokai.nvim", lazy = true },
 	-- { "morhetz/gruvbox", lazy = false},
-    require("plugins.colorscheme.gruvbox"),
-	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
-	{ "projekt0n/github-nvim-theme", lazy = false },
-	{ "catppuccin/nvim", lazy = false, priority = 1000 },
-	{ "shaunsingh/nord.nvim", lazy = false },
 	require("plugins.plugin-bufferline"),
 	require("plugins.plugin-lualine"),
 	--require("plugins.plugin-drop"),
@@ -56,16 +30,6 @@ local plugins = {
 
 	require("plugins.plugin-noice"),
     require("plugins.plugin-nvim-notify"),
-	--{
-	--	"folke/noice.nvim",
-	--	event = "VeryLazy",
-	--dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
-	--	config = function()
-	--		require("noice").setup(require("config.noice-config"))
-	--	end,
-	--},
-	-- LSP and Autocompletion
-	--require("noice").setup(require("config.noice-config")),
 	require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
 	require("plugins.plugin-symbols-outline"),
@@ -117,25 +81,6 @@ local plugins = {
 
 	-- File Explorer
 	require("plugins.plugin-nvim-tree"),
-	--require("plugins.plugin-neotree"),
-	--require("plugins.plugin-telescope-file-browser"),
-	--{'kyazdani42/nvim-tree.lua', dependencies = {'kyazdani42/nvim-web-devicons'}},
-
-	--{
-	--	"nvim-neo-tree/neo-tree.nvim",
-	--	branch = "v3.x",
-	--	dependencies = {
-	--		"nvim-lua/plenary.nvim",
-	--		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-	--		"MunifTanjim/nui.nvim",
-	--		"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-	--	},
-	--	config = function()
-	--		require("neo-tree").setup(require("config.neo-tree-config"))
-	--	end,
-	--	keys = require("config.neo-tree-keymap"),
-	--	lazy = false,
-	--},
     require("plugins.plugin-gitsigns"),
     require("plugins.plugin-diffview"),
 	-- Terminal Integration
@@ -166,14 +111,20 @@ local plugins = {
     -- require("plugins.plugin-vim-visual-multi"),
 }
 
+local colorschemes = require('colorscheme').colorschemes
+-- add colorschemes to plugins
+for _, colorscheme in ipairs(colorschemes) do
+    table.insert(plugins, colorscheme)
+end
+
 local opts = {}
 
 -- enable cinnamon only if neovide is not enabled
 --[[ if not vim.g.neovide then
     table.insert(plugins, require("plugins.plugin-cinnamon"))
 end ]]
-if not vim.g.neovide then
-    print("Neovide is enabled")
-end
+-- if not vim.g.neovide then
+--     print("Neovide is enabled")
+-- end
 
 require("lazy").setup(plugins)
