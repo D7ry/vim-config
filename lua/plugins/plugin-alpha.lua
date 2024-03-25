@@ -112,17 +112,22 @@ return {
 		dashboard.section.buttons.val = {
 			--dashboard.button( "a", "󱙺  > Jarvis" , ":enew | :ChatGPT<CR>"),
 			-- dashboard.button("t", "󰙅  > File tree", ":Telescope file_browser<CR>"),
+			--
+			--
+			dashboard.button("p", "  > Projects", function()
+				require("telescope").extensions.projects.projects({})
+			end),
 			dashboard.button("f", "󰛔  > Find File", ":Telescope find_files<CR>"),
-            
+
 			dashboard.button("o", "  > Recent Files (CWD)", function()
-				require("telescope.builtin").oldfiles({ only_cwd = true})
+				require("telescope.builtin").oldfiles({ only_cwd = true })
 			end),
 			dashboard.button("O", "  > Recent Files (ALL)", function()
 				require("telescope.builtin").oldfiles({ only_cwd = false })
 			end),
 			dashboard.button("s", "  > Configuration", ":cd ~/.config/nvim/ | :e .<CR> | :Telescope find_files<CR>"),
 			--			dashboard.button("c", "󰔎  > Color scheme", ":Telescope colorscheme<CR>"),
-			dashboard.button("l", "  > Plugins", ":Lazy<CR>"),
+			-- dashboard.button("l", "  > Plugins", ":Lazy<CR>"),
 			--			dashboard.button("q", "󰗼  > Exit", ":qa<CR>"),
 		}
 		local function footer()

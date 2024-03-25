@@ -161,6 +161,7 @@ local plugins = {
 	require("plugins.plugin-nvim-markdown"),
 	require("plugins.plugin-nabla"),
 	require("plugins.plugin-comment"),
+    require("plugins.plugin-project"),
     -- require("plugins.plugin-vim-visual-multi"),
 }
 
