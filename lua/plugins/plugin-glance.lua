@@ -59,6 +59,8 @@ return {
 					["h"] = actions.close_fold,
 					["<leader>h"] = actions.enter_win("preview"), -- Focus preview window
 					["<leader>l"] = actions.enter_win("preview"), -- Focus preview window
+					["<leader>j"] = actions.enter_win("preview"), -- Focus preview window
+					["<leader>k"] = actions.enter_win("preview"), -- Focus preview window
 					["q"] = actions.close,
 					["Q"] = actions.close,
 					["<Esc>"] = actions.close,
@@ -72,6 +74,8 @@ return {
 					["<S-Tab>"] = actions.previous_location,
 					["<leader>l"] = actions.enter_win("list"), -- Focus list window
 					["<leader>h"] = actions.enter_win("list"), -- Focus list window
+					["<leader>j"] = actions.enter_win("list"), -- Focus list window
+					["<leader>k"] = actions.enter_win("list"), -- Focus list window
 					["<Esc>"] = actions.close,
 				},
 			},
