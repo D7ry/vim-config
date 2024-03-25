@@ -55,6 +55,7 @@ return {
 		--},
 		{ "<Leader>fg", "<cmd>Telescope live_grep<cr>", "global search" },
 		{ "<Leader>ff", "<cmd>Telescope find_files<CR>" },
+        { "<Leader>fo", function () require('telescope.builtin').oldfiles({only_cwd = true}) end, "open old files" },
 
 		{ "<Leader>fb", "<cmd>Telescope buffers<cr>", "Telescope buffers" },
 		{
