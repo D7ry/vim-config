@@ -22,7 +22,7 @@ return {
             -- options will open the window in the other direction *if* there is a
             -- different buffer in the way of the preferred direction
             -- Enum: prefer_right, prefer_left, right, left, float
-            default_direction = "prefer_right",
+            default_direction = "left",
 
             -- Determines where the aerial window will be opened
             --   edge   - open aerial at the far right/left of the editor
@@ -352,10 +352,14 @@ return {
           -- optionally use on_attach to set keymaps when aerial has attached to a buffer
           on_attach = function(bufnr)
             -- Jump forwards/backwards with '{' and '}'
-            vim.keymap.set("n", "<C-p>", "<cmd>AerialPrev<CR>", { buffer = bufnr })
-            vim.keymap.set("n", "<C-n>", "<cmd>AerialNext<CR>", { buffer = bufnr })
+            -- vim.keymap.set("n", "<C-p>", "<cmd>AerialPrev<CR>", { buffer = bufnr })
+            -- vim.keymap.set("n", "<C-n>", "<cmd>AerialNext<CR>", { buffer = bufnr })
           end,
         })
-        vim.keymap.set("n", "<Leader>ae", "<cmd>AerialToggle!<CR>")
-    end
+    end,
+    keys = {
+        { "<C-k>a", "<cmd>AerialToggle!<CR>", "Toggle aerial window"},
+        { "<C-p>", "<cmd>AerialPrev<CR>"},
+        { "<C-n>", "<cmd>AerialNext<CR>"}
+    }
 }
