@@ -79,6 +79,11 @@ local function push_left(component)
 	table.insert(config.sections.lualine_c, component)
 end
 
+
+local function push_mid_left(component)
+	table.insert(config.sections.lualine_c, component)
+end
+
 local function push_far_left(component)
 	table.insert(config.sections.lualine_a, component)
 end
@@ -112,7 +117,18 @@ push_far_left({
 -- 	--color = { fg = colors.magenta, gui = 'bold' },
 -- })
 
+push_left({
+   function()
+        local current_project = require("project_nvim").get_current_project()
+        if current_project then
+            return current_project
+        else
+            return "No Active Project"
+        end
+   end,
+})
 push_left({ "location" })
+
 
 --ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
@@ -137,7 +153,8 @@ push_left({
 	-- cond = conditions.hide_in_width,
 })
 
-push_left({
+-- show the currently active project
+push_mid_left({
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
 	symbols = { error = " ", warn = " ", info = " " },

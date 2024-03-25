@@ -1,6 +1,6 @@
 return {
-
-	"ahmedkhalf/project.nvim",
+	"D7ry/project.nvim",
+	-- "ahmedkhalf/project.nvim",
 	config = function()
 		require("project_nvim").setup({
 			-- Manual mode doesn't automatically change your root directory, so you have
@@ -16,7 +16,7 @@ return {
 			-- All the patterns used to detect root dir, when **"pattern"** is in
 			-- detection_methods
 			-- patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
-            patterns = {".git"}, -- only use git root
+			patterns = { ".git" }, -- only use git root
 			-- Table of lsp clients to ignore by name
 			-- eg: { "efm", ... }
 			ignore_lsp = {},
@@ -42,8 +42,8 @@ return {
 			-- telescope
 			datapath = vim.fn.stdpath("data"),
 
-            -- load projects extension into telescope
-            require("telescope").load_extension("projects"),
+			-- load projects extension into telescope
+			require("telescope").load_extension("projects"),
 		})
 	end,
 }
