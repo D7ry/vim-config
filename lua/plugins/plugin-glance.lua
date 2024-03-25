@@ -72,6 +72,7 @@ return {
 					["<S-Tab>"] = actions.previous_location,
 					["<leader>l"] = actions.enter_win("list"), -- Focus list window
 					["<leader>h"] = actions.enter_win("list"), -- Focus list window
+					["<Esc>"] = actions.close,
 				},
 			},
 			hooks = {},

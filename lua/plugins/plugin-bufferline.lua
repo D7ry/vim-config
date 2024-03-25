@@ -5,6 +5,7 @@ return {
         require("bufferline").setup(
             {
                 options = {
+                    style_preset = require("bufferline").style_preset.minimal,
                     diagnostics = "nvim_lsp",
 
                     diagnostics_indicator = function(count, level, diagnostics_dict, context)

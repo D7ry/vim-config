@@ -78,9 +78,9 @@ return {
 			hijack_unnamed_buffer_when_opening = false,
 			root_dirs = {},
 			prefer_startup_root = false,
-			sync_root_with_cwd = false,
+			sync_root_with_cwd = true,
 			reload_on_bufenter = false,
-			respect_buf_cwd = false,
+			respect_buf_cwd = true,
 			select_prompts = false,
 			sort = {
 				sorter = "name",
@@ -205,8 +205,8 @@ return {
 				auto_open = true,
 			},
 			update_focused_file = {
-				enable = false,
-				update_root = false,
+				enable = true,
+				update_root = true,
 				ignore_list = {},
 			},
 			system_open = {

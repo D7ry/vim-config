@@ -1,5 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
+  "CopilotChat.nvim": { "branch": "canary", "commit": "2b53687d0ccc025f07972dd8ac11cc74b9f17722" },
   "alpha-nvim": { "branch": "main", "commit": "41283fb402713fc8b327e60907f74e46166f4cfd" },
   "battery.nvim": { "branch": "main", "commit": "007d7943e28d1fc8c49a46c3a9c3b3f34975a0c2" },
   "better-escape.vim": { "branch": "master", "commit": "6b16a45a839727977277f6ab11bded63e9ed86bb" },
