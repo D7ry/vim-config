@@ -39,7 +39,7 @@ return {
 				title = "Copilot",
 				footer = "<C-i> to toggle chat | <C-l> to clean chat",
 				width = 0.6,
-				height = 0.4,
+				height = 0.5,
 				row = 0,
 				border = "rounded", -- 'none', single', 'double', 'rounded', 'solid', 'shadow'
 			},
