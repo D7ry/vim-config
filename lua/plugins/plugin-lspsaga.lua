@@ -16,10 +16,10 @@ return {
 			{ noremap = true, silent = true },
 		},
 
-		{
-			"<Leader>rn",
-			"<cmd>Lspsaga rename<CR>",
-			{ noremap = true, silent = true },
-		},
+		-- {
+		-- 	"<Leader>rn",
+		-- 	"<cmd>Lspsaga rename<CR>",
+		-- 	{ noremap = true, silent = true },
+		-- },
 	},
 }
