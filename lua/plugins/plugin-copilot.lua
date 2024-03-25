@@ -22,13 +22,14 @@ return {
 				enabled = true,
 				auto_trigger = true,
 				debounce = 75,
+                -- NOTE: M is the meta key, alt on keyboard
 				keymap = {
-					accept = "<C-enter>",
+					accept = "<M-enter>",
 					accept_word = false,
 					accept_line = false,
-					next = "<C-;>",
-					prev = "<C-,>",
-					--dismiss = "<esc>",
+					next = "<M-n>",
+					prev = "<M-p>",
+					dismiss = "<M-w>",
 				},
 			},
 			filetypes = {
