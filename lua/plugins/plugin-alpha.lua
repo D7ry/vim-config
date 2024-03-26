@@ -119,6 +119,27 @@ return {
 			[[                                                ]],
 		}
 
+		local earth_logo = {
+			[[                                ]],
+			[[             ,,,,,,             ]],
+			[[         o#'9MMHb':'-,o,        ]],
+			[[      .oH":HH$' "' ' -*R&o,     ]],
+			[[     dMMM*""'`'      .oM"HM?.   ]],
+			[[   ,MMM'          "HLbd< ?&H\   ]],
+			[[  .:MH ."\          ` MM  MM&b  ]],
+			[[ . "*H    -        &MMMMMMMMMH: ]],
+			[[ .    dboo        MMMMMMMMMMMM. ]],
+			[[ .   dMMMMMMb      *MMMMMMMMMP. ]],
+			[[ .    MMMMMMMP        *MMMMMP . ]],
+			[[      `#MMMMM           MM6P ,  ]],
+			[[  '    `MMMP"           HM*`,   ]],
+			[[   '    :MM             .- ,    ]],
+			[[    '.   `#?..  .       ..'     ]],
+			[[       -.   .         .-        ]],
+			[[         ''-.oo,oo.-''          ]],
+			[[                                ]],
+		}
+
 		local vim_logo = {
 			[[     ##############..... ##############   ]],
 			[[     ##############......##############   ]],
@@ -140,8 +161,9 @@ return {
 			[[                     .                    ]],
 		}
 
-		local logo = vim_logo
+		local logo = saturn_logo
 		dashboard.section.header.val = logo
+		dashboard.section.header.opts.hl = "Constant"
 		-- no Idea how it works exaclty, try n error with distinguishable colors lol
 		--
 		dashboard.section.footer.val = {
@@ -181,11 +203,11 @@ return {
 			local version = vim.version()
 			local nvim_version_info = " Neovim v" .. version.major .. "." .. version.minor .. "." .. version.patch
 
-            function get_proejct_text()
-                local current_project = require("project_nvim").get_current_project()
-                current_project = current_project or "No Active Project"
-                return " " .. current_project
-            end
+			function get_proejct_text()
+				local current_project = require("project_nvim").get_current_project()
+				current_project = current_project or "No Active Project"
+				return " " .. current_project
+			end
 			local current_project = require("project_nvim").get_current_project()
 			current_project = current_project or "No Active Project"
 			local project_text = " " .. current_project

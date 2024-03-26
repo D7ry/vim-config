@@ -17,13 +17,6 @@ colorschemes = {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("config.tokyonight-setup")
-		end,
-	},
-	{
-		"ellisonleao/gruvbox.nvim",
-		priority = 1000,
-		config = function()
 			require("tokyonight").setup({
 				-- your configuration comes here
 				-- or leave it empty to use the default settings
@@ -61,6 +54,10 @@ colorschemes = {
 			})
 		end,
 	},
+	{
+		"ellisonleao/gruvbox.nvim",
+		priority = 1000,
+	},
 	{ "mhartington/oceanic-next", lazy = false },
 	{ "tanvirtin/monokai.nvim", lazy = true },
 	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
@@ -78,4 +75,4 @@ colorschemes = {
 	},
 }
 
-return { colorschemes = colorschemes, current_scheme = "gruvbox-material" }
+return { colorschemes = colorschemes, current_scheme = "kanagawa" }
