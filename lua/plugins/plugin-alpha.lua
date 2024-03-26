@@ -51,26 +51,25 @@ return {
 		-- }
 
 		dashboard.section.header.opts.hl = "Identifier"
-		-- local logo = {
-		-- 	[[ ███       ███ ]],
-		-- 	[[████      ████]],
-		-- 	[[██████     █████]],
-		-- 	[[███████    █████]],
-		-- 	[[████████   █████]],
-		-- 	[[█████████  █████]],
-		-- 	[[█████ ████ █████]],
-		-- 	[[█████  █████████]],
-		-- 	[[█████   ████████]],
-		-- 	[[█████    ███████]],
-		-- 	[[█████     ██████]],
-		-- 	[[████      ████]],
-		-- 	[[ ███       ███ ]],
-		-- 	[[                  ]],
-		-- 	[[ N  E  O  V  I  M ]],
-		-- }
-		--
+		local neovim_logo = {
+			[[ ███       ███ ]],
+			[[████      ████]],
+			[[██████     █████]],
+			[[███████    █████]],
+			[[████████   █████]],
+			[[█████████  █████]],
+			[[█████ ████ █████]],
+			[[█████  █████████]],
+			[[█████   ████████]],
+			[[█████    ███████]],
+			[[█████     ██████]],
+			[[████      ████]],
+			[[ ███       ███ ]],
+			[[                  ]],
+			[[ N  E  O  V  I  M ]],
+		}
 
-		local logo = {
+		local llvm_logo = {
 
 			"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
 			"⠀⠀⠀⠀⠀⠀⠀⠀⠐⠒⠒⠒⠂⠀⠤⠤⠤⣄⣀⡀⠘⢆⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⡿⠋⣀⣔⣒⣉⣀⠤⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠎⠀⣀⣀⡤⠤⠤⠄⠀⠒⠒⠒⠒⠀⠀⠀⠀⠀⠀⠀⠀",
@@ -99,8 +98,52 @@ return {
 			"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
 			"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀⠀⠀        V⠀I⠀M   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
 		}
+
+		local saturn_logo = {
+			[[                                                ]],
+			[[                                          _.oo. ]],
+			[[                  _.u[[/;:,.         .odMMMMMM' ]],
+			[[               .o888UU[[[/;:-.  .o@P^    MMM^   ]],
+			[[              oN88888UU[[[/;::-.        dP^     ]],
+			[[             dNMMNN888UU[[[/;:--.   .o@P^       ]],
+			[[            ,MMMMMMN888UU[[/;::-. o@^           ]],
+			[[            NNMMMNN888UU[[[/~.o@P^              ]],
+			[[            888888888UU[[[/o@^-..               ]],
+			[[           oI8888UU[[[/o@P^:--..                ]],
+			[[        .@^  YUU[[[/o@^;::---..                 ]],
+			[[      oMP     ^/o@P^;:::---..                   ]],
+			[[   .dMMM    .o@^ ^;::---...                     ]],
+			[[  dMMMMMMM@^`       `^^^^                       ]],
+			[[ YMMMUP^                                        ]],
+			[[  ^^                                            ]],
+			[[                                                ]],
+		}
+
+		local vim_logo = {
+			[[     ##############..... ##############   ]],
+			[[     ##############......##############   ]],
+			[[       ##########..........##########     ]],
+			[[       ##########........##########       ]],
+			[[       ##########.......##########        ]],
+			[[       ##########.....##########..        ]],
+			[[       ##########....##########.....      ]],
+			[[     ..##########..##########.........    ]],
+			[[   ....##########.#########.............  ]],
+			[[     ..################JJJ............    ]],
+			[[       ################.............      ]],
+			[[       ##############.JJJ.JJJJJJJJJJ      ]],
+			[[       ############...JJ...JJ..JJ  JJ     ]],
+			[[       ##########....JJ...JJ..JJ  JJ      ]],
+			[[       ########......JJJ..JJJ JJJ JJJ     ]],
+			[[       ######    .........                ]],
+			[[                   .....                  ]],
+			[[                     .                    ]],
+		}
+
+		local logo = vim_logo
 		dashboard.section.header.val = logo
 		-- no Idea how it works exaclty, try n error with distinguishable colors lol
+		--
 		dashboard.section.footer.val = {
 			"The computing scientist's main challenge is not to",
 			"get confused by the complexities of his own making.",
@@ -138,13 +181,35 @@ return {
 			local version = vim.version()
 			local nvim_version_info = " Neovim v" .. version.major .. "." .. version.minor .. "." .. version.patch
 
+            function get_proejct_text()
+                local current_project = require("project_nvim").get_current_project()
+                current_project = current_project or "No Active Project"
+                return " " .. current_project
+            end
+			local current_project = require("project_nvim").get_current_project()
+			current_project = current_project or "No Active Project"
+			local project_text = " " .. current_project
 			local quote = "\n"
 				.. "The computing scientist's main challenge is not to \n"
 				.. "get confused by the complexities of his own making.\n"
 				.. "                                                   \n"
 				.. "                                   - E. W. Dijkstra\n"
 
-			return newline .. newline .. quote .. date .. newline .. time
+			return {
+				"It seemed unthinkable for me to leave the world   ",
+				"forever before I had produced all that I felt called",
+				"upon to produce",
+				"                                                   ",
+				"                             - Ludwig van Beethoven",
+				-- "The computing scientist's main challenge is not to",
+				-- "get confused by the complexities of his own making.",
+				-- "                                                   ",
+				-- "                                   - E. W. Dijkstra",
+				date,
+				time,
+				get_proejct_text(),
+			}
+			--return newline .. newline.. quote .. date .. newline .. time .. newline ..project_text
 		end
 
 		dashboard.section.footer.val = footer()
