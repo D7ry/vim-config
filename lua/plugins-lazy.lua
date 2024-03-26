@@ -32,7 +32,7 @@ local plugins = {
     require("plugins.plugin-nvim-notify"),
 	require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
-	require("plugins.plugin-symbols-outline"),
+	require("plugins.plugin-outline"),
     require("plugins.plugin-lspsaga"),
     require("plugins.plugin-inc-rename"),
     require("plugins.plugin-glance"),
