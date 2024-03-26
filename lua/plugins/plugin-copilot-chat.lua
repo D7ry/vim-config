@@ -13,37 +13,43 @@ local function get_visual_selection()
 end
 return {
 	{
-		"CopilotC-Nvim/CopilotChat.nvim",
+		-- "CopilotC-Nvim/CopilotChat.nvim",
+		"D7ry/CopilotChat.nvim",
+		config = function()
+			require("CopilotChat").setup({
 
+				debug = false, -- Enable debugging
+
+				notify_done = false,
+				context = "buffer",
+				-- system_prompt = prompts.COPILOT_INSTRUCTIONS, -- System prompt to use
+				--
+				question_header = "󱍄", -- Header to use for user questions
+				answer_header = "",
+				separator = "━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+				branch = "canary",
+				model = "gpt-4", -- GPT model to use, 'gpt-3.5-turbo' or 'gpt-4'
+				temperature = 0.1, -- GPT temperature
+				dependencies = {
+					{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+					{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+				},
+
+				show_help = false,
+				window = {
+					layout = "float",
+					relative = "editor",
+					title = "Copilot",
+					footer = "<C-i> to toggle chat | <C-l> to clean chat",
+					width = 0.6,
+					height = 0.5,
+					row = 0,
+					border = "rounded", -- 'none', single', 'double', 'rounded', 'solid', 'shadow'
+				},
+				-- See Configuration section for rest
+			})
+		end,
 		opts = {
-			debug = false, -- Enable debugging
-
-			context = "buffer",
-			-- system_prompt = prompts.COPILOT_INSTRUCTIONS, -- System prompt to use
-            -- 
-            question_header = '󱍄', -- Header to use for user questions
-			answer_header = "",
-			separator = "━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-			branch = "canary",
-			model = "gpt-4", -- GPT model to use, 'gpt-3.5-turbo' or 'gpt-4'
-			temperature = 0.1, -- GPT temperature
-			dependencies = {
-				{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-				{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
-			},
-
-			show_help = false,
-			window = {
-				layout = "float",
-				relative = "win",
-				title = "Copilot",
-				footer = "<C-i> to toggle chat | <C-l> to clean chat",
-				width = 0.6,
-				height = 0.5,
-				row = 0,
-				border = "rounded", -- 'none', single', 'double', 'rounded', 'solid', 'shadow'
-			},
-			-- See Configuration section for rest
 		},
 		-- See Commands section for default commands if you want to lazy load on them
 		keys = {

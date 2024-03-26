@@ -4,6 +4,13 @@ return {
 	cmd = { "Outline", "OutlineOpen" },
 	keys = { -- Example mapping to toggle outline
 		{
+			"<leader>a",
+			function()
+				require("outline").toggle({ focus_outline = true, location = "left" })
+			end,
+			desc = "Toggle outline",
+		},
+		{
 			"<C-k>a",
 			function()
 				require("outline").toggle({ focus_outline = false, location = "left" })
@@ -35,7 +42,7 @@ return {
 
 		keymaps = {
 			show_help = "?",
-			close = { "<Esc>", "q" },
+			--close = { "<Esc>", "q" },
 			goto_location = "<Cr>",
 			peek_location = "<tab>",
 			goto_and_close = "<S-Cr>",
