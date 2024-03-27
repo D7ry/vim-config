@@ -322,16 +322,17 @@ end
 ---@param width number
 ---@return string
 function StringUtils.center_str(str, width)
-	if width <= #str then
-		return str
-	end
-	local int = width - #str
-	local padding = math.floor((int) / 2)
-	local ws = StringUtils.repeating(" ", padding)
-	if padding % 2 == 1 then
-		str = " "..str
-	end
-	return ws..str..ws
+    if width <= #str then
+        return str
+    end
+    local int = width - #str
+    local padding = math.floor(int / 2)
+    local ws = StringUtils.repeating(" ", padding)
+    str = ws..str..ws
+    if #str < width then
+        str = str .. " "
+    end
+    return str
 end
 
 ---Makes all lines have the same width
