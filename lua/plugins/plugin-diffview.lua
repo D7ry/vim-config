@@ -3,17 +3,21 @@ local viewing_file_history = false
 local viewing_commit_history = false
 
 local function disable_bufferline()
-    vim.o.showtabline = 0
+	vim.o.showtabline = 0
 end
 
 local function enable_bufferline()
-    vim.o.showtabline = 2
+	vim.o.showtabline = 2
 end
 
 return {
-	"sindrets/diffview.nvim",
+	"D7ry/diffview.nvim",
+	config = function()
+		require("diffview").setup({
+			delete_buffer_on_diff_exit = true
+		})
+	end,
 	keys = {
-
 		{
 			"<Leader>gs", -- git status
 			function()
@@ -29,7 +33,7 @@ return {
 					vim.cmd("DiffviewOpen")
 					viewing_diff = true
 				end
-                disable_bufferline()
+				disable_bufferline()
 			end,
 			"Toggle diff view",
 		},
@@ -42,13 +46,13 @@ return {
 				end
 				if viewing_commit_history then
 					vim.cmd("tabclose")
-                    viewing_commit_history = false
-                end
+					viewing_commit_history = false
+				end
 				if not viewing_file_history then
 					vim.cmd("DiffviewFileHistory %")
 					viewing_file_history = true
 				end
-                disable_bufferline()
+				disable_bufferline()
 			end,
 			"Toggle file history view for current file",
 		},
@@ -68,7 +72,7 @@ return {
 					vim.cmd("DiffviewFileHistory")
 					viewing_commit_history = true
 				end
-                disable_bufferline()
+				disable_bufferline()
 			end,
 			"Toggle commit history view for all files",
 		},
@@ -91,7 +95,7 @@ return {
 					vim.cmd("tabclose")
 					viewing_commit_history = false
 				end
-                enable_bufferline()
+				enable_bufferline()
 			end,
 			"quit diff view",
 		},
