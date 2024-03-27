@@ -3,11 +3,11 @@ local viewing_file_history = false
 local viewing_commit_history = false
 
 local function disable_bufferline()
-	vim.o.showtabline = 0
+	-- vim.o.showtabline = 0
 end
 
 local function enable_bufferline()
-	vim.o.showtabline = 2
+	-- vim.o.showtabline = 2
 end
 
 return {

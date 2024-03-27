@@ -27,13 +27,14 @@ local plugins = {
 	require("plugins.plugin-todo-comments"),
 	--require("plugins.plugin-dashboard"),
 	require("plugins.plugin-trouble"),
+    -- require("plugins.plugin-dropbar"),
 
 	require("plugins.plugin-noice"),
     require("plugins.plugin-nvim-notify"),
 	require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
 	require("plugins.plugin-outline"),
-    require("plugins.plugin-lspsaga"),
+    -- require("plugins.plugin-lspsaga"),
     require("plugins.plugin-inc-rename"),
     require("plugins.plugin-glance"),
 	{ "neovim/nvim-lspconfig", lazy = false },
@@ -93,7 +94,7 @@ local plugins = {
 	{ "williamboman/mason.nvim", lazy = false },
 	{ "williamboman/mason-lspconfig.nvim", lazy = false },
 	{ "jdhao/better-escape.vim" },
-	require("plugins.plugin-which-key"),
+	-- require("plugins.plugin-which-key"),
     require("plugins.plugin-illuminate"),
 	{ "folke/which-key.nvim" },
 	--{ "ggandor/leap.nvim" },
@@ -109,13 +110,28 @@ local plugins = {
 	require("plugins.plugin-nabla"),
 	require("plugins.plugin-comment"),
     require("plugins.plugin-project"),
+    -- require("plugins.plugin-ufo")
     -- require("plugins.plugin-vim-visual-multi"),
+}
+
+-- plugins only enabled when no frontend is enabled
+local terminal_mode_plugins = {
+    require("plugins.plugin-cinnamon")
+    -- require("plugins.plugin-neoscroll")
 }
 
 local colorschemes = require('colorscheme').colorschemes
 -- add colorschemes to plugins
 for _, colorscheme in ipairs(colorschemes) do
     table.insert(plugins, colorscheme)
+end
+
+
+if not vim.g.neovide then
+    -- merge terminal_mode_plugins with plugins
+    for k,v in pairs(terminal_mode_plugins) do
+        plugins[k] = v
+    end
 end
 
 local opts = {}

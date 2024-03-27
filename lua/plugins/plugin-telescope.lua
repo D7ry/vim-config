@@ -55,6 +55,8 @@ return {
 		--},
 		{ "<Leader>fg", "<cmd>Telescope live_grep<cr>", "global search" },
 		{ "<Leader>ff", "<cmd>Telescope find_files<CR>" },
+		{ "<Leader>fn", "<cmd>Telescope noice<CR>" },
+		{ "<Leader>fh", "<cmd>Telescope help_tags<CR>" },
 		{
 			"<Leader>fo",
 			function()
@@ -86,11 +88,11 @@ return {
 			end,
 			"telescope tree sitter",
 		},
-		{
-			"<Leader>fh",
-			"<cmd>Telescope harpoon marks<cr>",
-			"telescope harpoon marks",
-		},
+		-- {
+		-- 	"<Leader>fh",
+		-- 	"<cmd>Telescope harpoon marks<cr>",
+		-- 	"telescope harpoon marks",
+		-- },
 	},
 	config = function()
 		local ts = require("telescope")
