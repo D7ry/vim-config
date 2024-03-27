@@ -111,6 +111,7 @@ local plugins = {
 	require("plugins.plugin-nabla"),
 	require("plugins.plugin-comment"),
     require("plugins.plugin-project"),
+    -- require("plugins.plugin-lightbulb")
     -- require("plugins.plugin-neoclip") -- hotkey issue
     -- require("plugins.plugin-ufo")
     -- require("plugins.plugin-vim-visual-multi"),
