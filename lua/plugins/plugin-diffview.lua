@@ -1,6 +1,15 @@
 local viewing_diff = false
 local viewing_file_history = false
 local viewing_commit_history = false
+
+local function disable_bufferline()
+    vim.o.showtabline = 0
+end
+
+local function enable_bufferline()
+    vim.o.showtabline = 2
+end
+
 return {
 	"sindrets/diffview.nvim",
 	keys = {
@@ -20,6 +29,7 @@ return {
 					vim.cmd("DiffviewOpen")
 					viewing_diff = true
 				end
+                disable_bufferline()
 			end,
 			"Toggle diff view",
 		},
@@ -38,6 +48,7 @@ return {
 					vim.cmd("DiffviewFileHistory %")
 					viewing_file_history = true
 				end
+                disable_bufferline()
 			end,
 			"Toggle file history view for current file",
 		},
@@ -57,6 +68,7 @@ return {
 					vim.cmd("DiffviewFileHistory")
 					viewing_commit_history = true
 				end
+                disable_bufferline()
 			end,
 			"Toggle commit history view for all files",
 		},
@@ -79,6 +91,7 @@ return {
 					vim.cmd("tabclose")
 					viewing_commit_history = false
 				end
+                enable_bufferline()
 			end,
 			"quit diff view",
 		},
