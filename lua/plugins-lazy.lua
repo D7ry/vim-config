@@ -133,7 +133,7 @@ end
 if not vim.g.neovide then
     -- merge terminal_mode_plugins with plugins
     for k,v in pairs(terminal_mode_plugins) do
-        plugins[k] = v
+        table.insert(plugins, v)
     end
 end
 
