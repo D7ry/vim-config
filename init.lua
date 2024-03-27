@@ -11,13 +11,6 @@ require("plugins-lazy")
 vim.cmd.colorscheme(require("colorscheme").current_scheme)
 require("setup_markdown")
 require("lsp")
-require("discordrpc")
---require("lualine").setup() -- https://github.com/nvim-lualine/lualine.nvim
-require("gitsigns").setup() -- https://github.com/lewis6991/gitsigns.nvim
---require("bufferline").setup() -- https://github.com/akinsho/bufferline.nvim
---require("leap").add_default_mappings()
---require("copilot").setup({})
---require("config.rust-tools")
 require("config.nvim-cmp")
 require("lazygit")
 require("neovide")
