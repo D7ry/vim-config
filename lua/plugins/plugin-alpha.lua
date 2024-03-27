@@ -200,6 +200,8 @@ return {
 			--local total_plugins = #vim.tbl_keys(packer_plugins)
 			local date = os.date(" %m-%d-%Y")
 			local time = os.date(" %H:%M:%S")
+            local cwd = " " .. vim.fn.getcwd()
+            
 			local version = vim.version()
 			local nvim_version_info = " Neovim v" .. version.major .. "." .. version.minor .. "." .. version.patch
 
@@ -227,8 +229,10 @@ return {
 				-- "get confused by the complexities of his own making.",
 				-- "                                                   ",
 				-- "                                   - E. W. Dijkstra",
-				date,
-				time,
+				-- date,
+				-- time,
+				"                                                   ",
+                cwd,
 				get_proejct_text(),
 			}
 			--return newline .. newline.. quote .. date .. newline .. time .. newline ..project_text

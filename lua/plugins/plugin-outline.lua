@@ -4,7 +4,7 @@ return {
 	cmd = { "Outline", "OutlineOpen" },
 	keys = { -- Example mapping to toggle outline
 		{
-			"<leader>a",
+			"<leader>o",
 			function()
 				require("outline").toggle({ focus_outline = true, location = "left" })
 			end,
@@ -58,8 +58,8 @@ return {
 			fold_all = "W",
 			unfold_all = "E",
 			fold_reset = "R",
-			-- down_and_jump = "<C-j>",
-			-- up_and_jump = "<C-k>",
+			down_and_jump = "<C-n>",
+			up_and_jump = "<C-p>",
 		},
 		-- Your setup opts here
 	},
