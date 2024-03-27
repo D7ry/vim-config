@@ -6,7 +6,7 @@ return {
 			override_keymaps = true,
 			max_length = -1,
 			scroll_limit = 50,
-			default_delay = 0.5, -- The default delay (in ms) between each line when scrolling.
+			default_delay = 0.5, -- the default delay (in ms) between each line when scrolling.
 		})
 	end,
 }

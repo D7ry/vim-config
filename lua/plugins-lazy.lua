@@ -27,6 +27,7 @@ local plugins = {
 	require("plugins.plugin-todo-comments"),
 	--require("plugins.plugin-dashboard"),
 	require("plugins.plugin-trouble"),
+    require("plugins.plugin-scrollbar"),
     -- require("plugins.plugin-dropbar"),
 
 	require("plugins.plugin-noice"),
@@ -110,6 +111,7 @@ local plugins = {
 	require("plugins.plugin-nabla"),
 	require("plugins.plugin-comment"),
     require("plugins.plugin-project"),
+    -- require("plugins.plugin-neoclip") -- hotkey issue
     -- require("plugins.plugin-ufo")
     -- require("plugins.plugin-vim-visual-multi"),
 }
