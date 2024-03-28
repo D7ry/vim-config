@@ -225,9 +225,21 @@ local function get_user_host()
 end
 
 local function get_header()
-    local logo_transformed = transform_logo(vim_logo, os.clock())
-    table.insert(logo_transformed, StringUtils.center_str(get_user_host(), StringUtils.get_max_width(logo_transformed)))
-    return logo_transformed
+    -- local logo_transformed = transform_logo(vim_logo, os.clock())
+    -- table.insert(logo_transformed, StringUtils.center_str(get_user_host(), StringUtils.get_max_width(logo_transformed)))
+    -- 
+    local logo = {}
+    for key, value in pairs(llvm_logo) do
+        table.insert(logo, value)
+    end
+    local time = os.date(" %H:%M:%S")
+    local logo_width = StringUtils.get_max_width(logo)
+    time = StringUtils.center_str(time, logo_width)
+
+    table.insert(logo, StringUtils.center_str(get_user_host(), logo_width))
+    table.insert(logo, time)
+
+    return logo
 end
 
 return {
