@@ -34,4 +34,7 @@ return {
 			exclude_groups = {}, -- table: groups you don't want to clear
 		})
 	end,
+    keys = {
+        {"<leader>st", "<cmd>TransparentToggle<cr>", "Toggle transparent mode"}
+    }
 }
