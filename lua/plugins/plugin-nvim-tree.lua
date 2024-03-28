@@ -350,6 +350,8 @@ return {
 		{
 			"<Leader><tab>",
 			function()
+                -- check window width
+                local window_width = vim.api.nvim_win_get_width(0)
 				require("nvim-tree.api").tree.toggle({ focus = true})
 			end,
 			"focus nvim tree",

@@ -3,7 +3,7 @@ return {
 	config = function()
 		require("satellite").setup({
 			current_only = false,
-			winblend = 25,
+			winblend = 0,
 			zindex = 40,
 			excluded_filetypes = {},
 			width = 2,

@@ -24,7 +24,7 @@ return {
 				debounce = 75,
                 -- NOTE: M is the meta key, alt on keyboard
 				keymap = {
-					accept = "<M-enter>",
+					accept = "<C-enter>",
 					accept_word = false,
 					accept_line = false,
 					next = "<M-n>",
