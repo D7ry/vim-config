@@ -40,19 +40,7 @@ local plugins = {
     require("plugins.plugin-glance"),
 	{ "neovim/nvim-lspconfig", lazy = false },
 	{ "folke/lsp-colors.nvim" },
-	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			{ "hrsh7th/cmp-nvim-lsp", lazy = false },
-			{ "hrsh7th/cmp-buffer", lazy = false },
-			{ "hrsh7th/cmp-path", lazy = false },
-			{ "hrsh7th/cmp-cmdline", lazy = false },
-			{ "hrsh7th/cmp-vsnip" },
-			{ "hrsh7th/vim-vsnip" },
-			{ "onsails/lspkind.nvim", lazy = false }, --{'hrsh7th/cmp-nvim-lsp-signature-help'}
-		},
-		lazy = false,
-	},
+    require("plugins.plugin-nvim-cmp"),
 	--require("plugins.plugin-harpoon"),
 	--{ "L3MON4D3/LuaSnip" },
 	--{ "saadparwaiz1/cmp_luasnip" },
