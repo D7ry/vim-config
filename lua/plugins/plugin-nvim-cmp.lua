@@ -16,7 +16,6 @@ return {
 			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 		end
-        
 
 		--local luasnip = require("luasnip")
 		local cmp = require("cmp")
@@ -24,17 +23,19 @@ return {
 		-- unmap vanilla cmp keys
 		vim.api.nvim_set_keymap("i", "<C-n>", "<Nop>", { noremap = true })
 		vim.api.nvim_set_keymap("i", "<C-p>", "<Nop>", { noremap = true })
-		vim.api.nvim_set_keymap("i", "<C-x><C-o>", "<Nop>", { noremap = true })
+		-- vim.api.nvim_set_keymap("i", "<C-x><C-o>", "<Nop>", { noremap = true })
 
 		local lspkind = require("lspkind")
 		cmp.setup({
-			snippet = {
-				-- REQUIRED - you must specify a snippet engine
-				expand = function(args)
-					--     require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-				end,
+			mapping = {
+				["<Enter>"] = cmp.mapping.confirm({ select = true }),
 			},
-
+			snippet = {
+				-- expand = function(args)
+				-- 	    require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+				-- end,
+			},
+			--
 			window = {
 				completion = cmp.config.window.bordered(),
 				documentation = cmp.config.window.bordered(),
@@ -46,7 +47,36 @@ return {
 				-- Use <C-k/j> to switch in items
 				["<C-p>"] = cmp.mapping.select_prev_item(),
 				["<C-n>"] = cmp.mapping.select_next_item(),
-				["<C-q>"] = cmp.mapping.abort(),
+				["<Esc>"] = function(fallback)
+					if
+						not cmp.visible()
+						or not cmp.get_selected_entry()
+					then
+						fallback()
+					else
+						cmp.abort()
+					end
+				end,
+
+				["<Enter>"] = function(fallback)
+					-- Don't block <CR> if signature help is active
+					-- https://github.com/hrsh7th/cmp-nvim-lsp-signature-help/issues/13
+					if
+						not cmp.visible()
+						or not cmp.get_selected_entry()
+						or cmp.get_selected_entry().source.name == "nvim_lsp_signature_help"
+					then
+						fallback()
+					else
+						cmp.confirm({
+							-- Replace word if completing in the middle of a word
+							-- https://github.com/hrsh7th/nvim-cmp/issues/664
+							behavior = cmp.ConfirmBehavior.Replace,
+							-- Don't select first item on CR if nothing was selected
+							select = false,
+						})
+					end
+				end,
 
 				-- ["<C-g>"] = cmp.mapping(function(fallback)
 				-- 	vim.api.nvim_feedkeys(
@@ -57,12 +87,11 @@ return {
 				-- end),
 				-- Use <CR>(Enter) to confirm selection
 				-- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-				['<CR>'] = cmp.mapping.confirm({ select = true}),
 
-                ['<CR>'] = cmp.mapping.confirm({
-                    behavior = cmp.ConfirmBehavior.Insert,
-                    select = true,
-                }),
+				-- ['<CR>'] = cmp.mapping.confirm({
+				--     behavior = cmp.ConfirmBehavior.Insert,
+				--     select = true,
+				-- }),
 
 				-- A super tab
 				-- sourc: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
@@ -86,9 +115,9 @@ return {
 				--     end
 				-- end, { "i", "s" }),
 			}),
-
-			-- Let's configure the item's appearance
-			-- source: https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
+			--
+			-- -- Let's configure the item's appearance
+			-- -- source: https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
 			formatting = {
 				-- Set order from left to right
 				-- kind: single letter indicating the type of completion
@@ -114,7 +143,8 @@ return {
 				--          return vim_item
 				--      end,
 			},
-
+			--
+			--
 			-- Set source precedence
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" }, -- For nvim-lsp
