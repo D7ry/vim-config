@@ -58,7 +58,7 @@ local plugins = {
 	require("plugins.plugin-telescope"),
 	require("plugins.plugin-copilot"),
 	require("plugins.plugin-copilot-lualine"),
-    require("plugins.plugin-copilot-chat"),
+    -- require("plugins.plugin-copilot-chat"),
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
