@@ -129,3 +129,8 @@ vim.keymap.set("n", "<Leader>l", "<C-w>l", opts)
 vim.keymap.set("t", "<C-\\>q", "<C-\\><C-n>", opts)
 
 vim.keymap.set("n", "<C-i>", "K", opts)
+
+-- Inlay hints toggle
+vim.keymap.set('n', '<leader>i', function()
+    vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
+end, { desc = 'Toggle Inlay Hints' })

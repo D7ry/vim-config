@@ -50,7 +50,8 @@ local plugins = {
 		lazy = false,
 	},
 	require("plugins.plugin-lspkind"),
-	require("plugins.plugin-rust-tools"),
+	-- require("plugins.plugin-rust-tools"),
+    -- require("plugins.plugin-rustaceanvim"),
 
 	-- auto formatting
 	require("plugins.plugin-conform"),
@@ -87,7 +88,6 @@ local plugins = {
     require("plugins.plugin-illuminate"),
 	{ "folke/which-key.nvim" },
 	--{ "ggandor/leap.nvim" },
-	{ "simrat39/rust-tools.nvim" },
 	require("plugins.plugin-nvim-autopairs"),
 	require("plugins.plugin-battery"),
 	require("plugins.plugin-indent-blankline"),
@@ -99,6 +99,7 @@ local plugins = {
 	require("plugins.plugin-nabla"),
 	require("plugins.plugin-comment"),
     require("plugins.plugin-project"),
+    require("plugins.plugin-actions-preview"),
     -- require("plugins.plugin-lightbulb")
     -- require("plugins.plugin-neoclip") -- hotkey issue
     -- require("plugins.plugin-ufo")

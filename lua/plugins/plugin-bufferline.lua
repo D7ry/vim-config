@@ -9,7 +9,7 @@ return {
 
 				indicator = {
 					icon = "▎", -- this should be omitted if indicator style is not 'icon'
-					style = "icon", --'icon' | 'underline' | 'none',
+					style = "underline", --'icon' | 'underline' | 'none',
 				},
 				diagnostics_indicator = function(count, level, diagnostics_dict, context)
 					local icon = level:match("error") and " " or ""
