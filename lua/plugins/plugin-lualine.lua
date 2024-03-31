@@ -36,8 +36,10 @@ local conditions = {
 local config = {
 	options = {
 		-- Disable sections and component separators
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
+		-- component_separators = { left = "", right = "" },
+		-- section_separators = { left = "", right = "" },
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		--        theme = "tokyonight",
 		--theme = {
 		-- We are going to use lualine_c an lualine_x as left and
@@ -46,6 +48,7 @@ local config = {
 		--normal = { c = { fg = colors.fg, bg = colors.bg } },
 		--inactive = { c = { fg = colors.fg, bg = colors.bg } },
 		--},
+        theme = "monokai-pro",
 		globalstatus = true,
 		disabled_filetypes = { "Outline", "aerial", "alpha", "neo-tree", "NvimTree" }, -- disable startup dashboard
 	},
