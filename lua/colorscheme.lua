@@ -75,4 +75,4 @@ colorschemes = {
 	},
 }
 
-return { colorschemes = colorschemes, current_scheme = "kanagawa" }
+return { colorschemes = colorschemes, current_scheme = "monokai-pro-octagon" }
