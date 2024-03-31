@@ -42,7 +42,7 @@ local plugins = {
 	{ "folke/lsp-colors.nvim" },
     require("plugins.plugin-nvim-cmp"),
 	--require("plugins.plugin-harpoon"),
-	--{ "L3MON4D3/LuaSnip" },
+	{ "L3MON4D3/LuaSnip" },
 	--{ "saadparwaiz1/cmp_luasnip" },
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
