@@ -128,7 +128,6 @@ vim.keymap.set("n", "<Leader>l", "<C-w>l", opts)
 -- Quit terminal shortcut
 vim.keymap.set("t", "<C-\\>q", "<C-\\><C-n>", opts)
 
-vim.keymap.set("n", "<C-i>", "K", opts)
 
 -- Inlay hints toggle
 vim.keymap.set('n', '<leader>i', function()
