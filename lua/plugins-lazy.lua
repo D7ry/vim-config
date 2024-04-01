@@ -28,7 +28,7 @@ local plugins = {
 	--require("plugins.plugin-dashboard"),
 	require("plugins.plugin-trouble"),
     require("plugins.plugin-scrollbar"),
-    -- require("plugins.plugin-dropbar"),
+    require("plugins.plugin-dropbar"),
 
 	require("plugins.plugin-noice"),
     require("plugins.plugin-nvim-notify"),
@@ -100,7 +100,7 @@ local plugins = {
 	require("plugins.plugin-comment"),
     require("plugins.plugin-project"),
     require("plugins.plugin-actions-preview"),
-    -- require("plugins.plugin-lightbulb")
+    require("plugins.plugin-lightbulb")
     -- require("plugins.plugin-neoclip") -- hotkey issue
     -- require("plugins.plugin-ufo")
     -- require("plugins.plugin-vim-visual-multi"),
