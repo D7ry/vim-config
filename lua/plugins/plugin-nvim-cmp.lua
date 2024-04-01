@@ -47,7 +47,7 @@ return {
 				-- Use <C-k/j> to switch in items
 				["<C-p>"] = cmp.mapping.select_prev_item(),
 				["<C-n>"] = cmp.mapping.select_next_item(),
-				["<Esc>"] = function(fallback)
+				["<C-q>"] = function(fallback)
 					if
 						not cmp.visible()
 						or not cmp.get_selected_entry()
