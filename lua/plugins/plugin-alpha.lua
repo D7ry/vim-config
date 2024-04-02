@@ -1,3 +1,5 @@
+-- vim.api.nvim_exec(autocmd BufDelete * if empty(filter(tabpagebuflist(), '!buflisted(v:val)')) | Alpha | endif)
+
 local StringUtils = require("plugins.utils.string_utils")
 
 -- dashboard.section.header.val = {
@@ -374,3 +376,5 @@ return {
 		--require'alpha'.setup(require'alpha.themes.dashboard'.config)
 	end,
 }
+
+

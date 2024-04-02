@@ -107,8 +107,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Map keys to navigate through buffers
-vim.api.nvim_set_keymap("n", "<Leader>]", ":bnext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>[", ":bprevious<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<Leader>]", ":bnext<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<Leader>[", ":bprevious<CR>", { noremap = true, silent = true })
 -- toggleterm
 --vim.keymap.set("n", "<leader>`", "<cmd>ToggleTerm direction=horizontal<cr>", opts)
 

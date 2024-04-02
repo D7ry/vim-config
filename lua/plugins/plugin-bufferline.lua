@@ -40,7 +40,33 @@ return {
 	keys = {
 		{
 			"<leader><leader>",
-			":BufferLinePick<CR>",
+            function ()
+                vim.cmd("BufferLinePick");
+            end
+		},
+		{
+			"<leader>-",
+            function ()
+                vim.cmd("BufferLineMovePrev");
+            end
+		},
+		{
+			"<leader>=",
+            function ()
+                vim.cmd("BufferLineMoveNext");
+            end
+		},
+		{
+			"<leader>[",
+            function ()
+                vim.cmd("BufferLineCyclePrev");
+            end
+		},
+		{
+			"<leader>]",
+            function ()
+                vim.cmd("BufferLineCycleNext");
+            end
 		},
 	},
 	lazy = false,
