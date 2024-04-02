@@ -27,19 +27,19 @@ local plugins = {
 	require("plugins.plugin-todo-comments"),
 	--require("plugins.plugin-dashboard"),
 	require("plugins.plugin-trouble"),
-    require("plugins.plugin-scrollbar"),
+	require("plugins.plugin-scrollbar"),
 
 	require("plugins.plugin-noice"),
-    require("plugins.plugin-nvim-notify"),
+	require("plugins.plugin-nvim-notify"),
 	require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
 	require("plugins.plugin-outline"),
-    -- require("plugins.plugin-lspsaga"),
-    require("plugins.plugin-inc-rename"),
-    require("plugins.plugin-glance"),
+	-- require("plugins.plugin-lspsaga"),
+	require("plugins.plugin-inc-rename"),
+	require("plugins.plugin-glance"),
 	{ "neovim/nvim-lspconfig", lazy = false },
 	{ "folke/lsp-colors.nvim" },
-    require("plugins.plugin-nvim-cmp"),
+	require("plugins.plugin-nvim-cmp"),
 	--require("plugins.plugin-harpoon"),
 	{ "L3MON4D3/LuaSnip" },
 	--{ "saadparwaiz1/cmp_luasnip" },
@@ -50,7 +50,7 @@ local plugins = {
 	},
 	require("plugins.plugin-lspkind"),
 	-- require("plugins.plugin-rust-tools"),
-    -- require("plugins.plugin-rustaceanvim"),
+	-- require("plugins.plugin-rustaceanvim"),
 
 	-- auto formatting
 	require("plugins.plugin-conform"),
@@ -58,7 +58,7 @@ local plugins = {
 	require("plugins.plugin-telescope"),
 	require("plugins.plugin-copilot"),
 	require("plugins.plugin-copilot-lualine"),
-    -- require("plugins.plugin-copilot-chat"),
+	-- require("plugins.plugin-copilot-chat"),
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -72,8 +72,8 @@ local plugins = {
 
 	-- File Explorer
 	require("plugins.plugin-nvim-tree"),
-    require("plugins.plugin-gitsigns"),
-    require("plugins.plugin-diffview"),
+	require("plugins.plugin-gitsigns"),
+	require("plugins.plugin-diffview"),
 	-- Terminal Integration
 	require("plugins.plugin-toggleterm"),
 	-- Other Utilities
@@ -84,7 +84,7 @@ local plugins = {
 	{ "williamboman/mason-lspconfig.nvim", lazy = false },
 	{ "jdhao/better-escape.vim" },
 	-- require("plugins.plugin-which-key"),
-    require("plugins.plugin-illuminate"),
+	require("plugins.plugin-illuminate"),
 	{ "folke/which-key.nvim" },
 	--{ "ggandor/leap.nvim" },
 	require("plugins.plugin-nvim-autopairs"),
@@ -97,34 +97,41 @@ local plugins = {
 	require("plugins.plugin-nvim-markdown"),
 	require("plugins.plugin-nabla"),
 	require("plugins.plugin-comment"),
-    require("plugins.plugin-project"),
-    require("plugins.plugin-actions-preview"),
-    require("plugins.plugin-lightbulb")
-    -- require("plugins.plugin-neoclip") -- hotkey issue
-    -- require("plugins.plugin-ufo")
-    -- require("plugins.plugin-vim-visual-multi"),
+	require("plugins.plugin-project"),
+	require("plugins.plugin-actions-preview"),
+	require("plugins.plugin-lightbulb"),
+	-- require("plugins.plugin-neoclip") -- hotkey issue
+	-- require("plugins.plugin-ufo")
+	-- require("plugins.plugin-vim-visual-multi"),
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
 }
 
 -- plugins only enabled when no frontend is enabled
 local terminal_mode_plugins = {
-    -- require("plugins.plugin-cinnamon")
-    -- require("plugins.plugin-neoscroll")
-    -- unfortunately scroll plugins leads to segfault
-    require("plugins.plugin-dropbar"),
+	-- require("plugins.plugin-cinnamon")
+	-- require("plugins.plugin-neoscroll")
+	-- unfortunately scroll plugins leads to segfault
+	require("plugins.plugin-dropbar"),
 }
 
-local colorschemes = require('colorscheme').colorschemes
+local colorschemes = require("colorscheme").colorschemes
 -- add colorschemes to plugins
 for _, colorscheme in ipairs(colorschemes) do
-    table.insert(plugins, colorscheme)
+	table.insert(plugins, colorscheme)
 end
 
-
 if not vim.g.neovide then
-    -- merge terminal_mode_plugins with plugins
-    for k,v in pairs(terminal_mode_plugins) do
-        table.insert(plugins, v)
-    end
+	-- merge terminal_mode_plugins with plugins
+	for k, v in pairs(terminal_mode_plugins) do
+		table.insert(plugins, v)
+	end
 end
 
 local opts = {}
