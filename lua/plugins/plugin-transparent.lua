@@ -36,5 +36,6 @@ return {
 	end,
     keys = {
         {"<leader>st", "<cmd>TransparentToggle<cr>", "Toggle transparent mode"}
-    }
+    },
+    lazy=false
 }

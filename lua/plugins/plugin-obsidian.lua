@@ -13,19 +13,18 @@ return {
   dependencies = {
     -- Required.
     "nvim-lua/plenary.nvim",
-
     -- see below for full list of optional dependencies 👇
   },
   opts = {
     workspaces = {
       {
         name = "personal",
-        path = "~/vaults/personal",
+        path = "~/repo/vaults/personal",
       },
-      {
-        name = "work",
-        path = "~/vaults/work",
-      },
+      -- {
+      --   name = "work",
+      --   path = "~/repo/vaults/work",
+      -- },
     },
 
     -- see below for full list of options 👇

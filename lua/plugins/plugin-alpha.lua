@@ -231,7 +231,7 @@ local function get_header()
     -- table.insert(logo_transformed, StringUtils.center_str(get_user_host(), StringUtils.get_max_width(logo_transformed)))
     -- 
     local logo = {}
-    for key, value in pairs(earth_logo) do
+    for key, value in pairs(vim_logo) do
         table.insert(logo, value)
     end
     local time = os.date(" %H:%M:%S")

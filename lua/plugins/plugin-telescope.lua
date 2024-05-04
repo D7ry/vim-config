@@ -99,7 +99,7 @@ return {
 		--local fb_actions = ts.extensions.file_browser.actions
 		ts.setup({
 			defaults = {
-				borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
+				-- borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
 				sorting_strategy = "ascending",
 				winblend = 0,
 				prompt_prefix = "🔭 ",

@@ -5,17 +5,10 @@ if vim.g.neovide then
 	-- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
 	vim.g.neovide_transparency = 1
 	vim.g.transparency = 1
-	if vim.loop.os_uname().sysname == "Linux" then
-		font_size = 12
-		vim.o.guifont = "DroidSansM Nerd Font Mono:h12"
-	else -- macos
-		font_size = 14 -- bigger font on my small macbook
-		vim.o.guifont = "DroidSansM Nerd Font Mono:h14"
-	end
 	vim.g.neovide_fullscreen = true
 	vim.g.neovide_cursor_vfx_mode = "railgun"
 
-    local font = "DroidSansM Nerd Font Mono"
+    local font = "FiraCode Nerd Font Mono"
     local font_size = 12
 
     -- returns the font string that can be used to set the font in neovide

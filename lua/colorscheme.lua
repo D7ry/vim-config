@@ -1,12 +1,7 @@
 -- CURRENT_SCHEME = "kanagawa-wave"
 
 colorschemes = {
-	{
-		"loctvl842/monokai-pro.nvim",
-		config = function()
-			require("config.monokai-pro-setup")
-		end,
-	},
+	"loctvl842/monokai-pro.nvim",
 	{ "rebelot/kanagawa.nvim", lazy = false },
 	{ "sainnhe/edge", lazy = false },
 	{ "sainnhe/sonokai", lazy = false },
@@ -75,4 +70,4 @@ colorschemes = {
 	},
 }
 
-return { colorschemes = colorschemes, current_scheme = "monokai-pro-octagon" }
+return { colorschemes = colorschemes, current_scheme = "github_dark_default" }

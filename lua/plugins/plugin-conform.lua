@@ -13,8 +13,7 @@ return {
 			},
 			formatters = {
 				clang_format = {
-					args = {
-					}
+					args = {},
 					-- indentation is a tab
 				},
 			},

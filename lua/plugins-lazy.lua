@@ -79,7 +79,7 @@ local plugins = {
 	-- Other Utilities
 	--require("plugins.plugin-cinnamon"), -- for smooth scrolling
 	--{'karb94/neoscroll.nvim'},
-	{ "andweeb/presence.nvim" },
+	-- { "andweeb/presence.nvim" },
 	{ "williamboman/mason.nvim", lazy = false },
 	{ "williamboman/mason-lspconfig.nvim", lazy = false },
 	{ "jdhao/better-escape.vim" },
