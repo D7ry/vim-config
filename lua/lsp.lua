@@ -111,6 +111,8 @@ lspconfig.marksman.setup({
 }
 )
 
+lspconfig.opencl_ls.setup{}
+
 lspconfig.rust_analyzer.setup({
 	on_attach = on_attach,
 	cmd = { "rustup", "run", "stable", "rust-analyzer" },

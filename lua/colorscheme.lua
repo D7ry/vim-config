@@ -1,7 +1,12 @@
 -- CURRENT_SCHEME = "kanagawa-wave"
 
 colorschemes = {
-	"loctvl842/monokai-pro.nvim",
+	{
+		"loctvl842/monokai-pro.nvim",
+		config = function()
+			require("config.monokai-pro-setup")
+		end,
+	},
 	{ "rebelot/kanagawa.nvim", lazy = false },
 	{ "sainnhe/edge", lazy = false },
 	{ "sainnhe/sonokai", lazy = false },
@@ -54,7 +59,7 @@ colorschemes = {
 		priority = 1000,
 	},
 	{ "mhartington/oceanic-next", lazy = false },
-	{ "tanvirtin/monokai.nvim", lazy = true },
+	-- { "tanvirtin/monokai.nvim", lazy = true },
 	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
 	{ "projekt0n/github-nvim-theme", lazy = false },
 	{ "catppuccin/nvim", lazy = false, priority = 1000 },
@@ -70,4 +75,4 @@ colorschemes = {
 	},
 }
 
-return { colorschemes = colorschemes, current_scheme = "github_dark_default" }
+return { colorschemes = colorschemes, current_scheme = "monokai-pro" }

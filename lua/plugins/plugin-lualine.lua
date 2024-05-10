@@ -48,7 +48,7 @@ local config = {
 		--normal = { c = { fg = colors.fg, bg = colors.bg } },
 		--inactive = { c = { fg = colors.fg, bg = colors.bg } },
 		--},
-        theme = "monokai-pro",
+        -- theme = "monokai-pro",
 		globalstatus = true,
 		disabled_filetypes = { "Outline", "aerial", "alpha", "neo-tree", "NvimTree" }, -- disable startup dashboard
 	},

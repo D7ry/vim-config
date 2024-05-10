@@ -115,8 +115,8 @@ local plugins = {
 
 -- plugins only enabled when no frontend is enabled
 local terminal_mode_plugins = {
-	-- require("plugins.plugin-cinnamon")
-	-- require("plugins.plugin-neoscroll")
+	require("plugins.plugin-cinnamon"),
+	-- require("plugins.plugin-neoscroll"),
 	-- unfortunately scroll plugins leads to segfault
 	require("plugins.plugin-dropbar"),
 }

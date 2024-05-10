@@ -41,6 +41,11 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     command = "set filetype=glsl",
 })
 
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = {"*.cl"},
+    command = "set filetype=cpp",
+})
+
 
 
 -- # lock cursor for certain filetypes

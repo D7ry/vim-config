@@ -21,6 +21,10 @@ return {
         name = "personal",
         path = "~/repo/vaults/personal",
       },
+      {
+        name = "study",
+        path = "~/repo/vaults/study",
+      },
       -- {
       --   name = "work",
       --   path = "~/repo/vaults/work",
