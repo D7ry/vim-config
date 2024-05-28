@@ -6,7 +6,7 @@ return {
 			options = {
 				style_preset = require("bufferline").style_preset.minimal,
 				diagnostics = "nvim_lsp",
-                separator_style="slant",
+                separator_style="thick",
 
 				indicator = {
 					icon = "▎", -- this should be omitted if indicator style is not 'icon'

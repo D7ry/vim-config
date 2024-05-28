@@ -215,13 +215,13 @@ push_right({
 	color = { fg = colors.green, gui = "bold" },
 })
 
--- battery support
-local nvimbattery = {
-	function()
-		return require("battery").get_status_line()
-	end,
-	--color = { fg = colors.violet, bg = colors.bg },
-}
+-- -- battery support
+-- local nvimbattery = {
+-- 	function()
+-- 		return require("battery").get_status_line()
+-- 	end,
+-- 	--color = { fg = colors.violet, bg = colors.bg },
+-- }
 
 return {
 	"nvim-lualine/lualine.nvim",

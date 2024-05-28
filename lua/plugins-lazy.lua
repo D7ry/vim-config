@@ -56,8 +56,8 @@ local plugins = {
 	require("plugins.plugin-conform"),
 	-- Telescope
 	require("plugins.plugin-telescope"),
-	require("plugins.plugin-copilot"),
-	require("plugins.plugin-copilot-lualine"),
+	-- require("plugins.plugin-copilot"),
+	-- require("plugins.plugin-copilot-lualine"),
 	-- require("plugins.plugin-copilot-chat"),
 	-- Treesitter
 	{
@@ -78,8 +78,7 @@ local plugins = {
 	require("plugins.plugin-toggleterm"),
 	-- Other Utilities
 	--require("plugins.plugin-cinnamon"), -- for smooth scrolling
-	--{'karb94/neoscroll.nvim'},
-	-- { "andweeb/presence.nvim" },
+    require("plugins.plugin-presence"),
 	{ "williamboman/mason.nvim", lazy = false },
 	{ "williamboman/mason-lspconfig.nvim", lazy = false },
 	{ "jdhao/better-escape.vim" },
@@ -88,11 +87,11 @@ local plugins = {
 	{ "folke/which-key.nvim" },
 	--{ "ggandor/leap.nvim" },
 	require("plugins.plugin-nvim-autopairs"),
-	require("plugins.plugin-battery"),
+	--require("plugins.plugin-battery"),
 	require("plugins.plugin-indent-blankline"),
 	require("plugins.plugin-nvim-bufdel"),
 	--require("plugins.plugin-headlines")
-	require("plugins.plugin-obsidian"),
+	--require("plugins.plugin-obsidian"),
 	require("plugins.plugin-transparent"),
 	require("plugins.plugin-nvim-markdown"),
 	require("plugins.plugin-nabla"),
@@ -115,8 +114,8 @@ local plugins = {
 
 -- plugins only enabled when no frontend is enabled
 local terminal_mode_plugins = {
-	require("plugins.plugin-cinnamon"),
-	-- require("plugins.plugin-neoscroll"),
+	--require("plugins.plugin-cinnamon"),
+	--require("plugins.plugin-neoscroll"),
 	-- unfortunately scroll plugins leads to segfault
 	require("plugins.plugin-dropbar"),
 }
