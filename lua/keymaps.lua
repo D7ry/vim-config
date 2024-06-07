@@ -131,5 +131,5 @@ vim.keymap.set("t", "<C-\\>q", "<C-\\><C-n>", opts)
 
 -- Inlay hints toggle
 vim.keymap.set('n', '<leader>i', function()
-    vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(), nil)
 end, { desc = 'Toggle Inlay Hints' })
