@@ -42,30 +42,13 @@ return {
 				row = 0,
 				col = 1,
 			},
-			yadm = {
-				enable = false,
-			},
 		})
 	end,
 
 	keys = {
-		{ "<Leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle current line blame" },
-		{ "g]", "<cmd>Gitsigns next_hunk<cr>", "Next git hunk" },
-		{ "g[", "<cmd>Gitsigns prev_hunk<cr>", "Prev git hunk" },
-
-		{ "<Leader>gv", "<cmd>Gitsigns preview_hunk_inline<cr>", "Preview git hunk in line" },
-		-- {
-		-- 	"<leader>gd",
-		-- 	function()
-  --               if viewing_diff then
-  --                   vim.cmd("wincmd p | q")
-  --                   viewing_diff = false
-  --               else
-  --                   vim.cmd(":Gitsigns diffthis")
-  --                   viewing_diff = true
-  --               end
-		-- 	end,
-  --           "Toggle git diff view"
-		-- },
+		{ "gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Gitsigns toggle blame" },
+		{ "g]", "<cmd>Gitsigns next_hunk<cr>", "Next git hunk", desc = "Gitsigns view next hunk in current file"},
+		{ "g[", "<cmd>Gitsigns prev_hunk<cr>", "Prev git hunk", desc = "Gitsigns view prev hunk in current file"},
+		{ "gv", "<cmd>Gitsigns preview_hunk_inline<cr>", desc = "Gitsigns preview git hunk in line" },
 	},
 }

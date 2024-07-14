@@ -98,22 +98,22 @@ return {
 		{
 			"<Leader>fr",
             "<CMD>Glance references<CR>",
-			"glance references",
+			desc = "Glance references",
         },
 		{
 			"<Leader>fd",
             "<CMD>Glance definitions<CR>",
-			"glance definitions",
+			desc = "Glance definitions",
 		},
 		{
 			"<Leader>ft",
             "<CMD>Glance type_definitions<CR>",
-			"glance type definitions",
+			desc ="Glance type definitions",
 		},
 		{
 			"<Leader>fi",
             "<CMD>Glance implementations<CR>",
-			"glance implementations",
+			desc ="Glance implementations",
 		},
     }
 }

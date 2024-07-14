@@ -12,6 +12,7 @@ colorschemes = {
 	{ "sainnhe/sonokai", lazy = false },
 	{ "marko-cerovac/material.nvim", lazy = true },
 	{ "navarasu/onedark.nvim", lazy = true },
+    { "EdenEast/nightfox.nvim" , lazy=false},
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -75,4 +76,4 @@ colorschemes = {
 	},
 }
 
-return { colorschemes = colorschemes, current_scheme = "monokai-pro" }
+return { colorschemes = colorschemes, current_scheme = "nordfox" }

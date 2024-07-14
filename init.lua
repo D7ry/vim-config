@@ -12,8 +12,9 @@ vim.cmd.colorscheme(require("colorscheme").current_scheme)
 require("setup_markdown")
 require("lsp")
 -- require("config.nvim-cmp")
-require("lazygit")
+-- require("lazygit")
 require("neovide")
+vim.opt.clipboard = "unnamedplus"
 
 -- open up telescope if no file has been opened
 -- vim.api.nvim_create_autocmd("VimEnter", {

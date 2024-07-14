@@ -41,6 +41,31 @@ return {
 				-- Call the format function with options and the callback
 				require("conform").format(opts, formatCallback)
 			end,
+            desc = "Format whole file",
+            mode = "n"
+		},
+		{
+			"<Leader>fm",
+			function()
+				-- Define any options required for formatting
+				local opts = {}
+
+				-- Define the callback function
+				local function formatCallback(err)
+					if err then
+						-- If err is not nil, an error occurred during formatting.
+						vim.notify("Formatting failed: " .. err, vim.log.levels.ERROR, { title = "Conform" })
+					else
+						-- If err is nil, formatting was successful.
+						vim.notify("Formatting successful", vim.log.levels.INFO, { title = "Conform" })
+					end
+				end
+
+				-- Call the format function with options and the callback
+				require("conform").format(opts, formatCallback)
+			end,
+            desc = "Format selected text",
+            mode = "v"
 		},
 	},
 }

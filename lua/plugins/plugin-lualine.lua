@@ -50,7 +50,7 @@ local config = {
 		--},
         -- theme = "monokai-pro",
 		globalstatus = true,
-		disabled_filetypes = { "Outline", "aerial", "alpha", "neo-tree", "NvimTree" }, -- disable startup dashboard
+		disabled_filetypes = { "Outline", "aerial", "alpha", "neo-tree", "NvimTree", "trouble"}, -- disable startup dashboard
 	},
 	sections = {
 		-- these are to remove the defaults
@@ -64,17 +64,35 @@ local config = {
 	},
 	inactive_sections = {
 		-- these are to remove the defaults
-		lualine_a = { "filename" },
+		lualine_a = {},
 		lualine_b = {},
 		lualine_y = {},
 		lualine_z = {},
 		lualine_c = {},
 		lualine_x = {},
 	},
-	statusline = {
 
-		lualine_c = { "filename" },
-	},
+    winbar = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = {'filename'},
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {}
+    },
+
+    inactive_winbar = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = {'filename'},
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {}
+    },
+	-- statusline = {
+	--
+	-- 	lualine_c = { "filename" },
+	-- },
 }
 
 -- Inserts a component in lualine_c at left section
@@ -82,12 +100,31 @@ local function push_left(component)
 	table.insert(config.sections.lualine_c, component)
 end
 
+
+
 local function push_mid_left(component)
 	table.insert(config.sections.lualine_b, component)
 end
 
 local function push_far_left(component)
 	table.insert(config.sections.lualine_a, component)
+end
+
+local function push_far_left_winbar(component)
+	table.insert(config.winbar.lualine_a, component)
+end
+
+
+local function push_mid_left_winbar(component)
+	table.insert(config.winbar.lualine_b, component)
+end
+
+
+local function push_left_winbar(component, push_to_all)
+	table.insert(config.winbar.lualine_c, component)
+    if (push_to_all) then
+        table.insert(config.inactive_winbar.lualine_c, component)
+    end
 end
 
 -- Inserts a component in lualine_x at right section
@@ -133,7 +170,13 @@ push_mid_left({
 	--    color = { fg = colors.violet, gui = 'bold' },
 })
 
-push_left({ "location" })
+-- push_left({
+-- 	"filename",
+-- 	cond = conditions.buffer_not_empty,
+-- 	--color = { fg = colors.magenta, gui = 'bold' },
+-- })
+
+-- push_left({ "location" })
 
 --ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
@@ -168,7 +211,7 @@ push_left({
 		color_info = { fg = colors.cyan },
 	},
 })
-
+--
 push_right({
 	-- copilot status
 	"copilot",
@@ -201,19 +244,19 @@ push_far_right({
 })
 
 -- Add components to right sections
-push_right({
-	"o:encoding", -- option component same as &encoding in viml
-	fmt = string.upper, -- I'm not sure why it's upper case either ;)
-	cond = conditions.hide_in_width,
-	color = { fg = colors.green, gui = "bold" },
-})
+-- push_right({
+-- 	"o:encoding", -- option component same as &encoding in viml
+-- 	fmt = string.upper, -- I'm not sure why it's upper case either ;)
+-- 	cond = conditions.hide_in_width,
+-- 	color = { fg = colors.green, gui = "bold" },
+-- })
 
-push_right({
-	"fileformat",
-	fmt = string.upper,
-	icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-	color = { fg = colors.green, gui = "bold" },
-})
+-- push_right({
+-- 	"fileformat",
+-- 	fmt = string.upper,
+-- 	icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+-- 	color = { fg = colors.green, gui = "bold" },
+-- })
 
 -- -- battery support
 -- local nvimbattery = {
@@ -227,6 +270,25 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "kyazdani42/nvim-web-devicons" },
 	config = function()
+        -- trouble suport
+        local trouble = require("trouble")
+        local symbols = trouble.statusline({
+          mode = "lsp_document_symbols",
+          groups = {},
+          title = false,
+          filter = { range = true },
+          format = "{kind_icon}{symbol.name:Normal}",
+          -- The following line is needed to fix the background color
+          -- Set it to the lualine section you want to use
+          hl_group = "lualine_c_normal",
+        })
+        push_left_winbar(
+        {
+            symbols.get,
+            cond = symbols.has
+        },
+        false
+        )
 		require("lualine").setup(config)
 	end,
 }

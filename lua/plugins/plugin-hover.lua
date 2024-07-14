@@ -6,6 +6,7 @@ return (
             init = function()
                 -- Require providers
                 require("hover.providers.lsp")
+                -- require("hover.providers.diagnostic")
                 -- require('hover.providers.gh')
                 -- require('hover.providers.gh_user')
                 -- require('hover.providers.jira')
@@ -13,7 +14,7 @@ return (
                 -- require('hover.providers.dictionary')
             end,
             preview_opts = {
-                border = nil
+                border = "none"
             },
             -- Whether the contents of a currently open hover window should be moved
             -- to a :h preview-window when pressing the hover keymap.

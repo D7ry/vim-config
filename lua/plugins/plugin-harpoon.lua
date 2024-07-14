@@ -21,14 +21,14 @@ return {
 			function()
 				require("harpoon.ui").nav_next()
 			end,
-			"open harpoon",
+			"next harpoon",
 		},
 		{
 			"<Leader>p",
 			function()
 				require("harpoon.ui").nav_prev()
 			end,
-			"open harpoon",
+			"previous harpoon",
 		},
 	},
 	config = function()

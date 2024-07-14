@@ -4,7 +4,7 @@ return {
 	opts = {
 		cmdline = {
 			enabled = true, -- enables the Noice cmdline UI
-			view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
+			view = "cmdline", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
 			opts = {}, -- global options for the cmdline. See section on views
 			---@type table<string, CmdlineFormat>
 			format = {
@@ -19,7 +19,7 @@ return {
 				filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
 				lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
 				help = { pattern = "^:%s*he?l?p?%s+", icon = "󰾙 " },
-				input = {}, -- Used by input()
+				input = {}, -- Used by input false
 				-- lua = false, -- to disable a format, set to `false`
 			},
 		},
@@ -193,8 +193,8 @@ return {
 			bottom_search = false, -- use a classic bottom cmdline for search
 			command_palette = false, -- position the cmdline and popupmenu together
 			long_message_to_split = false, -- long messages will be sent to a split
-			inc_rename = true, -- enables an input dialog for inc-rename.nvim
-			lsp_doc_border = false, -- add a border to hover docs and signature help
+			inc_rename = false, -- enables an input dialog for inc-rename.nvim
+			lsp_doc_border = true, -- add a border to hover docs and signature help
 		},
 		throttle = 1000 / 30, -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
 		---@type NoiceConfigViews

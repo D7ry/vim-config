@@ -20,26 +20,30 @@ local plugins = {
 	--require("plugins.plugin-miniintro"),
 	-- UI Plugins
 	-- { "morhetz/gruvbox", lazy = false},
-	require("plugins.plugin-bufferline"),
+	-- require("plugins.plugin-bufferline"),
 	require("plugins.plugin-lualine"),
 	--require("plugins.plugin-drop"),
 	-- require("plugins.plugin-alpha"),
 	require("plugins.plugin-todo-comments"),
 	--require("plugins.plugin-dashboard"),
 	require("plugins.plugin-trouble"),
-	require("plugins.plugin-scrollbar"),
-
-	require("plugins.plugin-noice"),
-	require("plugins.plugin-nvim-notify"),
-	--require("plugins.plugin-hover"),
+	-- require("plugins.plugin-scrollbar"),
+    require("plugins.plugin-lsp-signature"),
+    -- TODO: get dap to work with minGW
+    require("plugins.plugin-nvim-dap"),
+    require("plugins.plugin-nvim-dap-ui"),
+	-- require("plugins.plugin-noice"), -- known to cause problems on windows
+    require("plugins.plugin-nvim-notify"),
+	require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
-	require("plugins.plugin-outline"),
+	-- require("plugins.plugin-outline"),
 	-- require("plugins.plugin-lspsaga"),
-	require("plugins.plugin-inc-rename"),
-	require("plugins.plugin-glance"),
+	-- require("plugins.plugin-inc-rename"),
+	-- require("plugins.plugin-glance"),
 	{ "neovim/nvim-lspconfig", lazy = false },
-	{ "folke/lsp-colors.nvim" },
+	-- { "folke/lsp-colors.nvim" },
 	require("plugins.plugin-nvim-cmp"),
+    -- require("plugins.plugin-bookmarks"),
 	--require("plugins.plugin-harpoon"),
 	{ "L3MON4D3/LuaSnip" },
 	--{ "saadparwaiz1/cmp_luasnip" },
@@ -73,16 +77,16 @@ local plugins = {
 	-- File Explorer
 	require("plugins.plugin-nvim-tree"),
 	require("plugins.plugin-gitsigns"),
-	require("plugins.plugin-diffview"),
+	-- require("plugins.plugin-diffview"),
 	-- Terminal Integration
-	require("plugins.plugin-toggleterm"),
+	-- require("plugins.plugin-toggleterm"),
 	-- Other Utilities
 	--require("plugins.plugin-cinnamon"), -- for smooth scrolling
-    require("plugins.plugin-presence"),
+    -- require("plugins.plugin-presence"),
 	{ "williamboman/mason.nvim", lazy = false },
 	{ "williamboman/mason-lspconfig.nvim", lazy = false },
-	{ "jdhao/better-escape.vim" },
-	-- require("plugins.plugin-which-key"),
+	-- { "jdhao/better-escape.vim" },
+	require("plugins.plugin-which-key"),
 	require("plugins.plugin-illuminate"),
 	--{ "folke/which-key.nvim" },
 	--{ "ggandor/leap.nvim" },
@@ -98,18 +102,19 @@ local plugins = {
 	require("plugins.plugin-comment"),
 	require("plugins.plugin-project"),
 	require("plugins.plugin-actions-preview"),
-	require("plugins.plugin-lightbulb"),
+	-- require("plugins.plugin-lightbulb"),
+    --require("plugins.plugin-tabnine"),
 	-- require("plugins.plugin-neoclip") -- hotkey issue
 	-- require("plugins.plugin-ufo")
 	-- require("plugins.plugin-vim-visual-multi"),
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		ft = { "markdown" },
-		build = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	},
+	-- {
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+	-- 	ft = { "markdown" },
+	-- 	build = function()
+	-- 		vim.fn["mkdp#util#install"]()
+	-- 	end,
+	-- },
 }
 
 -- plugins only enabled when no frontend is enabled
@@ -117,7 +122,7 @@ local terminal_mode_plugins = {
 	--require("plugins.plugin-cinnamon"),
 	--require("plugins.plugin-neoscroll"),
 	-- unfortunately scroll plugins leads to segfault
-	require("plugins.plugin-dropbar"),
+	-- require("plugins.plugin-dropbar"),
 }
 
 local colorschemes = require("colorscheme").colorschemes
