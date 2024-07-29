@@ -7,14 +7,14 @@ return {
 			function()
 				require("harpoon.mark").add_file()
 			end,
-			"mark file to harpoon",
+			"Harpoon create mark",
 		},
 		{
 			"<Leader>hu",
 			function()
 				require("harpoon.ui").toggle_quick_menu()
 			end,
-			"open harpoon",
+			"Harpoon open ui",
 		},
 		{
 			"<Leader>n",

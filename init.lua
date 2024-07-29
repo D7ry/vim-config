@@ -6,39 +6,36 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 require("options")
 require("keymaps")
---require("plugins")
-require("plugins-lazy")
-vim.cmd.colorscheme(require("colorscheme").current_scheme)
-require("setup_markdown")
-require("lsp")
--- require("config.nvim-cmp")
--- require("lazygit")
-require("neovide")
 vim.opt.clipboard = "unnamedplus"
 
--- open up telescope if no file has been opened
--- vim.api.nvim_create_autocmd("VimEnter", {
--- 	pattern = "*",
--- 	callback = function()
--- 		if #vim.fn.argv() == 0 then
--- 			vim.cmd("Telescope find_files")
--- 		end
--- 	end,
--- })
---open up a neotree if no file has been opened
---vim.api.nvim_create_autocmd("VimEnter", {
---    pattern = "*",
---    callback = function()
---        if #vim.fn.argv() == 0 then
---            vim.cmd('Neotree toggle')
---        end
---    end
---})
---
+if vim.g.vscode then
+    -- VSCode extension
+    require("vscode_neovim")
 
---TODO: put this into a separate file
+else -- ordinary vim
+    require("plugins-lazy")
+    vim.cmd.colorscheme(require("colorscheme").current_scheme)
+    require("setup_markdown")
+    require("lsp")
+    -- require("config.nvim-cmp")
+    -- require("lazygit")
+    require("neovide")
+end
+
+
+
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
-    pattern = {"*.vert", "*.frag"},
+    pattern = {
+    "*.vert",
+    "*.frag",
+    -- raytracing shaders
+    "*.rgen",
+    "*.rint",
+    "*.rahit",
+    "*.rchit",
+    "*.rmiss",
+    "*.rcall",
+},
     command = "set filetype=glsl",
 })
 

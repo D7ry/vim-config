@@ -8,7 +8,7 @@ if vim.g.neovide then
 	vim.g.neovide_fullscreen = true
 	vim.g.neovide_cursor_vfx_mode = "railgun"
 
-    local font = "FiraCode Nerd Font Mono"
+    local font = "CaskaydiaCove Nerd Font"
     local font_size = 12
 
     -- returns the font string that can be used to set the font in neovide
@@ -35,6 +35,7 @@ if vim.g.neovide then
     -- adjust font size with ctrl + =/-
 	vim.api.nvim_set_keymap("n", "<C-=>", ":lua adjust_neovide_font_size(1)<CR>", opts)
 	vim.api.nvim_set_keymap("n", "<C-->", ":lua adjust_neovide_font_size(-1)<CR>", opts)
+    vim.api.nvim_set_keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
 	--	vim.g.neovide_background_color = "#0f1117" .. alpha()
 	--
 	-- Put anything you want to happen only in Neovide here

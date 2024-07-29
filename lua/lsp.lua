@@ -61,7 +61,7 @@ local on_attach = function(client, bufnr)
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	--vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
 	--vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-	--vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 	--vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
 	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
 	vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
@@ -137,3 +137,26 @@ lspconfig.rust_analyzer.setup({
 		},
 	},
 })
+
+
+-- set up shader lsp
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = {"*.vert", "*.frag"},
+    command = "set filetype=glsl",
+})
+
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = {"*.cl"},
+    command = "set filetype=cpp",
+})
+
+
+-- limit hover window width
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  -- opts.border = opts.border or 'single'
+  opts.max_width= opts.max_width or 80
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+

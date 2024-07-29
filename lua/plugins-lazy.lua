@@ -21,10 +21,10 @@ local plugins = {
 	-- UI Plugins
 	-- { "morhetz/gruvbox", lazy = false},
 	-- require("plugins.plugin-bufferline"),
-	require("plugins.plugin-lualine"),
+	-- require("plugins.plugin-lualine"),
 	--require("plugins.plugin-drop"),
 	-- require("plugins.plugin-alpha"),
-	require("plugins.plugin-todo-comments"),
+	-- require("plugins.plugin-todo-comments"),
 	--require("plugins.plugin-dashboard"),
 	require("plugins.plugin-trouble"),
 	-- require("plugins.plugin-scrollbar"),
@@ -34,7 +34,7 @@ local plugins = {
     require("plugins.plugin-nvim-dap-ui"),
 	-- require("plugins.plugin-noice"), -- known to cause problems on windows
     require("plugins.plugin-nvim-notify"),
-	require("plugins.plugin-hover"),
+	-- require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
 	-- require("plugins.plugin-outline"),
 	-- require("plugins.plugin-lspsaga"),
@@ -43,6 +43,7 @@ local plugins = {
 	{ "neovim/nvim-lspconfig", lazy = false },
 	-- { "folke/lsp-colors.nvim" },
 	require("plugins.plugin-nvim-cmp"),
+    
     -- require("plugins.plugin-bookmarks"),
 	--require("plugins.plugin-harpoon"),
 	{ "L3MON4D3/LuaSnip" },
@@ -52,7 +53,7 @@ local plugins = {
 		build = "make",
 		lazy = false,
 	},
-	require("plugins.plugin-lspkind"),
+	-- require("plugins.plugin-lspkind"),
 	-- require("plugins.plugin-rust-tools"),
 	-- require("plugins.plugin-rustaceanvim"),
 
@@ -79,7 +80,7 @@ local plugins = {
 	require("plugins.plugin-gitsigns"),
 	-- require("plugins.plugin-diffview"),
 	-- Terminal Integration
-	-- require("plugins.plugin-toggleterm"),
+	require("plugins.plugin-toggleterm"),
 	-- Other Utilities
 	--require("plugins.plugin-cinnamon"), -- for smooth scrolling
     -- require("plugins.plugin-presence"),

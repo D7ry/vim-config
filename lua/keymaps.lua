@@ -49,8 +49,8 @@ unmap_key("n", ")")
 -- vim.api.nvim_set_keymap("n", ")", "$", opts)
 
 -- going up/down also centers the view
-vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
 
 -- Example usage, this creates a command that you can use from the Neovim command line
 -- Usage in Neovim command line
@@ -65,13 +65,10 @@ vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", opts)
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- move left/right by a word
-vim.api.nvim_set_keymap("n", "<C-l>", "w", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-h>", "b", { noremap = true, silent = true })
-
 -- Automatic center after searching
 vim.api.nvim_set_keymap("n", "n", "nzz", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "N", "Nzz", { noremap = true, silent = true })
+
 
 -- quick save
 --vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
@@ -88,17 +85,6 @@ vim.keymap.set("v", ">", ">gv", opts)
 -- Insertion   --
 -----------------
 
--- Remove the original keybinding for Ctrl-j
--- vim.api.nvim_del_keymap('i', '<C-j>')
---vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', { noremap = true, silent = true, expr = false })
---vim.api.nvim_set_keymap('i', '<C-j>', '<Down>', { noremap = true, silent = true, expr = false })
---vim.api.nvim_set_keymap('i', '<C-k>', '<Up>', { noremap = true, silent = true, expr = false })
---vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', { noremap = true, silent = true, expr = false })
-
--- Define a keybinding in Insert mode to delete a word with Ctrl+Backspace
-vim.api.nvim_set_keymap("i", "<C-BS>", "<C-w>", { noremap = true, silent = true })
--- delete a word in command mode
-vim.api.nvim_set_keymap("t", "<C-BS>", "<C-w>", { noremap = true, silent = true })
 -- invoke noh when pressing esc in normal mode
 vim.api.nvim_set_keymap("n", "<Esc>", ":noh<CR>", { noremap = true, silent = true })
 
@@ -114,8 +100,6 @@ vim.g.maplocalleader = " "
 -- toggleterm
 --vim.keymap.set("n", "<leader>`", "<cmd>ToggleTerm direction=horizontal<cr>", opts)
 
--- telescope
-
 -- switch windows
 -- Hint: see `:h vim.map.set()`
 -- Better window navigation
@@ -124,14 +108,15 @@ vim.keymap.set("n", "<Leader>j", "<C-w>j", opts)
 vim.keymap.set("n", "<Leader>k", "<C-w>k", opts)
 vim.keymap.set("n", "<Leader>l", "<C-w>l", opts)
 
--- toggle symbols
---vim.keymap.set('n', '<Leader>s', '<cmd>SymbolsOutline<cr>', opts)
-
--- Quit terminal shortcut
-vim.keymap.set("t", "<C-\\>q", "<C-\\><C-n>", opts)
-
 
 -- Inlay hints toggle
 vim.keymap.set('n', '<leader>i', function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(), nil)
+    local notify_string = ""
+    if vim.lsp.inlay_hint.is_enabled() then
+         notify_string = "Inlay hint enabled"
+    else
+         notify_string = "Inlay hint disabled"
+    end
+    vim.notify(notify_string)
 end, { desc = 'Toggle Inlay Hints' })
