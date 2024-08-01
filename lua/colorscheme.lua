@@ -76,4 +76,4 @@ colorschemes = {
 	},
 }
 
-return { colorschemes = colorschemes, current_scheme = "nordfox" }
+return { colorschemes = colorschemes, current_scheme = "default" }

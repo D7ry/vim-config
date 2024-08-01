@@ -29,6 +29,14 @@ vim.keymap.set('n', '<leader>fd', function()
     require("vscode").action("editor.action.peekDefinition")
 end, { desc = 'Peek Definition', noremap=true })
 
+vim.keymap.set('n', '<leader>fs', function()
+    require("vscode").action("workbench.action.gotoSymbol")
+end, { desc = 'LSP document symbols', noremap=true })
+
+vim.keymap.set('n', '<leader>fS', function()
+    require("vscode").action("workbench.action.showAllSymbols")
+end, { desc = 'LSP workspace symbols', noremap=true })
+
 vim.keymap.set('n', '<leader>fr', function()
     require("vscode").action("editor.action.referenceSearch.trigger")
 end, { desc = 'Peek References', noremap=true })
@@ -51,7 +59,6 @@ vim.keymap.set('n', '<leader>a', function()
 end, { desc = 'Toggle Labeled bookmark' , noremap=true})
 
 
----- File Tree
 vim.keymap.set('n', "<Leader><tab>",
     function()
         require("vscode").action("workbench.action.toggleSidebarVisibility")

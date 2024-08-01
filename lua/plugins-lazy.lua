@@ -26,12 +26,12 @@ local plugins = {
 	-- require("plugins.plugin-alpha"),
 	-- require("plugins.plugin-todo-comments"),
 	--require("plugins.plugin-dashboard"),
-	require("plugins.plugin-trouble"),
+	-- require("plugins.plugin-trouble"),
 	-- require("plugins.plugin-scrollbar"),
     require("plugins.plugin-lsp-signature"),
     -- TODO: get dap to work with minGW
-    require("plugins.plugin-nvim-dap"),
-    require("plugins.plugin-nvim-dap-ui"),
+    -- require("plugins.plugin-nvim-dap"),
+    -- require("plugins.plugin-nvim-dap-ui"),
 	-- require("plugins.plugin-noice"), -- known to cause problems on windows
     require("plugins.plugin-nvim-notify"),
 	-- require("plugins.plugin-hover"),
@@ -45,7 +45,7 @@ local plugins = {
 	require("plugins.plugin-nvim-cmp"),
     
     -- require("plugins.plugin-bookmarks"),
-	--require("plugins.plugin-harpoon"),
+	require("plugins.plugin-harpoon"),
 	{ "L3MON4D3/LuaSnip" },
 	--{ "saadparwaiz1/cmp_luasnip" },
 	{
@@ -94,7 +94,7 @@ local plugins = {
 	require("plugins.plugin-nvim-autopairs"),
 	--require("plugins.plugin-battery"),
 	require("plugins.plugin-indent-blankline"),
-	require("plugins.plugin-nvim-bufdel"),
+	-- require("plugins.plugin-nvim-bufdel"),
 	--require("plugins.plugin-headlines")
 	--require("plugins.plugin-obsidian"),
 	require("plugins.plugin-transparent"),
