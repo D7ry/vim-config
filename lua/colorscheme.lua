@@ -71,9 +71,9 @@ colorschemes = {
 		config = function()
 			vim.g.gruvbox_material_background = "soft"
 			vim.g.gruvbox_material_foreground = "soft"
-			vim.g.gruvbox_material_palette = "material"
+			vim.g.gruvbox_material_palette = "original"
 		end,
 	},
 }
 
-return { colorschemes = colorschemes, current_scheme = "default" }
+return { colorschemes = colorschemes, current_scheme = "gruvbox-material" }

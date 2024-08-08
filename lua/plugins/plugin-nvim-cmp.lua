@@ -126,7 +126,7 @@ return {
 				fields = { "abbr", "menu", "kind" },
 
 				format = lspkind.cmp_format({
-					mode = "symbol_text", -- show only symbol annotations
+					mode = "text", -- show only symbol annotations
                     maxwidth = function() return math.floor(0.3 * vim.o.columns) end,
 					ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 					-- The function below will be called before any actual modifications from lspkind
