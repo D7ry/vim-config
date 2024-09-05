@@ -21,12 +21,12 @@ local plugins = {
 	-- UI Plugins
 	-- { "morhetz/gruvbox", lazy = false},
 	-- require("plugins.plugin-bufferline"),
-	-- require("plugins.plugin-lualine"),
+	require("plugins.plugin-lualine"),
 	--require("plugins.plugin-drop"),
 	-- require("plugins.plugin-alpha"),
-	-- require("plugins.plugin-todo-comments"),
+	require("plugins.plugin-todo-comments"),
 	--require("plugins.plugin-dashboard"),
-	-- require("plugins.plugin-trouble"),
+	require("plugins.plugin-trouble"),
 	-- require("plugins.plugin-scrollbar"),
     require("plugins.plugin-lsp-signature"),
     -- TODO: get dap to work with minGW
@@ -78,6 +78,7 @@ local plugins = {
 	-- File Explorer
 	require("plugins.plugin-nvim-tree"),
 	require("plugins.plugin-gitsigns"),
+    'MeanderingProgrammer/render-markdown.nvim',
 	-- require("plugins.plugin-diffview"),
 	-- Terminal Integration
 	require("plugins.plugin-toggleterm"),

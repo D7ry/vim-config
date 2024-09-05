@@ -113,7 +113,8 @@ return {
 				sorting_strategy = "ascending",
 				winblend = 0,
 				prompt_prefix = "🔭 ",
-				layout_strategy = "vertical",
+				-- layout_strategy = "vertical",
+				layout_strategy = "flex",
 				layout_config = {
                 horizontal = {
                     preview_width = 0.6,
