@@ -32,14 +32,14 @@ local plugins = {
     -- TODO: get dap to work with minGW
     -- require("plugins.plugin-nvim-dap"),
     -- require("plugins.plugin-nvim-dap-ui"),
-	-- require("plugins.plugin-noice"), -- known to cause problems on windows
+	-- require("plugins.plugin-noice"),
     require("plugins.plugin-nvim-notify"),
 	-- require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
 	-- require("plugins.plugin-outline"),
 	-- require("plugins.plugin-lspsaga"),
 	-- require("plugins.plugin-inc-rename"),
-	-- require("plugins.plugin-glance"),
+	require("plugins.plugin-glance"),
 	{ "neovim/nvim-lspconfig", lazy = false },
 	-- { "folke/lsp-colors.nvim" },
 	require("plugins.plugin-nvim-cmp"),

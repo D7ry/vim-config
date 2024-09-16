@@ -50,8 +50,8 @@ return {
 					["<C-p>"] = actions.previous_location, -- Bring the cursor to the previous location skipping groups in the list
 					["<C-u>"] = actions.preview_scroll_win(5),
 					["<C-d>"] = actions.preview_scroll_win(-5),
-					["v"] = actions.jump_vsplit,
-					["s"] = actions.jump_split,
+					["<C-v>"] = actions.jump_vsplit,
+					["<C-s>"] = actions.jump_split,
 					-- ["t"] = actions.jump_tab,
 					["<CR>"] = actions.jump,
 					-- ["o"] = actions.jump,

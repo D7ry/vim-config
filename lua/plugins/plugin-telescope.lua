@@ -4,20 +4,20 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzf-native.nvim" },
 	keys = {
 		{ "<Leader>t", "<cmd>Telescope<cr>", desc = "Telescope" },
-		{
-			"<Leader>fd",
-			function()
-				require("telescope.builtin").lsp_definitions({ jump_type = "never" })
-			end,
-			desc = "Telescope go to definition",
-		},
-		{
-			"<Leader>ft",
-			function()
-				require("telescope.builtin").lsp_type_definitions({ jump_type = "never" })
-			end,
-			desc = "Telescope go to type definition",
-		},
+		-- {
+		-- 	"<Leader>fd",
+		-- 	function()
+		-- 		require("telescope.builtin").lsp_definitions({ jump_type = "never" })
+		-- 	end,
+		-- 	desc = "Telescope go to definition",
+		-- },
+		-- {
+		-- 	"<Leader>ft",
+		-- 	function()
+		-- 		require("telescope.builtin").lsp_type_definitions({ jump_type = "never" })
+		-- 	end,
+		-- 	desc = "Telescope go to type definition",
+		-- },
 		{
 			"<Leader>fw",
 			function()
@@ -25,13 +25,13 @@ return {
 			end,
 			desc = "Telescope find in current buffer",
 		},
-		{
-			"<Leader>fr",
-			function()
-				require("telescope.builtin").lsp_references({ jump_type = "never", show_line = false })
-			end,
-			desc = "Telescope go to references",
-		},
+		-- {
+		-- 	"<Leader>fr",
+		-- 	function()
+		-- 		require("telescope.builtin").lsp_references({ jump_type = "never", show_line = false })
+		-- 	end,
+		-- 	desc = "Telescope go to references",
+		-- },
 		{
 			"<Leader>fo",
 			function()
@@ -46,13 +46,13 @@ return {
 		-- 	end,
 		-- 	" go to incoming calls",
 		-- },
-		{
-		"<Leader>fi",
-		function()
-			require("telescope.builtin").lsp_implementations({ jump_type = "never" })
-		end,
-		desc = "go to implementations",
-		},
+		-- {
+		-- "<Leader>fi",
+		-- function()
+		-- 	require("telescope.builtin").lsp_implementations({ jump_type = "never" })
+		-- end,
+		-- desc = "go to implementations",
+		-- },
 		{ "<Leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Telescope ripgrep" },
 		{ "<Leader>ff", "<cmd>Telescope find_files<CR>", desc = "Telescope files" },
 		{ "<Leader>fO", 
