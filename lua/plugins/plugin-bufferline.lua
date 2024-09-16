@@ -42,31 +42,36 @@ return {
 			"<leader><leader>",
             function ()
                 vim.cmd("BufferLinePick");
-            end
+            end,
+            desc = "Buffer pick"
 		},
 		{
 			"<leader>-",
             function ()
                 vim.cmd("BufferLineMovePrev");
-            end
+            end,
+            desc = "Move buffer previous"
 		},
 		{
 			"<leader>=",
             function ()
                 vim.cmd("BufferLineMoveNext");
-            end
+            end,
+            desc = "Move buffer next"
 		},
 		{
 			"<leader>[",
             function ()
                 vim.cmd("BufferLineCyclePrev");
-            end
+            end,
+            desc = "Previous buffer"
 		},
 		{
 			"<leader>]",
             function ()
                 vim.cmd("BufferLineCycleNext");
-            end
+            end,
+            desc = "Next buffer"
 		},
 	},
 	lazy = false,

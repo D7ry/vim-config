@@ -95,7 +95,7 @@ local plugins = {
 	require("plugins.plugin-nvim-autopairs"),
 	--require("plugins.plugin-battery"),
 	require("plugins.plugin-indent-blankline"),
-	-- require("plugins.plugin-nvim-bufdel"),
+	require("plugins.plugin-nvim-bufdel"),
 	--require("plugins.plugin-headlines")
 	--require("plugins.plugin-obsidian"),
 	require("plugins.plugin-transparent"),
