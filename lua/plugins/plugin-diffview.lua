@@ -35,7 +35,7 @@ return {
 				end
 				disable_bufferline()
 			end,
-			"Toggle diff view",
+			desc = "Git repo diff view",
 		},
 		{
 			"<Leader>gf", -- git log but on a current file
@@ -54,7 +54,7 @@ return {
 				end
 				disable_bufferline()
 			end,
-			"Toggle file history view for current file",
+			desc = "Git current file log UI",
 		},
 		{
 			"<Leader>gl", -- git log
@@ -74,7 +74,7 @@ return {
 				end
 				disable_bufferline()
 			end,
-			"Toggle commit history view for all files",
+			desc = "Git log UI",
 		},
 		{
 			"q",
@@ -97,7 +97,7 @@ return {
 				end
 				enable_bufferline()
 			end,
-			"quit diff view",
+			desc = "Quit",
 		},
 	},
 }

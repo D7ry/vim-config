@@ -79,7 +79,7 @@ local plugins = {
 	require("plugins.plugin-nvim-tree"),
 	require("plugins.plugin-gitsigns"),
     'MeanderingProgrammer/render-markdown.nvim',
-	-- require("plugins.plugin-diffview"),
+	require("plugins.plugin-diffview"),
 	-- Terminal Integration
 	require("plugins.plugin-toggleterm"),
 	-- Other Utilities
