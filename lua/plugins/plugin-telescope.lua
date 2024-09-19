@@ -105,6 +105,7 @@ return {
 		--local fb_actions = ts.extensions.file_browser.actions
 		ts.setup({
 			defaults = {
+                file_ignore_patterns = {"^extern/"}, -- ignore all files in extern directory
                 paths_display = "filename_first",
                 --wrap_results = true,
 				--borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" }, -- monokai pro setup
