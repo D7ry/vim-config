@@ -96,6 +96,11 @@ lspconfig.pyright.setup({
     on_attach = on_attach,
 })
 
+
+lspconfig.glsl_analyzer.setup({
+    on_attach = on_attach,
+})
+
 lspconfig.lua_ls.setup({ on_attach = on_attach })
 
 local clangd_capabilities = capabilities
