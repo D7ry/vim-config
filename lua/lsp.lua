@@ -10,8 +10,8 @@ require("mason").setup({
 
 require("mason-lspconfig").setup({
 	-- A list of servers to automatically install if they're not already installed
-        ensure_installed = { "glsl_analyzer", "lua_ls", "rust_analyzer", "marksman" , "pyright"},
-        automatic_installation = true,
+	ensure_installed = {  "glsl_analyzer", "lua_ls", "rust_analyzer", "marksman", "pyright" },
+	automatic_installation = true,
 })
 
 --Set completeopt to have a better completion experience
@@ -93,7 +93,16 @@ end
 --})
 -- for static type checking
 lspconfig.pyright.setup({
-    on_attach = on_attach,
+	on_attach = on_attach,
+})
+
+lspconfig.eslint.setup({
+	on_attach = function(client, bufnr)
+		-- Add any custom on_attach functionality here
+	end,
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+	cmd = { "typescript-language-server", "--stdio" },
 })
 
 
@@ -108,16 +117,15 @@ clangd_capabilities.offsetEncoding = "utf-8"
 lspconfig.clangd.setup({
 	capabilities = clangd_capabilities,
 	on_attach = on_attach,
-    cmd = {"clangd", "--header-insertion=never"}, -- dont' want to insert random headers.
+	cmd = { "clangd", "--header-insertion=never" }, -- dont' want to insert random headers.
 })
 
 lspconfig.marksman.setup({
 
 	on_attach = on_attach,
-}
-)
+})
 
-lspconfig.opencl_ls.setup{}
+lspconfig.opencl_ls.setup({})
 
 lspconfig.rust_analyzer.setup({
 	on_attach = on_attach,
@@ -143,25 +151,22 @@ lspconfig.rust_analyzer.setup({
 	},
 })
 
-
 -- set up shader lsp
-vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
-    pattern = {"*.vert", "*.frag"},
-    command = "set filetype=glsl",
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = { "*.vert", "*.frag" },
+	command = "set filetype=glsl",
 })
 
-vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
-    pattern = {"*.cl"},
-    command = "set filetype=cpp",
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = { "*.cl" },
+	command = "set filetype=cpp",
 })
-
 
 -- limit hover window width
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-  opts = opts or {}
-  -- opts.border = opts.border or 'single'
-  opts.max_width= opts.max_width or 80
-  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+	opts = opts or {}
+	-- opts.border = opts.border or 'single'
+	opts.max_width = opts.max_width or 80
+	return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
-

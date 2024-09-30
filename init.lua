@@ -22,8 +22,6 @@ else -- ordinary vim
     require("neovide")
 end
 
-require("lazygit") -- init lazygit
-
 -- extended glsl types
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     pattern = {

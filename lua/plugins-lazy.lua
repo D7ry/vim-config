@@ -76,6 +76,7 @@ local plugins = {
 	require("plugins.plugin-nvim-treesitter-context"),
 
 	-- File Explorer
+    require("plugins.plugin-fm"),
 	require("plugins.plugin-nvim-tree"),
 	require("plugins.plugin-gitsigns"),
     'MeanderingProgrammer/render-markdown.nvim',

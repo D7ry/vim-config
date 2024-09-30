@@ -76,4 +76,4 @@ colorschemes = {
 	},
 }
 
-return { colorschemes = colorschemes, current_scheme = "gruvbox-material" }
+return { colorschemes = colorschemes, current_scheme = "nordfox" }
