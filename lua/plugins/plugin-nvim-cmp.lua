@@ -32,12 +32,12 @@ return {
 			},
 			snippet = {
 				expand = function(args)
-					    require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+					require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
 				end,
 			},
 			--
 			window = {
-    --             completion = cmp.config.window.bordered(),
+				-- completion = cmp.config.window.bordered(),
 				-- documentation = cmp.config.window.bordered(),
 			},
 			mapping = cmp.mapping.preset.insert({
@@ -48,10 +48,7 @@ return {
 				["<C-p>"] = cmp.mapping.select_prev_item(),
 				["<C-n>"] = cmp.mapping.select_next_item(),
 				["<C-q>"] = function(fallback)
-					if
-						not cmp.visible()
-						or not cmp.get_selected_entry()
-					then
+					if not cmp.visible() or not cmp.get_selected_entry() then
 						fallback()
 					else
 						cmp.abort()
@@ -95,25 +92,25 @@ return {
 
 				-- A super tab
 				-- sourc: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
-				["<Tab>"] = cmp.mapping(function(fallback)
-				    -- Hint: if the completion menu is visible select next one
-				    if cmp.visible() then
-				        cmp.select_next_item()
-				    elseif has_words_before() then
-				        cmp.complete()
-				    else
-				        fallback()
-				    end
-				end, { "i", "s" }), -- i - insert mode; s - select mode
-				["<S-Tab>"] = cmp.mapping(function(fallback)
-				    if cmp.visible() then
-				        cmp.select_prev_item()
-				    elseif luasnip.jumpable( -1) then
-				        luasnip.jump( -1)
-				    else
-				        fallback()
-				    end
-				end, { "i", "s" }),
+				-- ["<Tab>"] = cmp.mapping(function(fallback)
+				--     -- Hint: if the completion menu is visible select next one
+				--     if cmp.visible() then
+				--         cmp.select_next_item()
+				--     elseif has_words_before() then
+				--         cmp.complete()
+				--     else
+				--         fallback()
+				--     end
+				-- end, { "i", "s" }), -- i - insert mode; s - select mode
+				-- ["<S-Tab>"] = cmp.mapping(function(fallback)
+				--     if cmp.visible() then
+				--         cmp.select_prev_item()
+				--     elseif luasnip.jumpable( -1) then
+				--         luasnip.jump( -1)
+				--     else
+				--         fallback()
+				--     end
+				-- end, { "i", "s" }),
 			}),
 			--
 			-- -- Let's configure the item's appearance
@@ -123,11 +120,18 @@ return {
 				-- kind: single letter indicating the type of completion
 				-- abbr: abbreviation of "word"; when not empty it is used in the menu instead of "word"
 				-- menu: extra text for the popup menu, displayed after "word" or "abbr"
-				fields = { "abbr", "menu", "kind" },
+				fields = {
+					"kind",
+					"abbr",
+					"menu"
+				},
 
 				format = lspkind.cmp_format({
-					mode = "text", -- show only symbol annotations
-                    maxwidth = function() return math.floor(0.3 * vim.o.columns) end,
+					mode = "symbol", -- show only symbol annotations
+					maxwidth = {
+						menu = 50, -- leading text (labelDetails)
+						abbr = 50, -- actual suggestion item
+					},
 					ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 					-- The function below will be called before any actual modifications from lspkind
 				}),

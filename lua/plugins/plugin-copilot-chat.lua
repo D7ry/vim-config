@@ -15,6 +15,7 @@ return {
 	{
 		-- "CopilotC-Nvim/CopilotChat.nvim",
 		"D7ry/CopilotChat.nvim",
+        lazy = false,
 		config = function()
 			require("CopilotChat").setup({
 
@@ -54,7 +55,7 @@ return {
 		-- See Commands section for default commands if you want to lazy load on them
 		keys = {
 			{
-				"<leader>i",
+				"<leader>y",
 				function()
 					local input = vim.fn.input("Ask Buffer: ")
 					if input ~= "" then
@@ -66,7 +67,7 @@ return {
 			},
 
 			{
-				"<leader>i",
+				"<leader>y",
 				function()
 					local input = vim.fn.input("Ask Selected: ")
 					if input ~= "" then
@@ -77,7 +78,7 @@ return {
 				mode = "v",
 			},
 			{
-				"<C-i>",
+				"<C-y>",
 				"<cmd>CopilotChatToggle<CR>",
 				desc = "CopilotChat - Toggle chat",
 			},

@@ -25,10 +25,11 @@ return {
                 -- NOTE: M is the meta key, alt on keyboard
 				keymap = {
 					accept = "<C-enter>",
+					-- accept = "<tab>",
 					accept_word = false,
 					accept_line = false,
-					next = "<M-n>",
-					prev = "<M-p>",
+					next = "<C-n>",
+					prev = "<C-p>",
 					dismiss = "<M-w>",
 				},
 			},

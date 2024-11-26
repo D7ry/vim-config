@@ -98,7 +98,7 @@ return {
 				signcolumn = "yes",
 				width = 60,
 				float = {
-					enable = true,
+					enable = false,
 					quit_on_focus_loss = true,
 					open_win_config = function()
 						local HEIGHT_RATIO = 0.8 -- You can change this

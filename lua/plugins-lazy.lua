@@ -28,11 +28,11 @@ local plugins = {
 	--require("plugins.plugin-dashboard"),
 	require("plugins.plugin-trouble"),
 	-- require("plugins.plugin-scrollbar"),
-    require("plugins.plugin-lsp-signature"),
+    -- require("plugins.plugin-lsp-signature"),
     -- TODO: get dap to work with minGW
     -- require("plugins.plugin-nvim-dap"),
     -- require("plugins.plugin-nvim-dap-ui"),
-	-- require("plugins.plugin-noice"),
+	require("plugins.plugin-noice"),
     require("plugins.plugin-nvim-notify"),
 	-- require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
@@ -40,6 +40,7 @@ local plugins = {
 	-- require("plugins.plugin-lspsaga"),
 	-- require("plugins.plugin-inc-rename"),
 	require("plugins.plugin-glance"),
+    require("plugins.plugin-showkeys"),
 	{ "neovim/nvim-lspconfig", lazy = false },
 	-- { "folke/lsp-colors.nvim" },
 	require("plugins.plugin-nvim-cmp"),
@@ -61,9 +62,10 @@ local plugins = {
 	require("plugins.plugin-conform"),
 	-- Telescope
 	require("plugins.plugin-telescope"),
-	-- require("plugins.plugin-copilot"),
-	-- require("plugins.plugin-copilot-lualine"),
-	-- require("plugins.plugin-copilot-chat"),
+	require("plugins.plugin-copilot"),
+    -- require("plugins.plugin-avante"),
+	require("plugins.plugin-copilot-lualine"),
+	require("plugins.plugin-copilot-chat"),
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -85,7 +87,7 @@ local plugins = {
 	require("plugins.plugin-toggleterm"),
 	-- Other Utilities
 	--require("plugins.plugin-cinnamon"), -- for smooth scrolling
-    require("plugins.plugin-presence"),
+    -- require("plugins.plugin-presence"),
 	{ "williamboman/mason.nvim", lazy = false },
 	{ "williamboman/mason-lspconfig.nvim", lazy = false },
 	-- { "jdhao/better-escape.vim" },
