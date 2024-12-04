@@ -44,15 +44,15 @@ return {
 				-- Use <C-b/f> to scroll the docs
 				["<C-u>"] = cmp.mapping.scroll_docs(-4),
 				["<C-d>"] = cmp.mapping.scroll_docs(4),
-				-- Use <C-k/j> to switch in items
+				-- Use <C-n/p> to switch in items
 				["<C-p>"] = cmp.mapping.select_prev_item(),
 				["<C-n>"] = cmp.mapping.select_next_item(),
 				["<C-q>"] = function(fallback)
-					if not cmp.visible() or not cmp.get_selected_entry() then
-						fallback()
-					else
-						cmp.abort()
-					end
+                    if cmp.visible() then
+                        cmp.abort()
+                    else
+                        fallback()
+                    end
 				end,
 
 				["<Enter>"] = function(fallback)

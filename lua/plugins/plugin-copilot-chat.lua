@@ -13,8 +13,8 @@ local function get_visual_selection()
 end
 return {
 	{
-		-- "CopilotC-Nvim/CopilotChat.nvim",
-		"D7ry/CopilotChat.nvim",
+		"CopilotC-Nvim/CopilotChat.nvim",
+		-- "D7ry/CopilotChat.nvim",
         lazy = false,
 		config = function()
 			require("CopilotChat").setup({

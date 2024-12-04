@@ -20,7 +20,7 @@ local plugins = {
 	--require("plugins.plugin-miniintro"),
 	-- UI Plugins
 	-- { "morhetz/gruvbox", lazy = false},
-	-- require("plugins.plugin-bufferline"),
+	require("plugins.plugin-bufferline"),
 	require("plugins.plugin-lualine"),
 	--require("plugins.plugin-drop"),
 	-- require("plugins.plugin-alpha"),
@@ -87,7 +87,7 @@ local plugins = {
 	require("plugins.plugin-toggleterm"),
 	-- Other Utilities
 	--require("plugins.plugin-cinnamon"), -- for smooth scrolling
-    -- require("plugins.plugin-presence"),
+    require("plugins.plugin-presence"),
 	{ "williamboman/mason.nvim", lazy = false },
 	{ "williamboman/mason-lspconfig.nvim", lazy = false },
 	-- { "jdhao/better-escape.vim" },

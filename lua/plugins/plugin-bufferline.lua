@@ -60,14 +60,14 @@ return {
             desc = "Move buffer next"
 		},
 		{
-			"<leader>[",
+			"<C-p>",
             function ()
                 vim.cmd("BufferLineCyclePrev");
             end,
             desc = "Previous buffer"
 		},
 		{
-			"<leader>]",
+			"<C-n>",
             function ()
                 vim.cmd("BufferLineCycleNext");
             end,

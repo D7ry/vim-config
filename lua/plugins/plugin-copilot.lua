@@ -1,7 +1,6 @@
 return {
 	"zbirenbaum/copilot.lua",
 	config = function()
-         
 		require("copilot").setup({
 			panel = {
 				enabled = true,
@@ -24,8 +23,8 @@ return {
 				debounce = 75,
                 -- NOTE: M is the meta key, alt on keyboard
 				keymap = {
-					accept = "<C-enter>",
-					-- accept = "<tab>",
+					-- accept = "<C-enter>",
+					accept = "<C-j>",
 					accept_word = false,
 					accept_line = false,
 					next = "<C-n>",
