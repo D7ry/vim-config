@@ -62,7 +62,7 @@ local plugins = {
 	require("plugins.plugin-conform"),
 	-- Telescope
 	require("plugins.plugin-telescope"),
-	require("plugins.plugin-copilot"),
+	-- require("plugins.plugin-copilot"),
     -- require("plugins.plugin-avante"),
 	require("plugins.plugin-copilot-lualine"),
 	require("plugins.plugin-copilot-chat"),

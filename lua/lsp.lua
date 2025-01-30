@@ -10,7 +10,12 @@ require("mason").setup({
 
 require("mason-lspconfig").setup({
 	-- A list of servers to automatically install if they're not already installed
-	ensure_installed = {  "glsl_analyzer", "lua_ls", "rust_analyzer", "marksman", "pyright" },
+	ensure_installed = {  "glsl_analyzer", 
+    "lua_ls", 
+    -- "rust_analyzer", 
+    -- "marksman", 
+    -- "pyright" 
+},
 	automatic_installation = true,
 })
 
@@ -92,18 +97,18 @@ end
 --	},
 --})
 -- for static type checking
-lspconfig.pyright.setup({
-	on_attach = on_attach,
-})
+-- lspconfig.pyright.setup({
+-- 	on_attach = on_attach,
+-- })
 
-lspconfig.eslint.setup({
-	on_attach = function(client, bufnr)
-		-- Add any custom on_attach functionality here
-	end,
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
-	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-	cmd = { "typescript-language-server", "--stdio" },
-})
+-- lspconfig.eslint.setup({
+-- 	on_attach = function(client, bufnr)
+-- 		-- Add any custom on_attach functionality here
+-- 	end,
+-- 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+-- 	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+-- 	cmd = { "typescript-language-server", "--stdio" },
+-- })
 
 
 lspconfig.glsl_analyzer.setup({
@@ -127,29 +132,29 @@ lspconfig.marksman.setup({
 
 lspconfig.opencl_ls.setup({})
 
-lspconfig.rust_analyzer.setup({
-	on_attach = on_attach,
-	cmd = { "rustup", "run", "stable", "rust-analyzer" },
-	settings = {
-		["rust-analyzer"] = {
-			imports = {
-				granularity = {
-					group = "module",
-				},
-				prefix = "self",
-			},
-			cargo = {
-				allFeatures = true,
-				buildScripts = {
-					enable = true,
-				},
-			},
-			procMacro = {
-				enable = true,
-			},
-		},
-	},
-})
+-- lspconfig.rust_analyzer.setup({
+-- 	on_attach = on_attach,
+-- 	cmd = { "rustup", "run", "stable", "rust-analyzer" },
+-- 	settings = {
+-- 		["rust-analyzer"] = {
+-- 			imports = {
+-- 				granularity = {
+-- 					group = "module",
+-- 				},
+-- 				prefix = "self",
+-- 			},
+-- 			cargo = {
+-- 				allFeatures = true,
+-- 				buildScripts = {
+-- 					enable = true,
+-- 				},
+-- 			},
+-- 			procMacro = {
+-- 				enable = true,
+-- 			},
+-- 		},
+-- 	},
+-- })
 
 -- set up shader lsp
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
