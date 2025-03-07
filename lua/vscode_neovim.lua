@@ -21,23 +21,23 @@ vim.keymap.set('n', '<leader>t', function()
     require("vscode").action("workbench.action.showCommands")
 end, { desc = 'Telescope', noremap=true })
 
-vim.keymap.set('n', '<leader>ff', function()
+vim.keymap.set('n', '<leader>f', function()
     require("vscode").action("workbench.action.quickOpen")
 end, { desc = 'Browse Files', noremap=true })
 
-vim.keymap.set('n', '<leader>fd', function()
+vim.keymap.set('n', '<leader>d', function()
     require("vscode").action("editor.action.peekDefinition")
 end, { desc = 'Peek Definition', noremap=true })
 
-vim.keymap.set('n', '<leader>fs', function()
+vim.keymap.set('n', '<leader>s', function()
     require("vscode").action("workbench.action.gotoSymbol")
 end, { desc = 'LSP document symbols', noremap=true })
 
-vim.keymap.set('n', '<leader>fS', function()
+vim.keymap.set('n', '<leader>S', function()
     require("vscode").action("workbench.action.showAllSymbols")
 end, { desc = 'LSP workspace symbols', noremap=true })
 
-vim.keymap.set('n', '<leader>fr', function()
+vim.keymap.set('n', '<leader>r', function()
     require("vscode").action("editor.action.referenceSearch.trigger")
 end, { desc = 'Peek References', noremap=true })
 
@@ -63,8 +63,24 @@ vim.keymap.set('n', "<Leader><tab>",
     function()
         require("vscode").action("workbench.action.toggleSidebarVisibility")
     end, { desc = 'Toggle primary sidebar', noremap=true })
+    
+---- Navigation
+vim.keymap.set('n', "<C-h>",
+    function()
+        require("vscode").action("workbench.action.previousEditorInGroup")
+    end, { desc = 'Previous Editor in group', noremap=true })
+
+vim.keymap.set('n', "<C-l>",
+    function()
+        require("vscode").action("workbench.action.nextEditorInGroup")
+    end, { desc = 'Next Editor in group', noremap=true })
 
 ---- Window resizing
+-- zen mode
+vim.keymap.set('n', '<leader>z', function()
+    require("vscode").action("workbench.action.toggleZenMode")
+end, { desc = 'toggle zen mode' , noremap=true})
+
 vim.keymap.set('n', '<C-Right>', function()
     require("vscode").action("workbench.action.increaseViewSize")
 end, { desc = 'Size up current view' , noremap=true})
