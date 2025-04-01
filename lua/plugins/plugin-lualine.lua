@@ -212,10 +212,10 @@ push_left({
 	},
 })
 --
-push_right({
-	-- copilot status
-	"copilot",
-})
+-- push_right({
+-- 	-- copilot status
+-- 	"copilot",
+-- })
 
 push_right({
 	-- filesize component

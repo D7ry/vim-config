@@ -3,7 +3,7 @@ return {
 	lazy = false,
 	dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzf-native.nvim" },
 	keys = {
-		{ "<Leader>t", "<cmd>Telescope<cr>", desc = "Telescope" },
+		{ "<Leader>q", "<cmd>Telescope<cr>", desc = "Telescope" },
 		-- {
 		-- 	"<Leader>fd",
 		-- 	function()
@@ -19,7 +19,7 @@ return {
 		-- 	desc = "Telescope go to type definition",
 		-- },
 		{
-			"<Leader>fw",
+			"<Leader>w",
 			function()
 				require("telescope.builtin").current_buffer_fuzzy_find({ jump_type = "never", show_line = false })
 			end,
@@ -32,13 +32,13 @@ return {
 		-- 	end,
 		-- 	desc = "Telescope go to references",
 		-- },
-		{
-			"<Leader>fo",
-			function()
-				require("telescope.builtin").lsp_outgoing_calls({ jump_type = "never" })
-			end,
-			desc = "Telescope outgoing calls",
-		},
+		-- {
+		-- 	"<Leader>fo",
+		-- 	function()
+		-- 		require("telescope.builtin").lsp_outgoing_calls({ jump_type = "never" })
+		-- 	end,
+		-- 	desc = "Telescope outgoing calls",
+		-- },
 		-- {
 		-- 	"<Leader>fi",
 		-- 	function()
@@ -53,18 +53,18 @@ return {
 		-- end,
 		-- desc = "go to implementations",
 		-- },
-		{ "<Leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Telescope ripgrep" },
-		{ "<Leader>ff", "<cmd>Telescope find_files<CR>", desc = "Telescope files" },
-		{ "<Leader>fO", 
+		{ "<Leader>g", "<cmd>Telescope live_grep<cr>", desc = "Telescope ripgrep" },
+		{ "<Leader>f", "<cmd>Telescope find_files<CR>", desc = "Telescope files" },
+		{ "<Leader>O", 
             function() 
                 require("telescope.builtin").oldfiles({ only_cwd = false })
             end, 
         desc = "Telescope global old files" },
 
 		-- { "<Leader>fn", "<cmd>Telescope noice<CR>" },
-		{ "<Leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Telescope help" },
+		{ "<Leader>h", "<cmd>Telescope help_tags<CR>", desc = "Telescope help" },
 		{
-			"<Leader>fo",
+			"<Leader>o",
 			function()
 				require("telescope.builtin").oldfiles({ only_cwd = true })
 			end,
@@ -72,23 +72,23 @@ return {
 		},
 
 		{
-			"<Leader>fp",
+			"<Leader>p",
 			function()
 				require("telescope").extensions.projects.projects({})
 			end,
 			desc = "Telescope projects",
 		},
 
-		{ "<Leader>fb", "<cmd>Telescope buffers<cr>", "Telescope buffers" },
+		--{ "<Leader>fb", "<cmd>Telescope buffers<cr>", "Telescope buffers" },
 		{
-			"<Leader>fs",
+			"<Leader>s",
 			function()
 				require("telescope.builtin").lsp_document_symbols({ symbol_width = 50 })
 			end,
 			desc = "Telescope document symbols",
 		},
 		{
-			"<Leader>fS",
+			"<Leader>S",
 			function()
 				require("telescope.builtin").lsp_workspace_symbols({ symbol_width = 50 })
 			end,

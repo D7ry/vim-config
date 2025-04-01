@@ -59,13 +59,13 @@ local plugins = {
 	-- require("plugins.plugin-rustaceanvim"),
 
 	-- auto formatting
-	require("plugins.plugin-conform"),
+	--require("plugins.plugin-conform"),
 	-- Telescope
 	require("plugins.plugin-telescope"),
 	-- require("plugins.plugin-copilot"),
     -- require("plugins.plugin-avante"),
-	require("plugins.plugin-copilot-lualine"),
-	require("plugins.plugin-copilot-chat"),
+	--require("plugins.plugin-copilot-lualine"),
+	--require("plugins.plugin-copilot-chat"),
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -78,11 +78,11 @@ local plugins = {
 	require("plugins.plugin-nvim-treesitter-context"),
 
 	-- File Explorer
-    require("plugins.plugin-fm"),
+    --require("plugins.plugin-fm"),
 	require("plugins.plugin-nvim-tree"),
-	require("plugins.plugin-gitsigns"),
+	--require("plugins.plugin-gitsigns"),
     'MeanderingProgrammer/render-markdown.nvim',
-	require("plugins.plugin-diffview"),
+	--require("plugins.plugin-diffview"),
 	-- Terminal Integration
 	require("plugins.plugin-toggleterm"),
 	-- Other Utilities

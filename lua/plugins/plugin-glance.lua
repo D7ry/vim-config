@@ -96,22 +96,22 @@ return {
 	end,
     keys = {
 		{
-			"<Leader>fr",
+			"<Leader>r",
             "<CMD>Glance references<CR>",
 			desc = "Glance references",
         },
 		{
-			"<Leader>fd",
+			"<Leader>d",
             "<CMD>Glance definitions<CR>",
 			desc = "Glance definitions",
 		},
 		{
-			"<Leader>ft",
+			"<Leader>t",
             "<CMD>Glance type_definitions<CR>",
 			desc ="Glance type definitions",
 		},
 		{
-			"<Leader>fi",
+			"<Leader>i",
             "<CMD>Glance implementations<CR>",
 			desc ="Glance implementations",
 		},
