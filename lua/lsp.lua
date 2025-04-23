@@ -122,7 +122,10 @@ clangd_capabilities.offsetEncoding = "utf-8"
 lspconfig.clangd.setup({
 	capabilities = clangd_capabilities,
 	on_attach = on_attach,
-	cmd = { "clangd", "--header-insertion=never" }, -- dont' want to insert random headers.
+	cmd = { "clangd",
+        "--header-insertion=never",
+        "-j=32",
+    }, -- dont' want to insert random headers.
     init_options = {
         compilationDatabasePath="/mnt/c/src/sw/pvt/7ian/workspace/nvim"
     }
