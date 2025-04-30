@@ -117,6 +117,7 @@ lspconfig.glsl_analyzer.setup({
 
 lspconfig.lua_ls.setup({ on_attach = on_attach })
 
+-- disable clangd
 local clangd_capabilities = capabilities
 clangd_capabilities.offsetEncoding = "utf-8"
 lspconfig.clangd.setup({

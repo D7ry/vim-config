@@ -15,9 +15,9 @@ if vim.g.vscode then
 else -- ordinary vim
     require("plugins-lazy")
     vim.cmd.colorscheme(require("colorscheme").current_scheme)
-    require("setup_markdown")
+    --require("setup_markdown")
     require("lsp")
-    -- require("config.nvim-cmp")
+    --require("config.nvim-cmp")
     -- require("lazygit")
     require("neovide")
 end

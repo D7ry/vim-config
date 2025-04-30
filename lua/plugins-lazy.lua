@@ -20,27 +20,27 @@ local plugins = {
 	--require("plugins.plugin-miniintro"),
 	-- UI Plugins
 	-- { "morhetz/gruvbox", lazy = false},
-	require("plugins.plugin-bufferline"),
-	require("plugins.plugin-lualine"),
+	--require("plugins.plugin-bufferline"),
+	--require("plugins.plugin-lualine"),
 	--require("plugins.plugin-drop"),
 	-- require("plugins.plugin-alpha"),
-	require("plugins.plugin-todo-comments"),
+	--require("plugins.plugin-todo-comments"),
 	--require("plugins.plugin-dashboard"),
-	require("plugins.plugin-trouble"),
+	--require("plugins.plugin-trouble"),
 	-- require("plugins.plugin-scrollbar"),
     -- require("plugins.plugin-lsp-signature"),
     -- TODO: get dap to work with minGW
     -- require("plugins.plugin-nvim-dap"),
     -- require("plugins.plugin-nvim-dap-ui"),
-	require("plugins.plugin-noice"),
-    require("plugins.plugin-nvim-notify"),
+	--require("plugins.plugin-noice"),
+    --require("plugins.plugin-nvim-notify"),
 	-- require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
 	-- require("plugins.plugin-outline"),
 	-- require("plugins.plugin-lspsaga"),
 	-- require("plugins.plugin-inc-rename"),
 	require("plugins.plugin-glance"),
-    require("plugins.plugin-showkeys"),
+    	require("plugins.plugin-showkeys"),
 	{ "neovim/nvim-lspconfig", lazy = false },
 	-- { "folke/lsp-colors.nvim" },
 	require("plugins.plugin-nvim-cmp"),
@@ -67,27 +67,27 @@ local plugins = {
 	--require("plugins.plugin-copilot-lualine"),
 	--require("plugins.plugin-copilot-chat"),
 	-- Treesitter
-	{
-		"nvim-treesitter/nvim-treesitter",
-		lazy = false,
-		run = ":TSUpdate",
-		config = function()
-			require("nvim-treesitter.configs").setup(require("config.nvim-treesitter-config"))
-		end,
-	},
-	require("plugins.plugin-nvim-treesitter-context"),
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter",
+	-- 	lazy = false,
+	-- 	run = ":TSUpdate",
+	-- 	config = function()
+	-- 		require("nvim-treesitter.configs").setup(require("config.nvim-treesitter-config"))
+	-- 	end,
+	-- },
+	--require("plugins.plugin-nvim-treesitter-context"),
 
 	-- File Explorer
     --require("plugins.plugin-fm"),
-	require("plugins.plugin-nvim-tree"),
+	--require("plugins.plugin-nvim-tree"),
 	--require("plugins.plugin-gitsigns"),
-    'MeanderingProgrammer/render-markdown.nvim',
+    --'MeanderingProgrammer/render-markdown.nvim',
 	--require("plugins.plugin-diffview"),
 	-- Terminal Integration
-	require("plugins.plugin-toggleterm"),
+	--require("plugins.plugin-toggleterm"),
 	-- Other Utilities
 	--require("plugins.plugin-cinnamon"), -- for smooth scrolling
-    require("plugins.plugin-presence"),
+    --require("plugins.plugin-presence"),
 	{ "williamboman/mason.nvim", lazy = false },
 	{ "williamboman/mason-lspconfig.nvim", lazy = false },
 	-- { "jdhao/better-escape.vim" },
@@ -101,12 +101,12 @@ local plugins = {
 	require("plugins.plugin-nvim-bufdel"),
 	--require("plugins.plugin-headlines")
 	--require("plugins.plugin-obsidian"),
-	require("plugins.plugin-transparent"),
+	--require("plugins.plugin-transparent"),
 	-- require("plugins.plugin-nvim-markdown"),
 	--require("plugins.plugin-nabla"),
 	require("plugins.plugin-comment"),
 	require("plugins.plugin-project"),
-	require("plugins.plugin-actions-preview"),
+	--require("plugins.plugin-actions-preview"),
 	-- require("plugins.plugin-lightbulb"),
     --require("plugins.plugin-tabnine"),
 	-- require("plugins.plugin-neoclip") -- hotkey issue
