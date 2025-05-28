@@ -20,6 +20,7 @@ else -- ordinary vim
     --require("config.nvim-cmp")
     -- require("lazygit")
     require("neovide")
+    require("p4")
 end
 
 -- extended glsl types

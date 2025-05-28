@@ -32,7 +32,7 @@ local plugins = {
     -- TODO: get dap to work with minGW
     -- require("plugins.plugin-nvim-dap"),
     -- require("plugins.plugin-nvim-dap-ui"),
-	--require("plugins.plugin-noice"),
+	require("plugins.plugin-noice"),
     --require("plugins.plugin-nvim-notify"),
 	-- require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
@@ -59,7 +59,7 @@ local plugins = {
 	-- require("plugins.plugin-rustaceanvim"),
 
 	-- auto formatting
-	--require("plugins.plugin-conform"),
+	require("plugins.plugin-conform"),
 	-- Telescope
 	require("plugins.plugin-telescope"),
 	-- require("plugins.plugin-copilot"),
@@ -67,15 +67,15 @@ local plugins = {
 	--require("plugins.plugin-copilot-lualine"),
 	--require("plugins.plugin-copilot-chat"),
 	-- Treesitter
-	-- {
-	-- 	"nvim-treesitter/nvim-treesitter",
-	-- 	lazy = false,
-	-- 	run = ":TSUpdate",
-	-- 	config = function()
-	-- 		require("nvim-treesitter.configs").setup(require("config.nvim-treesitter-config"))
-	-- 	end,
-	-- },
-	--require("plugins.plugin-nvim-treesitter-context"),
+	{
+		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
+		run = ":TSUpdate",
+		config = function()
+			require("nvim-treesitter.configs").setup(require("config.nvim-treesitter-config"))
+		end,
+	},
+	-- require("plugins.plugin-nvim-treesitter-context"),
 
 	-- File Explorer
     --require("plugins.plugin-fm"),
