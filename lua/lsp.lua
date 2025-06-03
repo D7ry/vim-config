@@ -10,8 +10,9 @@ require("mason").setup({
 
 require("mason-lspconfig").setup({
 	-- A list of servers to automatically install if they're not already installed
-	ensure_installed = {  "glsl_analyzer", 
-    "lua_ls", 
+	ensure_installed = {  "glsl_analyzer",
+    "lua_ls",
+    "slangd"
     -- "rust_analyzer", 
     -- "marksman", 
     -- "pyright" 
@@ -41,13 +42,6 @@ vim.api.nvim_set_option("updatetime", 300)
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- Set different settings for different languages' LSP
--- LSP list: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
--- How to use setup({}): https://github.com/neovim/nvim-lspconfig/wiki/Understanding-setup-%7B%7D
---     - the settings table is sent to the LSP
---     - on_attach: a lua callback function to run after LSP attaches to a given buffer
-local lspconfig = require("lspconfig")
-
 -- Customized on_attach function
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
@@ -65,7 +59,7 @@ local on_attach = function(client, bufnr)
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	--vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+	--vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 	--vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
 	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
@@ -96,72 +90,51 @@ end
 --		},
 --	},
 --})
--- for static type checking
--- lspconfig.pyright.setup({
--- 	on_attach = on_attach,
--- })
 
--- lspconfig.eslint.setup({
--- 	on_attach = function(client, bufnr)
--- 		-- Add any custom on_attach functionality here
--- 	end,
--- 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
--- 	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
--- 	cmd = { "typescript-language-server", "--stdio" },
--- })
+vim.lsp.config(
+    "slangd",
+    {
+        on_attach = on_attach,
+    }
+)
+vim.lsp.config(
+    "lua_ls",
+    {
+        on_attach = on_attach,
+    }
+)
 
-
-lspconfig.glsl_analyzer.setup({
-    on_attach = on_attach,
-})
-
-lspconfig.lua_ls.setup({ on_attach = on_attach })
-
--- disable clangd
 local clangd_capabilities = capabilities
 clangd_capabilities.offsetEncoding = "utf-8"
-lspconfig.clangd.setup({
-	capabilities = clangd_capabilities,
-	on_attach = on_attach,
-	cmd = { "clangd",
-        "--header-insertion=never",
-        "-j=32",
-    }, -- dont' want to insert random headers.
-    init_options = {
-        compilationDatabasePath="/mnt/c/src/sw/pvt/7ian/workspace/nvim"
+vim.lsp.config(
+    "clangd",
+    {
+        capabilities = capabilities,
+        on_attach = on_attach,
+        cmd = { "clangd",
+            "--clang-tidy",
+            "--header-insertion=never",
+            "--header-insertion-decorators=0",
+            "--pch-storage=memory",
+            "-j=32",
+        }, -- dont' want to insert random headers.
+        init_options = {
+            compilationDatabasePath="/mnt/c/src/sw/pvt/7ian/workspace/glv/compile_db/glv_general_linux"
+        }
     }
-})
-
-lspconfig.marksman.setup({
-
-	on_attach = on_attach,
-})
-
-lspconfig.opencl_ls.setup({})
-
--- lspconfig.rust_analyzer.setup({
--- 	on_attach = on_attach,
--- 	cmd = { "rustup", "run", "stable", "rust-analyzer" },
--- 	settings = {
--- 		["rust-analyzer"] = {
--- 			imports = {
--- 				granularity = {
--- 					group = "module",
--- 				},
--- 				prefix = "self",
--- 			},
--- 			cargo = {
--- 				allFeatures = true,
--- 				buildScripts = {
--- 					enable = true,
--- 				},
--- 			},
--- 			procMacro = {
--- 				enable = true,
--- 			},
--- 		},
--- 	},
--- })
+)
+vim.lsp.config(
+    "glsl_analyzer",
+    {
+        on_attach = on_attach,
+    }
+)
+vim.lsp.config(
+    "marksman",
+    {
+        on_attach = on_attach,
+    }
+)
 
 -- set up shader lsp
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {

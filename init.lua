@@ -8,6 +8,14 @@ require("options")
 require("keymaps")
 vim.opt.clipboard = "unnamedplus"
 
+local is_nv = os.getenv("IS_NV")
+_G.IS_NV = (is_nv == "true")
+if _G.IS_NV then
+    local nv_lua_path = os.getenv("P_NVIM_GLV")
+    print("P_NVIM_GLV environment variable: " .. tostring(nv_lua_path))  -- Debug print
+    vim.opt.runtimepath:append(nv_lua_path)
+end
+
 if vim.g.vscode then
     -- VSCode extension
     require("vscode_neovim")

@@ -4,13 +4,13 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzf-native.nvim" },
 	keys = {
 		{ "<Leader>q", "<cmd>Telescope<cr>", desc = "Telescope" },
-		-- {
-		-- 	"<Leader>fd",
-		-- 	function()
-		-- 		require("telescope.builtin").lsp_definitions({ jump_type = "never" })
-		-- 	end,
-		-- 	desc = "Telescope go to definition",
-		-- },
+		{
+			"gd",
+			function()
+				require("telescope.builtin").lsp_definitions({ jump_type = "never" })
+			end,
+			desc = "Telescope go to definition",
+		},
 		-- {
 		-- 	"<Leader>ft",
 		-- 	function()
@@ -108,7 +108,7 @@ return {
                 file_ignore_patterns = {"^extern/", "^_out/"}, -- ignore all files in out/extern directory
                 paths_display = "filename_first",
                 --wrap_results = true,
-				--borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" }, -- monokai pro setup
+				borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" }, -- monokai pro setup
 				-- borderchars = { "", "", "", "", "", "", "", "" }, -- monokai pro setup
                 border = true,
 				sorting_strategy = "ascending",

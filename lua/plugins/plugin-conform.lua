@@ -22,7 +22,7 @@ return {
 	lazy = false,
 	keys = {
 		{
-			"<Leader>fm",
+			"<Leader>k",
 			function()
 				-- Define any options required for formatting
 				local opts = {}
@@ -45,7 +45,7 @@ return {
             mode = "n"
 		},
 		{
-			"<Leader>fm",
+			"<Leader>k",
 			function()
 				-- Define any options required for formatting
 				local opts = {}
