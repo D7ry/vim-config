@@ -10,6 +10,7 @@ return {
 				javascript = { { "prettierd", "prettier" } },
 				rust = { "rustfmt" },
 				cpp = { "clang_format" },
+                glsl = {"clang_format"},
 			},
 			formatters = {
 				clang_format = {

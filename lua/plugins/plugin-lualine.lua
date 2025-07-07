@@ -151,16 +151,16 @@ end
 -- 	--color = { fg = colors.magenta, gui = 'bold' },
 -- })
 
-push_far_left({
-	function()
-		local project_name = require("project_nvim").get_current_project()
-		if not project_name then
-            project_name = "No Active Project"
-        end
-        return project_name
-	end,
-	icon = "",
-})
+-- push_far_left({
+-- 	function()
+-- 		local project_name = require("project_nvim").get_current_project()
+-- 		if not project_name then
+--             project_name = "No Active Project"
+--         end
+--         return project_name
+-- 	end,
+-- 	icon = "",
+-- })
 
 
 
