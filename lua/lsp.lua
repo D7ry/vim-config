@@ -119,7 +119,7 @@ vim.lsp.config(
             "-j=32",
         }, -- dont' want to insert random headers.
         init_options = {
-            compilationDatabasePath="/mnt/c/src/sw/pvt/7ian/workspace/glv/compile_db/glv_general_linux"
+            compilationDatabasePath=os.getenv("P_NV_COMPILE_COMMANDS")
         }
     }
 )
