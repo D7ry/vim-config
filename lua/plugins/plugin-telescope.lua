@@ -105,11 +105,11 @@ return {
 		--local fb_actions = ts.extensions.file_browser.actions
 		ts.setup({
 			defaults = {
-                file_ignore_patterns = {"^extern/", "^_out/"}, -- ignore all files in out/extern directory
+                file_ignore_patterns = {"^extern/", "_out/"}, -- ignore all files in out/extern directory
                 paths_display = "filename_first",
                 --wrap_results = true,
-				borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" }, -- monokai pro setup
-				-- borderchars = { "", "", "", "", "", "", "", "" }, -- monokai pro setup
+				-- borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" }, -- monokai pro setup
+				--borderchars = { "", "", "", "", "", "", "", "" }, -- monokai pro setup
                 border = true,
 				sorting_strategy = "ascending",
 				winblend = 0,

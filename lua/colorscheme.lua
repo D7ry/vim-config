@@ -76,4 +76,4 @@ colorschemes = {
 	},
 }
 
-return { colorschemes = colorschemes, current_scheme = "monokai-pro" }
+return { colorschemes = colorschemes, current_scheme = "tokyonight" }

@@ -32,7 +32,7 @@ local plugins = {
     -- TODO: get dap to work with minGW
     -- require("plugins.plugin-nvim-dap"),
     -- require("plugins.plugin-nvim-dap-ui"),
-	require("plugins.plugin-noice"),
+	--require("plugins.plugin-noice"),
     --require("plugins.plugin-nvim-notify"),
 	-- require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
@@ -72,7 +72,7 @@ local plugins = {
 		lazy = false,
 		run = ":TSUpdate",
 		config = function()
-			require("nvim-treesitter.configs").setup(require("config.nvim-treesitter-config"))
+			
 		end,
 	},
 	--require("plugins.plugin-nvim-treesitter-context"),
