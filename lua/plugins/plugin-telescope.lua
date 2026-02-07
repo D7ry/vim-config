@@ -62,21 +62,13 @@ return {
         desc = "Telescope global old files" },
 
 		-- { "<Leader>fn", "<cmd>Telescope noice<CR>" },
-		{ "<Leader>h", "<cmd>Telescope help_tags<CR>", desc = "Telescope help" },
+		--{ "<Leader>h", "<cmd>Telescope help_tags<CR>", desc = "Telescope help" },
 		{
 			"<Leader>o",
 			function()
 				require("telescope.builtin").oldfiles({ only_cwd = true })
 			end,
 			desc = "Telescope old files",
-		},
-
-		{
-			"<Leader>p",
-			function()
-				require("telescope").extensions.projects.projects({})
-			end,
-			desc = "Telescope projects",
 		},
 
 		--{ "<Leader>fb", "<cmd>Telescope buffers<cr>", "Telescope buffers" },

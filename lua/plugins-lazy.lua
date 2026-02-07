@@ -32,7 +32,7 @@ local plugins = {
     -- TODO: get dap to work with minGW
     -- require("plugins.plugin-nvim-dap"),
     -- require("plugins.plugin-nvim-dap-ui"),
-	--require("plugins.plugin-noice"),
+	require("plugins.plugin-noice"),
     --require("plugins.plugin-nvim-notify"),
 	-- require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
@@ -76,7 +76,6 @@ local plugins = {
 		end,
 	},
 	--require("plugins.plugin-nvim-treesitter-context"),
-
 	-- File Explorer
     --require("plugins.plugin-fm"),
 	--require("plugins.plugin-nvim-tree"),
