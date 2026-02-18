@@ -1,4 +1,4 @@
--- Create a command 'P4a' in Neovim
+-- p4 anotate
 vim.api.nvim_create_user_command('P4a', function()
     -- Get the current buffer number
     local buf = vim.api.nvim_get_current_buf()
@@ -54,4 +54,64 @@ vim.api.nvim_create_user_command('P4a', function()
     vim.bo[buf].modifiable = false
     vim.bo[buf].readonly = true
     vim.bo[buf].swapfile = false
+end, {})
+
+local function p4_depot_path(local_file, p4_exe)
+    local out = vim.fn.systemlist(p4_exe .. ' where "' .. local_file .. '"')
+    if vim.v.shell_error ~= 0 or #out == 0 then
+        return nil
+    end
+
+    -- Format: local depot client
+    local parts = vim.split(out[1], "%s+")
+    return parts[2]
+end
+
+vim.api.nvim_create_user_command('P4d', function()
+    local cur_buf = vim.api.nvim_get_current_buf()
+    local local_file = vim.api.nvim_buf_get_name(cur_buf)
+
+    if local_file == "" then
+        vim.notify("No file associated with the current buffer", vim.log.levels.ERROR)
+        return
+    end
+
+    local p4_exe = "p4"
+    local os_info = vim.loop.os_uname()
+    if os_info.sysname == "Windows_NT" then
+        p4_exe = "p4.exe"
+        local_file = vim.fn.systemlist('wslpath -w "' .. local_file .. '"')[1]
+    end
+
+    -- Resolve depot path
+    local depot = p4_depot_path(local_file, p4_exe)
+    if not depot then
+        vim.notify("Failed to resolve depot path", vim.log.levels.ERROR)
+        return
+    end
+
+    -- Open split
+    vim.cmd('vnew')
+    local depot_buf = vim.api.nvim_get_current_buf()
+
+    vim.bo[depot_buf].buftype = "nofile"
+    vim.bo[depot_buf].bufhidden = "wipe"
+    vim.bo[depot_buf].swapfile = false
+    vim.bo[depot_buf].readonly = true
+
+    -- Print HEAD revision explicitly
+    local cmd = p4_exe .. ' print -q "' .. depot .. '#head"'
+    local content = vim.fn.systemlist(cmd)
+
+    if vim.v.shell_error ~= 0 then
+        vim.notify("p4 print failed", vim.log.levels.ERROR)
+        return
+    end
+
+    vim.api.nvim_buf_set_lines(depot_buf, 0, -1, false, content)
+
+    -- Enable diff mode
+    vim.cmd('diffthis')
+    vim.api.nvim_set_current_buf(cur_buf)
+    vim.cmd('diffthis')
 end, {})

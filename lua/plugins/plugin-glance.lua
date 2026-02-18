@@ -101,19 +101,14 @@ return {
 			desc = "Glance references",
         },
 		{
-			"<Leader>d",
-            "<CMD>Glance definitions<CR>",
-			desc = "Glance definitions",
-		},
-		{
 			"<Leader>t",
             "<CMD>Glance type_definitions<CR>",
 			desc ="Glance type definitions",
 		},
-		-- {
-		-- 	"<Leader>i",
-  --           "<CMD>Glance implementations<CR>",
-		-- 	desc ="Glance implementations",
-		-- },
+		{
+			"<Leader>i",
+            "<CMD>Glance implementations<CR>",
+			desc ="Glance implementations",
+		},
     }
 }

@@ -52,6 +52,9 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     command = "set filetype=cpp",
 })
 
+vim.diagnostic.config({ virtual_text = true })
+
+
 
 
 -- # lock cursor for certain filetypes

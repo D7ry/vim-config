@@ -2,6 +2,28 @@ return {
 	"nvimdev/lspsaga.nvim",
 	config = function()
 		require("lspsaga").setup({
+          finder = {
+            max_height = 0.6,
+            keys = {
+              vsplit = 'C-v',
+              toggle_or_open = "<CR>",
+              quit = "<Esc>",
+
+            },
+          },
+        code_action = {
+            keys = {
+              quit = "<Esc>",
+            }
+        },
+        definition = {
+
+            keys = {
+              vsplit = 'C-v',
+              edit = "<CR>",
+              quit = "<Esc>",
+            }
+        }
         })
 	end,
     lazy=false,
@@ -15,7 +37,22 @@ return {
 			"<cmd>Lspsaga code_action<CR>",
 			{ noremap = true, silent = true },
 		},
-
+		-- {
+		-- 	"<Leader>r",
+		-- 	"<cmd>Lspsaga finder<CR>",
+		-- 	{ noremap = true, silent = true },
+		-- },
+		-- {
+		-- 	"gd",
+		-- 	"<cmd>Lspsaga goto_definition<CR>",
+		-- 	{ noremap = true, silent = true },
+		-- },
+		-- {
+		-- 	"<Leader>t",
+		-- 	"<cmd>Lspsaga peek_type_definition<CR>",
+		-- 	{ noremap = true, silent = true },
+		-- },
+		--
 		-- {
 		-- 	"<Leader>rn",
 		-- 	"<cmd>Lspsaga rename<CR>",

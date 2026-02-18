@@ -152,7 +152,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 	opts = opts or {}
-	-- opts.border = opts.border or 'single'
+	--opts.border = opts.border or 'single'
 	opts.max_width = opts.max_width or 80
 	return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end

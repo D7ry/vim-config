@@ -28,16 +28,34 @@ local plugins = {
 	--require("plugins.plugin-dashboard"),
 	--require("plugins.plugin-trouble"),
 	-- require("plugins.plugin-scrollbar"),
-    -- require("plugins.plugin-lsp-signature"),
+    --require("plugins.plugin-lsp-signature"),
     -- TODO: get dap to work with minGW
     -- require("plugins.plugin-nvim-dap"),
     -- require("plugins.plugin-nvim-dap-ui"),
 	require("plugins.plugin-noice"),
+    {
+  "ojroques/nvim-osc52",
+  config = function()
+    require("osc52").setup {
+      max_length = 0,          -- Maximum length of selection (0 for no limit)
+      silent = false,          -- Disable message on successful copy
+      trim = false,            -- Trim surrounding whitespaces before copy
+    }
+    local function copy()
+      if ((vim.v.event.operator == "y" or vim.v.event.operator == "d")
+        and vim.v.event.regname == "") then
+        require("osc52").copy_register("")
+      end
+    end
+
+    vim.api.nvim_create_autocmd("TextYankPost", { callback = copy })
+  end,
+},
     --require("plugins.plugin-nvim-notify"),
-	-- require("plugins.plugin-hover"),
+	--require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
 	-- require("plugins.plugin-outline"),
-	-- require("plugins.plugin-lspsaga"),
+	require("plugins.plugin-lspsaga"),
 	-- require("plugins.plugin-inc-rename"),
 	require("plugins.plugin-glance"),
     	require("plugins.plugin-showkeys"),
@@ -59,7 +77,7 @@ local plugins = {
 	-- require("plugins.plugin-rustaceanvim"),
 
 	-- auto formatting
-	require("plugins.plugin-conform"),
+	-- require("plugins.plugin-conform"),
 	-- Telescope
 	require("plugins.plugin-telescope"),
 	-- require("plugins.plugin-copilot"),
@@ -72,10 +90,9 @@ local plugins = {
 		lazy = false,
 		run = ":TSUpdate",
 		config = function()
-			
 		end,
 	},
-	--require("plugins.plugin-nvim-treesitter-context"),
+	require("plugins.plugin-nvim-treesitter-context"),
 	-- File Explorer
     --require("plugins.plugin-fm"),
 	--require("plugins.plugin-nvim-tree"),
