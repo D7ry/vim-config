@@ -32,19 +32,14 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	keys = {
-		{
-			"<Leader>ca",
-			"<cmd>Lspsaga code_action<CR>",
-			{ noremap = true, silent = true },
-		},
 		-- {
-		-- 	"<Leader>r",
-		-- 	"<cmd>Lspsaga finder<CR>",
+		-- 	"<Leader>ca",
+		-- 	"<cmd>Lspsaga code_action<CR>",
 		-- 	{ noremap = true, silent = true },
 		-- },
 		-- {
-		-- 	"gd",
-		-- 	"<cmd>Lspsaga goto_definition<CR>",
+		-- 	"<Leader>r",
+		-- 	"<cmd>Lspsaga finder<CR>",
 		-- 	{ noremap = true, silent = true },
 		-- },
 		-- {
@@ -52,7 +47,6 @@ return {
 		-- 	"<cmd>Lspsaga peek_type_definition<CR>",
 		-- 	{ noremap = true, silent = true },
 		-- },
-		--
 		-- {
 		-- 	"<Leader>rn",
 		-- 	"<cmd>Lspsaga rename<CR>",

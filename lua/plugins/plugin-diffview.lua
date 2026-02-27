@@ -19,7 +19,7 @@ return {
 	end,
 	keys = {
 		{
-			"<Leader>gs", -- git status
+			"<Leader>ds", -- git status
 			function()
 				if viewing_file_history then
 					vim.cmd("tabclose")
@@ -38,7 +38,7 @@ return {
 			desc = "Git repo diff view",
 		},
 		{
-			"<Leader>gf", -- git log but on a current file
+			"<Leader>df", -- git log but on a current file
 			function()
 				if viewing_diff then
 					vim.cmd("tabclose")
@@ -57,7 +57,7 @@ return {
 			desc = "Git current file log UI",
 		},
 		{
-			"<Leader>gl", -- git log
+			"<Leader>dl", -- git log
 
 			function()
 				if viewing_diff then

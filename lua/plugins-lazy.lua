@@ -21,48 +21,47 @@ local plugins = {
 	-- UI Plugins
 	-- { "morhetz/gruvbox", lazy = false},
 	--require("plugins.plugin-bufferline"),
-	--require("plugins.plugin-lualine"),
+	require("plugins.plugin-lualine"),
 	--require("plugins.plugin-drop"),
 	-- require("plugins.plugin-alpha"),
 	--require("plugins.plugin-todo-comments"),
 	--require("plugins.plugin-dashboard"),
-	--require("plugins.plugin-trouble"),
-	-- require("plugins.plugin-scrollbar"),
+	require("plugins.plugin-trouble"),
+	--require("plugins.plugin-scrollbar"),
     --require("plugins.plugin-lsp-signature"),
     -- TODO: get dap to work with minGW
     -- require("plugins.plugin-nvim-dap"),
     -- require("plugins.plugin-nvim-dap-ui"),
 	require("plugins.plugin-noice"),
     {
-  "ojroques/nvim-osc52",
-  config = function()
-    require("osc52").setup {
-      max_length = 0,          -- Maximum length of selection (0 for no limit)
-      silent = false,          -- Disable message on successful copy
-      trim = false,            -- Trim surrounding whitespaces before copy
-    }
-    local function copy()
-      if ((vim.v.event.operator == "y" or vim.v.event.operator == "d")
-        and vim.v.event.regname == "") then
-        require("osc52").copy_register("")
-      end
-    end
+      "ojroques/nvim-osc52",
+      config = function()
+        require("osc52").setup {
+          max_length = 0,          -- Maximum length of selection (0 for no limit)
+          silent = false,          -- Disable message on successful copy
+          trim = false,            -- Trim surrounding whitespaces before copy
+        }
+        local function copy()
+          if ((vim.v.event.operator == "y" or vim.v.event.operator == "d")
+            and vim.v.event.regname == "") then
+            require("osc52").copy_register("")
+          end
+        end
 
-    vim.api.nvim_create_autocmd("TextYankPost", { callback = copy })
-  end,
-},
+        vim.api.nvim_create_autocmd("TextYankPost", { callback = copy })
+      end,
+    },
     --require("plugins.plugin-nvim-notify"),
 	--require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
 	-- require("plugins.plugin-outline"),
-	require("plugins.plugin-lspsaga"),
+	--require("plugins.plugin-lspsaga"), -- cnflicts with lualine
 	-- require("plugins.plugin-inc-rename"),
 	require("plugins.plugin-glance"),
     	require("plugins.plugin-showkeys"),
 	{ "neovim/nvim-lspconfig", lazy = false },
 	-- { "folke/lsp-colors.nvim" },
 	require("plugins.plugin-nvim-cmp"),
-    
     -- require("plugins.plugin-bookmarks"),
 	require("plugins.plugin-harpoon"),
 	{ "L3MON4D3/LuaSnip" },
@@ -77,7 +76,7 @@ local plugins = {
 	-- require("plugins.plugin-rustaceanvim"),
 
 	-- auto formatting
-	-- require("plugins.plugin-conform"),
+	require("plugins.plugin-conform"),
 	-- Telescope
 	require("plugins.plugin-telescope"),
 	-- require("plugins.plugin-copilot"),
@@ -92,13 +91,13 @@ local plugins = {
 		config = function()
 		end,
 	},
-	require("plugins.plugin-nvim-treesitter-context"),
+	--require("plugins.plugin-nvim-treesitter-context"),
 	-- File Explorer
     --require("plugins.plugin-fm"),
 	--require("plugins.plugin-nvim-tree"),
-	--require("plugins.plugin-gitsigns"),
+	require("plugins.plugin-gitsigns"),
     --'MeanderingProgrammer/render-markdown.nvim',
-	--require("plugins.plugin-diffview"),
+	require("plugins.plugin-diffview"),
 	-- Terminal Integration
 	--require("plugins.plugin-toggleterm"),
 	-- Other Utilities
@@ -114,7 +113,6 @@ local plugins = {
 	require("plugins.plugin-nvim-autopairs"),
 	--require("plugins.plugin-battery"),
 	require("plugins.plugin-indent-blankline"),
-	require("plugins.plugin-nvim-bufdel"),
 	--require("plugins.plugin-headlines")
 	--require("plugins.plugin-obsidian"),
 	--require("plugins.plugin-transparent"),
@@ -142,8 +140,7 @@ local plugins = {
 local terminal_mode_plugins = {
 	--require("plugins.plugin-cinnamon"),
 	--require("plugins.plugin-neoscroll"),
-	-- unfortunately scroll plugins leads to segfault
-	-- require("plugins.plugin-dropbar"),
+	require("plugins.plugin-dropbar"),
 }
 
 local colorschemes = require("colorscheme").colorschemes

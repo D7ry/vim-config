@@ -13,7 +13,7 @@ return {
 				untracked = { text = "┆" },
 			},
 			signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
-			numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
+			numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
 			linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
 			word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
 			watch_gitdir = {
@@ -21,7 +21,7 @@ return {
 			},
 			auto_attach = true,
 			attach_to_untracked = false,
-			current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+			current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
 			current_line_blame_opts = {
 				virt_text = true,
 				virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
@@ -46,7 +46,7 @@ return {
 	end,
 
 	keys = {
-		{ "gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Gitsigns toggle blame" },
+		{ "gb", "<cmd>Gitsigns blame<cr>", desc = "Gitsigns toggle blame" },
 		{ "g]", "<cmd>Gitsigns next_hunk<cr>", "Next git hunk", desc = "Gitsigns view next hunk in current file"},
 		{ "g[", "<cmd>Gitsigns prev_hunk<cr>", "Prev git hunk", desc = "Gitsigns view prev hunk in current file"},
 		{ "gv", "<cmd>Gitsigns preview_hunk_inline<cr>", desc = "Gitsigns preview git hunk in line" },
