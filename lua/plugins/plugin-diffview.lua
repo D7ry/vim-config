@@ -18,6 +18,18 @@ return {
 		})
 	end,
 	keys = {
+        {
+            "<Leader>db", -- diff branch against master
+            function()
+				if not viewing_diff then
+                    local base_commit_sha = vim.fn.system({"git", "merge-base", "HEAD", "nvvm/main"})
+                    local cmd = "DiffviewOpen " .. base_commit_sha
+                    vim.cmd(cmd)
+					viewing_diff = true
+                end
+            end,
+            desc = "Git branch diff view"
+        },
 		{
 			"<Leader>ds", -- git status
 			function()
@@ -35,7 +47,7 @@ return {
 				end
 				disable_bufferline()
 			end,
-			desc = "Git repo diff view",
+			desc = "Git current diff view",
 		},
 		{
 			"<Leader>df", -- git log but on a current file

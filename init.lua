@@ -26,9 +26,11 @@ else -- ordinary vim
     --require("setup_markdown")
     require("lsp")
     --require("config.nvim-cmp")
-    -- require("lazygit")
+    require("lazygit")
     require("neovide")
     require("p4")
+    vim.cmd([[let &t_Cs = "\e[4:3m"]])
+    vim.cmd([[let &t_Ce = "\e[4:0m"]])
 end
 
 -- extended glsl types

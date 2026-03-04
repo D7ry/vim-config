@@ -105,10 +105,10 @@ return {
             "<CMD>Glance type_definitions<CR>",
 			desc ="Glance type definitions",
 		},
-		{
-			"<Leader>i",
-            "<CMD>Glance implementations<CR>",
-			desc ="Glance implementations",
-		},
+		-- {
+		-- 	"<Leader>i",
+  --           "<CMD>Glance implementations<CR>",
+		-- 	desc ="Glance implementations",
+		-- },
     }
 }

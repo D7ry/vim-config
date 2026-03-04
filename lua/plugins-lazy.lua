@@ -21,12 +21,42 @@ local plugins = {
 	-- UI Plugins
 	-- { "morhetz/gruvbox", lazy = false},
 	--require("plugins.plugin-bufferline"),
+	--require("plugins.plugin-yazi"),
 	require("plugins.plugin-lualine"),
 	--require("plugins.plugin-drop"),
-	-- require("plugins.plugin-alpha"),
+	require("plugins.plugin-alpha"),
 	--require("plugins.plugin-todo-comments"),
 	--require("plugins.plugin-dashboard"),
 	require("plugins.plugin-trouble"),
+    {
+
+           lazy = false,
+          'tomasky/bookmarks.nvim',
+          --event = "VimEnter",
+          config = function()
+            require('bookmarks').setup{
+              -- sign_priority = 8,  --set bookmark sign priority to cover other sign
+              save_file = vim.fn.expand "$HOME/.bookmarks", -- bookmarks save file path
+              keywords =  {
+                ["@t"] = "☑️ ", -- mark annotation startswith @t ,signs this icon as `Todo`
+                ["@w"] = "⚠️ ", -- mark annotation startswith @w ,signs this icon as `Warn`
+                ["@f"] = "⛏ ", -- mark annotation startswith @f ,signs this icon as `Fix`
+                ["@n"] = " ", -- mark annotation startswith @n ,signs this icon as `Note`
+              },
+              on_attach = function(bufnr)
+                local bm = require "bookmarks"
+                local map = vim.keymap.set
+                map("n","mm",bm.bookmark_toggle) -- add or remove bookmark at current line
+                map("n","mi",bm.bookmark_ann) -- add or edit mark annotation at current line
+                map("n","mc",bm.bookmark_clean) -- clean all marks in local buffer
+                map("n","mn",bm.bookmark_next) -- jump to next mark in local buffer
+                map("n","mp",bm.bookmark_prev) -- jump to previous mark in local buffer
+                map("n","ml",bm.bookmark_list) -- show marked file list in quickfix window
+                map("n","mx",bm.bookmark_clear_all) -- removes all bookmarks
+              end
+            }
+          end
+    },
 	--require("plugins.plugin-scrollbar"),
     --require("plugins.plugin-lsp-signature"),
     -- TODO: get dap to work with minGW
@@ -55,7 +85,7 @@ local plugins = {
 	--require("plugins.plugin-hover"),
 	--require("plugins.plugin-aerial"),
 	-- require("plugins.plugin-outline"),
-	--require("plugins.plugin-lspsaga"), -- cnflicts with lualine
+    require("plugins.plugin-lspsaga"), -- cnflicts with lualine
 	-- require("plugins.plugin-inc-rename"),
 	require("plugins.plugin-glance"),
     	require("plugins.plugin-showkeys"),
@@ -99,7 +129,7 @@ local plugins = {
     --'MeanderingProgrammer/render-markdown.nvim',
 	require("plugins.plugin-diffview"),
 	-- Terminal Integration
-	--require("plugins.plugin-toggleterm"),
+	require("plugins.plugin-toggleterm"),
 	-- Other Utilities
 	--require("plugins.plugin-cinnamon"), -- for smooth scrolling
     --require("plugins.plugin-presence"),
@@ -115,7 +145,7 @@ local plugins = {
 	require("plugins.plugin-indent-blankline"),
 	--require("plugins.plugin-headlines")
 	--require("plugins.plugin-obsidian"),
-	--require("plugins.plugin-transparent"),
+	require("plugins.plugin-transparent"),
 	-- require("plugins.plugin-nvim-markdown"),
 	--require("plugins.plugin-nabla"),
 	require("plugins.plugin-comment"),
@@ -134,13 +164,14 @@ local plugins = {
 	-- 		vim.fn["mkdp#util#install"]()
 	-- 	end,
 	-- },
+	--require("plugins.plugin-dropbar"),
 }
 
 -- plugins only enabled when no frontend is enabled
 local terminal_mode_plugins = {
 	--require("plugins.plugin-cinnamon"),
 	--require("plugins.plugin-neoscroll"),
-	require("plugins.plugin-dropbar"),
+	--require("plugins.plugin-dropbar"),
 }
 
 local colorschemes = require("colorscheme").colorschemes

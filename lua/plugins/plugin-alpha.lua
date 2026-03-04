@@ -197,8 +197,6 @@ local function get_sys_widget(height)
 	return res
 end
 
-
-
 local function get_os_logo_char()
 	local ret = nil
 	local os_info = vim.loop.os_uname()
@@ -208,40 +206,40 @@ local function get_os_logo_char()
 		ret = ""
 	elseif os_info.sysname == "Linux" then
 		ret = ""
-		ret = "🐧"
+		--ret = "🐧"
 	end
 	return ret
 end
 
 local user_host = nil -- no real need to recalculate this every time
 local function get_user_host()
-    if user_host then
-        return user_host
-    end
+	if user_host then
+		return user_host
+	end
 	local hostname = execute("hostname -f")
 	local user = execute("whoami")
 	local user_host = user .. "@" .. hostname
 	local os_logo = get_os_logo_char()
-    user_host = os_logo .. " " .. user_host
-    return user_host
+	user_host = os_logo .. " " .. user_host
+	return user_host
 end
 
 local function get_header()
-    -- local logo_transformed = transform_logo(vim_logo, os.clock())
-    -- table.insert(logo_transformed, StringUtils.center_str(get_user_host(), StringUtils.get_max_width(logo_transformed)))
-    -- 
-    local logo = {}
-    for key, value in pairs(vim_logo) do
-        table.insert(logo, value)
-    end
-    local time = os.date(" %H:%M:%S")
-    local logo_width = StringUtils.get_max_width(logo)
-    time = StringUtils.center_str(time, logo_width)
+	-- local logo_transformed = transform_logo(vim_logo, os.clock())
+	-- table.insert(logo_transformed, StringUtils.center_str(get_user_host(), StringUtils.get_max_width(logo_transformed)))
+	--
+	local logo = {}
+	for key, value in pairs(llvm_logo) do
+		table.insert(logo, value)
+	end
+	local time = os.date(" %H:%M:%S")
+	local logo_width = StringUtils.get_max_width(logo)
+	time = StringUtils.center_str(time, logo_width)
 
-    table.insert(logo, StringUtils.center_str(get_user_host(), logo_width))
-    table.insert(logo, time)
+	table.insert(logo, StringUtils.center_str(get_user_host(), logo_width))
+	table.insert(logo, time)
 
-    return logo
+	return logo
 end
 
 return {
@@ -276,9 +274,9 @@ return {
 			-- dashboard.button("t", "󰙅  > File tree", ":Telescope file_browser<CR>"),
 			--
 			--
-			dashboard.button("p", "  > Projects", function()
-				require("telescope").extensions.projects.projects({})
-			end),
+			--dashboard.button("p", "  > Projects", function()
+			--require("telescope").extensions.workspaces.workspaces({})
+			--end),
 			dashboard.button("f", "󰛔  > Find File", ":Telescope find_files<CR>"),
 
 			dashboard.button("o", "  > Recent Files (CWD)", function()
@@ -288,6 +286,8 @@ return {
 				require("telescope.builtin").oldfiles({ only_cwd = false })
 			end),
 			dashboard.button("s", "  > Configuration", ":cd ~/.config/nvim/ | :e .<CR> | :Telescope find_files<CR>"),
+
+			dashboard.button("q", "󰈆  > Quit", ":q<CR>"),
 			--			dashboard.button("c", "󰔎  > Color scheme", ":Telescope colorscheme<CR>"),
 			-- dashboard.button("l", "  > Plugins", ":Lazy<CR>"),
 			--			dashboard.button("q", "󰗼  > Exit", ":qa<CR>"),
@@ -302,11 +302,11 @@ return {
 			local version = vim.version()
 			local nvim_version_info = " Neovim v" .. version.major .. "." .. version.minor .. "." .. version.patch
 
-			function get_project_text()
-				local current_project = require("project_nvim").get_current_project()
-				current_project = current_project or "No Active Project"
-				return " " .. current_project
-			end
+			-- function get_project_text()
+			-- 	local current_project = require("project_nvim").get_current_project()
+			-- 	current_project = current_project or "No Active Project"
+			-- 	return " " .. current_project
+			-- end
 
 			local cwd = " " .. vim.fn.getcwd()
 
@@ -330,10 +330,10 @@ return {
 			-- }
 
 			local box_content = {
-				get_project_text(),
-				cwd,
+				--get_project_text(),
+				--cwd,
+				nvim_version_info,
 			}
-
 
 			local quote = {
 				"It seemed unthinkable for me to leave the world   ",
