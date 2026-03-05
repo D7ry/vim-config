@@ -61,7 +61,7 @@ return {
 					viewing_commit_history = false
 				end
 				if not viewing_file_history then
-					vim.cmd("DiffviewFileHistory %")
+					vim.cmd("DiffviewFileHistory % -n 1024")
 					viewing_file_history = true
 				end
 				disable_bufferline()
