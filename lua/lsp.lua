@@ -119,9 +119,6 @@ vim.lsp.config(
             "--pch-storage=memory",
             "-j=32",
         }, -- dont' want to insert random headers.
-        init_options = {
-            compilationDatabasePath=os.getenv("P_NV_COMPILE_COMMANDS")
-        }
     }
 )
 vim.lsp.config(
