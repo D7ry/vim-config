@@ -42,22 +42,34 @@ vim.keymap.set('n', '<leader>r', function()
 end, { desc = 'Peek References', noremap=true })
 
 ---- Bookmarks
-vim.keymap.set('n', '<leader>m', function()
+vim.keymap.set('n', 'mm', function()
     require("vscode").action("bookmarks.toggle")
 end, { desc = 'Toggle Bookmark', noremap=true })
 
-vim.keymap.set('n', '<leader>n', function()
+vim.keymap.set('n', 'mn', function()
     require("vscode").action("bookmarks.toggleLabeled")
 end, { desc = 'Toggle Labeled bookmark' , noremap=true})
 
-vim.keymap.set('n', '<leader>l', function()
+vim.keymap.set('n', 'ml', function()
     require("vscode").action("bookmarks.list")
 end, { desc = 'Toggle Labeled bookmark' , noremap=true})
 
-vim.keymap.set('n', '<leader>a', function()
+vim.keymap.set('n', 'ma', function()
     require("vscode").action("bookmarks.listFromAllFiles")
 end, { desc = 'Toggle Labeled bookmark' , noremap=true})
 
+---- git
+vim.keymap.set('n', 'gb', function()
+    require("vscode").action("gitlens.toggleFileBlame")
+end, { desc = 'git blame file' , noremap=true})
+
+vim.keymap.set('n', 'g]', function()
+    require("vscode").action("workbench.action.editor.nextChange")
+end, { desc = 'git next hunk' , noremap=true})
+
+vim.keymap.set('n', 'g[', function()
+    require("vscode").action("workbench.action.editor.previousChange")
+end, { desc = 'git previous hunk' , noremap=true})
 
 vim.keymap.set('n', "<Leader><tab>",
     function()
